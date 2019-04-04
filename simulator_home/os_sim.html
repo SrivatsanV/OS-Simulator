@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<title>OS Simulator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-color: #212121;
+    min-height: 100%;
+}
+
+.title {
+  color: #000;
+  font-size: 18px;
+}
+
+
+.images img{
+  height: 150px;
+}
+
+.line {
+      position: relative;
+      top: 50%;
+      width: 16em;
+      margin: 0 auto;
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
+      font-size: 180%;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;transform: translateY(-50%);
+}
+
+/*Animation*/
+
+.anim-typewriter {
+      animation: typewriter 4s steps(40) 1s 1 normal both,
+      blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter {
+      from {
+            width: 0;
+      }
+      to {
+            width: 11em;
+      }
+}
+
+@keyframes blinkTextCursor {
+      from {
+            border-right-color: rgba(255, 255, 255, 0.75);
+      }
+      to {
+            border-right-color: transparent;
+      }
+}
+</style>
+<body>
+
+
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+      <h1 class="line anim-typewriter text-uppercase" style="color:#fff;">OS Simulator 2k19</h1>
+    </div>
+</div>
+
+
+
+
+
+<!-- Container (Portfolio Section) -->
+<div class="jumbotron" style="text-align:center;">
+  <h2>Below are the topics to SIMULATE</h3>
+  <p ><em>Here are the essential topics<br> Click on the images to simulate the respective topic</em></p><br>
+
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+<div class="images">
+    <div class="container">
+        <div class="row">
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Process Scheduling</h4>
+                    <p class="card-text">
+                        Content
+                    </p>
+                    <a href="Scheduling/index.html" class="btn btn-primary">Click</a>
+                  </div>
+                </div>
+          </div>
+
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Dealocks</h4>
+                    <p class="card-text">
+                        Content
+                    </p>
+                    <a href="Deadlock/index.html" class="btn btn-primary">Click</a>
+                  </div>
+                </div>
+          </div>
+
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Disk Scheduling</h4>
+                    <p class="card-text">
+                        Content
+                    </p>
+                    <a href="disk/disk_scheduling.html" class="btn btn-primary">Click</a>
+                  </div>
+                </div>
+          </div>
+
+
+          <div class="col">
+              <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Synchronization</h4>
+                    <p class="card-text">
+                        Content
+                    </p>
+                    <a href="Syncronization/index.html" class="btn btn-primary">Click</a>
+                  </div>
+                </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin:10px 0px;">
+          <div class="col-lg">
+              <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">MFT and MVT</h4>
+                    <p class="card-text">
+                        Content
+                    </p>
+                    <a href="memory/index.html" class="btn btn-primary">Click</a>
+                  </div>
+                </div>
+          </div>
+
+          <div class="col-lg">
+              <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Non-Contiguous Memory Management</h4>
+                    <p class="card-text">
+                        Content
+                    </p>
+                    <a href="OS-final/index.html" class="btn btn-primary">Click</a>
+                  </div>
+                </div>
+          </div>
+
+          <div class="col-lg">
+              <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">File allocation</h4>
+                    <p class="card-text">
+                        Content
+                    </p>
+                    <a href="file-allocation/Index page/index._page.html" class="btn btn-primary">Click</a>
+                  </div>
+                </div>
+          </div>
+
+        </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3" style="text-align:center;">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">OS Simulator</h5>
+          <p>The simualtor simulates most of the topics done and is built sing HTML,CSS and Javascript</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Team</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <p>Name : 171COxxx</p>
+              </li>
+              <li>
+                  <p>Name : 171COxxx</p>
+              </li>
+              <li>
+                  <p>Name : 171COxxx</p>
+              </li>
+              <li>
+                  <p>Name : 171COxxx</p>
+              </li>
+              <li>
+                  <p>Name : 171COxxx</p>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Team</h5>
+
+            <ul class="list-unstyled">
+                <li>
+                    <p>Name : 171COxxx</p>
+                  </li>
+                  <li>
+                      <p>Name : 171COxxx</p>
+                  </li>
+                  <li>
+                      <p>Name : 171COxxx</p>
+                  </li>
+                  <li>
+                      <p>Name : 171COxxx</p>
+                  </li>
+                  <li>
+                      <p>Name : 171COxxx</p>
+                  </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+  </footer>
+  <!-- Footer -->
+
+Supported content 
+
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</html>
