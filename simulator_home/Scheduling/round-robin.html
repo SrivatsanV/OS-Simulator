@@ -5,25 +5,12 @@
     Round Robin Scheduling
   </title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="./bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
 </head>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="../os_sim.html">OS simulator</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-      <li class="active"><a href="wiki.html">Wiki</a></li>
-    </ul>
-  </div>
-</nav>
-<br><br><br>
 
 <script>
   /*FCFS SCHEDULING*/
@@ -288,7 +275,7 @@ function Dequeue(){
 
   function displayBlock(i){
     if(i == total){
-      document.getElementById("ptab").style.display='block';
+      document.getElementById("ptab").style.display='inline-table';
       drawTable(0);
       return;
     }
@@ -316,28 +303,20 @@ function Dequeue(){
 body{
   text-align: center;
 }
-th {
-    background-color: #4CAF50;
-    color: white;
-}
+
 #b{
   font-size:2 em;
 }
 h1{
   font-style: italic;
 }
-.btn{
-  border-radius:12px;
-  background-color: #4CAF50;
-  color:white;
-}
+
 p{
   font-size: 3 em;
   font-style: italic;
 }
 #ptab{
   display:none;
-  margin-left: 27%;
 }
 
 #outer-div{
@@ -365,11 +344,27 @@ p{
   text-align: right;
   margin-bottom: 1;
 }
-#ep{
-  margin-left: 30%;
-}
+
 </style>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white;" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active" style="color:white;">
+              <a class="nav-link" style="color:white;" href="wiki.html">Wiki</a>
+            </li> 
+          </ul>
+        </div>
+      </nav>
+<div class="container">
   <h1>
     Round-Robin Scheduling
   </h1>
@@ -380,7 +375,7 @@ p{
   <br>
   <div>
       <h3>Entered Processes:</h3>
-    <table id="ep" class="table table-bordered" style="width:500px">
+    <table id="ep" class="table table-bordered" style="width:100%">
       <thead>
       <th>PNO.</th>
       <th>Arrival Time </th>
@@ -395,17 +390,17 @@ p{
   </div>
   <input type='number' id='at1' placeholder="arrival time"></input>
   <input type='number' id='bt1' placeholder="burst time 1"></input>
-  <button id="add" class="btn" onclick="AddtoList()">Add</button>
+  <button id="add" class="btn btn-secondary" onclick="AddtoList()">Add</button>
   <br>
   <input type='number' id="tq" placeholder="Time quantum"></input> 
-  <button id="start" class="btn">Start</button>
+  <button id="start" class="btn btn-secondary">Start</button>
   <br>
   <br>
   <div id="outer-div">
   </div>
   <br><br><br>
   <div class="panel-content">
-  <table id="ptab" class="table table-bordered" style="width:600px">
+  <table id="ptab" class="table table-bordered" style="width:100%">
   <thead>
   <tr id="thead">
   <th>PNO.</th>
@@ -423,5 +418,6 @@ p{
   </table>
     </div>
     <p id="Average"></p>
+</div>
 </body>
 </html>

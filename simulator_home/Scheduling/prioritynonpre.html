@@ -5,25 +5,13 @@
     Priority Non Pre-emptive Scheduling
   </title>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="./bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
 </head>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="../os_sim.html">OS simulator</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-      <li class="active"><a href="wiki.html">Wiki</a></li>
-    </ul>
-  </div>
-</nav>
-<br><br><br>
+
 
 <script>
   /*FCFS SCHEDULING*/
@@ -254,7 +242,7 @@ $(document).ready(function(){
 
   function displayBlock(i){
     if(i == total){
-      document.getElementById("ptab").style.display='block';
+      document.getElementById("ptab").style.display='inline-table';
       drawTable(0);
       return;
     }
@@ -292,18 +280,13 @@ th {
 h1{
   font-style: italic;
 }
-.btn{
-  border-radius:12px;
-  background-color: #4CAF50;
-  color:white;
-}
+
 p{
   font-size: 3 em;
   font-style: italic;
 }
 #ptab{
   display:none;
-  margin-left: 27%;
 }
 
 #outer-div{
@@ -331,12 +314,28 @@ p{
   text-align: right;
   margin-bottom: 1;
 }
-#ep{
-  margin-left: 30%;
-}
+
 </style>
 <body>
-  <br> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white;" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active" style="color:white;">
+              <a class="nav-link" style="color:white;" href="wiki.html">Wiki</a>
+            </li> 
+          </ul>
+        </div>
+      </nav>
+  <br>
+<div class="container"> 
   <h1>
     Priority Non-preemptive Scheduling
   </h1>
@@ -393,5 +392,6 @@ p{
   </table>
     </div>
     <p id="Average"></p>
+</div>
 </body>
 </html>
