@@ -4,7 +4,7 @@
   <head>
     <title>Multi-Level Feedback Queue Scheduling </title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,13 +13,7 @@
   </head>
 
   <style>
-    .button
-    {
-      background-color: #4CAF50;
-      border: #4CAF50;
-      padding: 5px 10px;
-      color: white;
-    }
+    
 
     .split
     {
@@ -49,7 +43,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     }
 
     #queue_one
@@ -92,14 +85,14 @@
        Details of the Process:<br>
        <input type="number" id="arr_time" placeholder="arrival time"></input>
        <input type="number" id="bur_time" placeholder="burst time"></input>
-       <button id="add" class="button" onclick="add_proc()">Add</button> <br><br>
+       <button id="add" class="btn btn-secondary" onclick="add_proc()">Add</button> <br><br>
 
        Time Slice of the first queue:<br>
        <input type="number" id="time_slice" placeholder="time slice"></input><br><br>
 
        Time Quantum of the first queue:<br>
        <input type="number" id="time_quant" placeholder="time quantum"></input>
-       <button id="start" class="button" onclick="mlfq()">Start</button> <br><br><br>
+       <button id="start" class="btn btn=secondary" onclick="mlfq()">Start</button> <br><br><br>
 
        <table id="proc_table" class="table table-bordered" style="width:500px;display:none">
          <thead>
