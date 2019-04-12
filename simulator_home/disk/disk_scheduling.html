@@ -5,7 +5,13 @@
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="./bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- for zing chart js -->
@@ -39,16 +45,13 @@ display:none;
 .tdm-button{
 	width:200px;
 	height:50px	;
-	border:solid 2px black;
+	border:solid 2px #282626;
+	background-color: #282626;
 	border-radius:8px;
-	margin-top:3px;
-	margin-bottom: 20px;
-	margin-left:40%;
 	color:white;
 	font-weight: bold;
-	font-family: "courier new", Times, serif;
+	font-family: 'PT Sans' , sans-serif;
 	font-size: 18px;
-	background: linear-gradient(to top right, #84ceeb 0%, #8860d0 100%);
 }
 .tdm-footer{
 	margin-left: 30%;
@@ -71,26 +74,26 @@ display:none;
 
 .button1 {
     background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
+    color: #05386b; 
+    border: 2px solid #DC143C;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 2px 2px;
     cursor: pointer;
 }
 
 .button1:hover {
-    background-color: #4CAF50;
+    background-color: #DC143C;
     color: white;
 }
 
 .button2 {
     background-color: white; 
-    color: black; 
-    border: 2px solid #008CBA;
+    color: #05386b; 
+    border: 2px solid #008080;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -101,14 +104,14 @@ display:none;
 }
 
 .button2:hover {
-    background-color: #008CBA;
+    background-color: #008080;
     color: white;
 }
 
 .button3 {
     background-color: white; 
     color: #05386b; 
-    border: 2px solid red;
+    border: 2px solid orange;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -119,14 +122,14 @@ display:none;
 }
 
 .button3:hover {
-    background-color: red;
+    background-color: orange;
     color: white;
 }
 
 .button4 {
     background-color: white;
     color: #05386b;
-    border: 2px solid #5cdb95;
+    border: 2px solid #000080;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -136,13 +139,13 @@ display:none;
     cursor: pointer;
 }
 
-.button4:hover {background-color: #5cdb95;
-				color:#05386b;}
+.button4:hover {background-color: #000080;
+				color:white;}
 
 .button5 {
     background-color: white;
-    color: black;
-    border: 2px solid #555555;
+    color: #05386b;
+    border: 2px solid #003300;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -153,14 +156,14 @@ display:none;
 }
 
 .button5:hover {
-    background-color: #555555;
+    background-color: #003300;
     color: white;
 }
 
 .button6 {
 	background-color: white;
-	color: black;
-	border: 2px solid orange;
+	color: #05386b;
+	border: 2px solid #663300;
 	padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -171,15 +174,15 @@ display:none;
 }
 
 .button6:hover {
-	background-color: orange;
+	background-color: #663300;
 	color:white;
 }
 
 
 .button-checked1{
-	background-color: #4CAF50; 
+	background-color: #DC143C; 
     color: white; 
-    border: 2px solid #4CAF50;
+    border: 2px solid #DC143C;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -190,9 +193,9 @@ display:none;
 }
 
 .button-checked2{
-	background-color: #008CBA; 
+	background-color: #008080; 
     color: white; 
-    border: 2px solid #008CBA;
+    border: 2px solid #008080;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -203,9 +206,9 @@ display:none;
 }
 
 .button-checked4{
-	background-color: #5cdb95; 
-    color: #05386b; 
-    border: 2px solid #5cdb95;
+	background-color: #000080; 
+    color: white; 
+    border: 2px solid #000080;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -216,32 +219,6 @@ display:none;
 }
 
 .button-checked3{
-	background-color: red; 
-    color: white; 
-    border: 2px solid red;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.button-checked5{
-	background-color: #555555; 
-    color: white; 
-    border: 2px solid #555555;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.button-checked6{
 	background-color: orange; 
     color: white; 
     border: 2px solid orange;
@@ -254,30 +231,67 @@ display:none;
     cursor: pointer;
 }
 
+.button-checked5{
+	background-color: #003300; 
+    color: white; 
+    border: 2px solid #003300;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-checked6{
+	background-color: #663300; 
+    color: white; 
+    border: 2px solid #663300;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 #tdm-input{
+	font-size: 20px;
 	width:120px;
-	height: 35px;
-	border:solid 2px #65ccb8;
+	height: 40px;
+	border:solid 2px #282626;
 	border-radius: 5px;
 }
 
 .tdm-head{
-	border:solid 2px white;
-	border-bottom: solid 2px powderblue;
-	border-radius:0px;
+	width:150px;
+	height: 50px;
+	border:solid 2px #282626;
+	border-bottom: solid 2px #282626;
+	border-radius:5px;
 }
 
 body{
-	 font-family: "Times New Roman", Times, serif;
-	 animation-name: FadeOut;
-	 animation-duration: 2s;  
+  	font-family: 'PT Sans' , sans-serif;
+	animation-name: FadeOut;
+	animation-duration: 2s;  
+}
+h1{
+	font-family: "impact", PT Sans, serif;
+	font-size: 60px;
 }
 h2{
-	font-family: "impact", Times, serif;	
+	font-family: "impact", PT Sans, serif;
+	font-size: 40px;
 }
-
+h3{
+	font-family: PT Sans, serif;
+	font-size: 30px;
+}
 .options button{
-	font-family: "courier new", Times, serif;	
+	font-family: 'PT Sans' , sans-serif;
 	font-size:20px;
 	font-weight: bold;
 }
@@ -297,143 +311,66 @@ h2{
     opacity: 1;
   }
 }
-
-.graph1{
-margin-left:7%;
-position:relative;
-width:100px;
-height:40px;
-background-color: #4CAF50;
-color: white;
-border-radius:solid 2px #008CBA;
-}
-
-.graph2{
-margin-left:8%;	
-position:relative;
-width:100px;
-height:40px;
-background-color: #008CBA;
-color: white;
-border:solid 2px #008CBA;
-}
-
-.graph3{
-margin-left:8%;	
-position:relative;
-width:100px;
-height:40px;	
-background-color: red;
-color: white;
-border:solid 2px red;
-}
-
-.graph4{
-margin-left:8%;	
-position:relative;
-width:100px;
-height:40px;
-background-color: #5cdb95;
-color: #05386b;
-border-radius: solid 2px #5cdb95;
-}
-
-.graph5{
-margin-left:8%;	
-position:relative;
-width:100px;
-height:40px;
-background-color: #555555;
-color: white;
-border: solid 2px #555555;
-}
-
-.graph6{
-
-margin-left:8%;	
-position:relative;
-width:100px;
-height:40px;
-background-color: orange;
-color: white;
-border:solid 2px orange;
-}
-
-.but_show_graph{
-	background-color: #ff652f;
-	border:solid 2px #ff652f;
-	color:white;
-	font-weight: bold;
-	margin-left: 20%;
-	margin-top: 5%;
-	border-radius: 8px;
-	
-color: white;
-}
 </style>
 
 </head>
 <body>
 
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
  <div class="navbar-header">
   <a class="navbar-brand" href="../os_sim.html">OS simulator</a>
    </div>
   <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="#">Wiki</a></li>
    </ul>
   </div>
 </nav>
-<br><br><br>
+<br><br>
 <div class="page-header" >
  <h1 align="center" style="font-variant:small-caps;">Disk Scheduling </h1> 
-<h3 align="center" style="font-variant:small-caps;background-color: black;color: white">Different Types of Disk Schedulings can be examined and compared here ....</h3>
-
+<h3 align="center" style="font-variant:small-caps;background-color: #282626;color: white">Comparison of Disk-Scheduling Algorithms</h3>
 
 </div>
 
-		<div class="options">
-			<h2  style="font-variant:small-caps;margin-left:40%"">Choose the algorithms</h2>
-			<button class="button button1" onclick="optchecked(0)" style="margin-top:3%;margin-left: 5%">F C F S</button>
-			<button class="button button2" onclick="optchecked(1)" style="margin-top:9%;position: absolute;">S S T F</button>
-			<button class="button button3" onclick="optchecked(2)" style="margin-left:18%;">S C A N</button>
-			<button class="button button4" onclick="optchecked(3)" style="margin-top:9%;position: absolute;">C S C A N</button>
-			<button class="button button5" onclick="optchecked(4)" style="margin-left:18%;">L O O K</button>
-			<button class="button button6" onclick="optchecked(5)" style="margin-top:9%;position: absolute;">C L O O K</button>
+		<div class="options" align="center">
+			<h2  style="font-variant:small-caps;margin-left:5%"">Choose the algorithms</h2>
+			<button class="button button1" onclick="optchecked(0)" >F C F S</button>
+			<button class="button button2" onclick="optchecked(1)" >S S T F</button>
+			<button class="button button3" onclick="optchecked(2)">S C A N</button>
+			<button class="button button4" onclick="optchecked(3)" >C S C A N</button>
+			<button class="button button5" onclick="optchecked(4)" >L O O K</button>
+			<button class="button button6" onclick="optchecked(5)" >C L O O K</button>
 		</div>
 
-		<div style="margin-top:10%;height:300px;color:black">
-		<div style="margin-top:5%;position:absolute;margin-left:10%;">
-			<h4 style="font-weight: bold"> Enter the following details</h4>
-			<div style="margin-top:8% ;position: absolute;width: 300px;"><label>HEAD</label><input class="tdm-head" type="number" min="0"></div>
+	<div style="color:black">
+		<div style="margin-top:5%;position:absolute;margin-left:5%;">
+			<h3 style="font-weight: bold"> Enter the following details</h3>
+			<div style="margin-top:8% ;position: absolute;width: 300px;font-size: 25px"><label>HEAD</label><input class="tdm-head" type="number" min="0" style="margin-left: 10%"></div>
 			<br>
-			<div style="margin-left: 200%;margin-top: -20% ;position: absolute;width:300px;">
-				<h4> Enter the first and last cylinder number</h4> 
-			<label>FIRST </label><input class="tdm-head" type="number" min="0"><br>
-			</div >
-			<div style="margin-left: 400%;margin-top: -0% ;position: absolute;width:300px;">
-			<label>LAST </label>
-			<input class="tdm-head" type="number" min="0"><br>
-			</div>
-			<button class="tdm-button" onclick="myFunction()" style="margin-top: 50%;position: absolute;">Add Request</button><br>
-			<button class="tdm-button" onclick="calculate()" style="margin-left: 300%;position:absolute;margin-top:41%"> Calculate </button>
-		</div>
+			<h4 style="width: 1000px;margin-top: 20% ;margin-left:5%;position: absolute;font-size: 30px"> Enter the first and last cylinder number</h4> 
+			<div style="margin-top:40% ;position: absolute;width: 300px;font-size: 25px"><label>FIRST</label><input class="tdm-head" type="number" min="0" style="margin-left: 10%"></div>
+			<div style="margin-left:80%;margin-top:40% ;position: absolute;width: 300px;font-size: 25px"><label>LAST</label><input class="tdm-head" type="number" min="0" style="margin-left: 10%"></div>
+		</div >
 	</div>
-
-		<input id="tdm-input" class="tdm-hide" type="number" min="0" style="position: absolute;margin-top:10%;left:0%;margin-left:5px;">
-		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;">
-		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:19%;margin-left:15px;">
-		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:29%;margin-left:15px;">
-		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:39%;margin-left:15px;">
-		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:49%;margin-left:15px;">
-		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:59%;margin-left:15px;">
-		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:69%;margin-left:15px;">
-		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:79%;margin-left:15px;">
-		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:89%;margin-left:15px;">
+	<div style="margin-top:30%;margin-left:5%;font-size: 25px">Enter requests (Maximum : 10 requests)
+		<button class="tdm-button" onclick="myFunction()" style="margin-left:10%;position: absolute;">Add Request</button>
+		<button class="tdm-button" onclick="calculate()" style="margin-left:35%;position:absolute;width: 300px"> Calculate Head Movements </button>
 	</div>
-
+		<!--<button class="tdm-button" onclick="calculate()" style="margin-left:40%;position:absolute;margin-top:5%;"> Calculate </button>-->
+		
+		<div style="margin-top: -5%;margin-left: 5% ">
+		<input id="tdm-input" class="tdm-hide" type="number" min="0" style="position: absolute;margin-top:10%;left:0%;margin-left:5px;text-align: center">
+		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:9%;margin-left:15px;text-align: center">
+		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:19%;margin-left:15px;text-align: center">
+		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:29%;margin-left:15px;text-align: center">
+		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:39%;margin-left:15px;text-align: center">
+		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:49%;margin-left:15px;text-align: center">
+		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:59%;margin-left:15px;text-align: center">
+		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:69%;margin-left:15px;text-align: center">
+		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:79%;margin-left:15px;text-align: center">
+		<input class="tdm-hide" id="tdm-input" type="number" min="0" style="position: absolute;margin-top:10%;left:89%;margin-left:15px;text-align: center">
+	</div>
 
 <div class="tdm-footer">
 	<br><br>
@@ -445,31 +382,30 @@ color: white;
 	<p id="output_clook"></p>
 </div>
 <p id="output"></p>
-<div id="chartContainer" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 20%"></div>
+<div id="chartContainer" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 10%"></div>
 
 <div class="tdm-hide" id="s_graph">
-	<button class="but_show_graph" onclick="show_graph_section()" style="width: 160px;height:60px;"> Show Header Movement</button>
+	<button class="tdm-button" onclick="show_graph_section()" style="width: 260px;height:60px;margin-left: 5%;margin-top: 3%"> Show Header Movement</button>
 </div>
 <!-- modal buttons -->
 <br><br>
-<div class="tdm-hide" id="graph_section">
-	<h2 style="margin-left: 43%;margin-bottom: 3%;"> HEADER MOVEMENT </h2>
-	<button onclick="fcfsModal()" class=" w3-button trigger-btn graph1" data-toggle="modal" style="text-decoration:none;">FCFS</button>
-	<button onclick="sstfModal()" class=" w3-button trigger-btn graph2" data-toggle="modal" style="text-decoration:none;">SSTF</button>
-	<button onclick="scanModal()" class=" w3-button trigger-btn graph3" data-toggle="modal" style="text-decoration:none;">SCAN</button>
-	<button onclick="cscanModal()" class=" w3-button trigger-btn graph4" data-toggle="modal" style="text-decoration:none;">CSCAN</button>
-	<button onclick="lookModal()" class=" w3-button trigger-btn graph5" data-toggle="modal" style="text-decoration:none;">LOOK</button>
-	<button onclick="clookModal()" class=" w3-button trigger-btn graph6" data-toggle="modal" style="text-decoration:none;">CLOOK</button>
-	<h4 style="font-weight: bold;margin-top:7%;margin-left: 40%;"> X-axis: Request Track Number</h4>
-	<h4 style="font-weight: bold;margin-top:10px;margin-left: 40%;">Y-axis: Request Number</h4>
+<div class="tdm-hide" id="graph_section" align="center">
+	<h3 style="font-weight: bold"> HEADER MOVEMENT </h3>
+	<button onclick="fcfsModal()" class=" w3-button trigger-btn button1" data-toggle="modal" style="font-weight: bold">FCFS</button>
+	<button onclick="sstfModal()" class=" w3-button trigger-btn button2" data-toggle="modal"style="font-weight: bold" >SSTF</button>
+	<button onclick="scanModal()" class=" w3-button trigger-btn button3" data-toggle="modal"style="font-weight: bold" >SCAN</button>
+	<button onclick="cscanModal()" class=" w3-button trigger-btn button4" data-toggle="modal"style="font-weight: bold" >CSCAN</button>
+	<button onclick="lookModal()" class=" w3-button trigger-btn button5" data-toggle="modal" style="font-weight: bold">LOOK</button>
+	<button onclick="clookModal()" class=" w3-button trigger-btn button6" data-toggle="modal"style="font-weight: bold">CLOOK</button>
+	<h4 style="font-weight: bold"> X-axis: Request Track Number : Y-axis: Request Number</h4>
 </div>
 
-<div id="chartContainer_fcfs" style="height: 400px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
-<div id="chartContainer_sstf" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
-<div id="chartContainer_scan" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
-<div id="chartContainer_cscan" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
-<div id="chartContainer_look" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
-<div id="chartContainer_clook" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 15%"></div>
+<div id="chartContainer_fcfs" style="height: 400px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+<div id="chartContainer_sstf" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+<div id="chartContainer_scan" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+<div id="chartContainer_cscan" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+<div id="chartContainer_look" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
+<div id="chartContainer_clook" style="height: 300px; width: 60%;margin-left: 20%;border: solid 2px white;margin-top: 5%"></div>
 
 <p id="input_fcfs"></p>
 	<p id="input_sstf"></p>
@@ -1162,12 +1098,12 @@ function calculate_sstf()
 	window.onload = function () {
         CanvasJS.addColorSet("myColors",
                 [//colorSet Array
-                "#5CDB95",
-                "#3500D3",
-                "#86C232",
-                "#FFE400",
-                "#FF652F",
-                "red"                
+                "#DC143C",
+                "#008080",
+                "orange",
+                "#000080",
+                "#003300",
+                "#663300"                
                 ]);
     }
 
@@ -1296,6 +1232,7 @@ function calculate_sstf()
     
 	function fcfsModal()
 	{
+
 		var max_val = document.getElementsByTagName("input")[2].value;
 
     	zingchart.render({
