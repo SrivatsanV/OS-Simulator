@@ -28,15 +28,30 @@ function addInitialRes(){
 	resources.textContent="";
 	for(var i=0;i<num;i++){
 		var card =document.createElement("div");
-		card.setAttribute("style","width:auto;float:left;margin-right:50px;height:50px;");
+		card.setAttribute("style","width:200px;margin-right:50px;text-align:center;");
 		var p = document.createElement("div");
-		p.setAttribute("style","width:100px;float:left;");
-		p.textContent="Resource "+(i+1);
-		card.appendChild(p);
+		//p.setAttribute("style","width:100px;float:left;");
+		p.setAttribute("class","input-group input-group-lg");
+		//p.textContent="Resource "+(i+1);
+		//card.appendChild(p);
+		var subDiv = document.createElement("div");
+		subDiv.setAttribute("class","input-group-prepend");
+		var text = document.createElement("span");
+		text.setAttribute("class","input-group-text");
+		text.setAttribute("id","inputGroup-sizing-lg");
+		text.innerHTML = "Resource "+(i+1);
 		var inp = document.createElement("input");
 		inp.setAttribute("id","res-"+(i+1));
-		inp.setAttribute("style","width:100px;text-align:center;margin:auto;float:left;");
-		card.appendChild(inp);
+		//inp.setAttribute("style","width:100px;text-align:center;margin:auto;");
+		inp.setAttribute("class","form-control");
+		inp.setAttribute("aria-lable","Large");
+		inp.setAttribute("aria-describedby","inputGroup-sizing-sm");
+		subDiv.appendChild(text);
+		p.appendChild(subDiv);
+		p.appendChild(inp);
+		
+		
+		card.appendChild(p);
 		resources.appendChild(card);
 	}
 	
@@ -58,11 +73,25 @@ function addInitialRes(){
 	d1.appendChild(p1);
 	for(var i=0;i<num;i++){
 		var card =document.createElement("div");
-		card.setAttribute("style","width:auto;float:left;margin-right:50px;height:50px;");
+		card.setAttribute("style","width:90px;float:left;margin-right:50px;height:50px;");
+		var p = document.createElement("div");
+		p.setAttribute("class","input-group input-group-sm");
+		var subDiv = document.createElement("div");
+		subDiv.setAttribute("class","input-group-prepend");
+		var text = document.createElement("span");
+		text.setAttribute("class","input-group-text");
+		text.setAttribute("id","inputGroup-sizing-sm");
 		var inp1 = document.createElement("input");
 		inp1.setAttribute("id","MPR"+(i+1));
 		inp1.setAttribute("placeholder","R-"+(i+1));
-		inp1.setAttribute("style","width:50px;text-align:center;margin:auto;float:left;");
+		inp1.setAttribute("class","form-control");
+		inp1.setAttribute("aria-lable","Small");
+		inp1.setAttribute("aria-describedby","inputGroup-sizing-sm");
+		
+		subDiv.appendChild(text);
+		p.appendChild(subDiv);
+		p.appendChild(inp1);
+		// inp1.setAttribute("style","width:50px;text-align:center;margin:auto;float:left;");
 		card.appendChild(inp1);
 		d1.appendChild(card);
 	}
@@ -75,19 +104,36 @@ function addInitialRes(){
 	d2.appendChild(p2);
 	for(var i=0;i<num;i++){
 		var card =document.createElement("div");
-		card.setAttribute("style","width:auto;float:left;margin-right:50px;height:50px;");
+		card.setAttribute("style","width:90px;float:left;margin-right:50px;height:50px;");
+		var p = document.createElement("div");
+		p.setAttribute("class","input-group input-group-sm");
+		var subDiv = document.createElement("div");
+		subDiv.setAttribute("class","input-group-prepend");
+		var text = document.createElement("span");
+		text.setAttribute("class","input-group-text");
+		text.setAttribute("id","inputGroup-sizing-sm")
+
 		var inp2 = document.createElement("input");
 		inp2.setAttribute("placeholder","R-"+(i+1));
 		inp2.setAttribute("id","APR"+(i+1));
-		inp2.setAttribute("style","width:50px;text-align:center;margin:auto;float:left;");
+		// inp2.setAttribute("style","width:50px;text-align:center;margin:auto;float:left;");
+
+		inp2.setAttribute("class","form-control");
+		inp2.setAttribute("aria-lable","Small");
+		inp2.setAttribute("aria-describedby","inputGroup-sizing-sm");
+
 		card.appendChild(inp2);
 		d2.appendChild(card);
 	}
 	input.appendChild(d2);
 	var but = document.createElement("button");
 	but.textContent = "ADD";
+	but.setAttribute("type","button");
+	but.setAttribute("class","btn btn-secondary");
 	but.setAttribute("onclick","addToList()");
-	input.appendChild(but);
+	but.setAttribute("style","margin:10px 0px");
+
+	card.appendChild(but);
 	console.log(num);
 	}
 }
@@ -243,7 +289,7 @@ function add()
 	var j =process-1;
 	if(process>index || process<=0)
 	{
-		window.alert("Please enter valid input: Entered process does not exitxt");
+		window.alert("Please enter valid input: Entered process does not exists");
 		return;
 	}
 	console.log(j);
@@ -431,8 +477,10 @@ function banker(){
 	}
 	var but = document.createElement("button");
 	but.textContent = "continue";
+	but.setAttribute("type","button");
+	but.setAttribute("class","btn btn-success");
 	but.setAttribute("onclick","add()");
-	but.setAttribute("style","width:100px;text-align:center;margin:auto;float:left;");
+	// but.setAttribute("style","width:100px;text-align:center;margin:auto;float:left;");
 	operation.appendChild(d3);
 	operation.appendChild(but);
 }
