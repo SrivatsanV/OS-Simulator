@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+		<link href="bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Page Replacement Algorithms</title>
+		<!-- Bootstrap -->
+
+  </head>
+  <body>
+		<div class="container-fluid">
+				<nav class="navbar fixed-top navbar-dark bg-dark">
+						<a class="navbar-brand" href="../os_sim.html	">sphinxos</a>
+				</nav>
+		</div>
+			<div class="imageContainer container-fluid">
+				<div class="centered">
+					<h1><font color = "white">Page Replacement Algorithms</font></h1>
+				</div>
+				<div class="centered" style="margin-top:120px">
+					<font color = "white" size = "5px">Pick any page replacement algorithm to simulate</font><br><br>
+					<div class="btn-group" role="group" aria-label="Basic example" style="margin-top: 50px">
+							<button type="button" class="btn btn-secondary" onclick="change(0)">First-in First-out</button>
+							<button type="button" class="btn btn-secondary" onclick="change(1)">Least Recently Used</button>
+							<button type="button" class="btn btn-secondary" onclick="change(2)">Optimal page replacement</button>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="jumbotron">
+						<h2>Description</h2>
+						In a computer operating system that uses paging for virtual memory management, page replacement algorithms decide which memory pages to page out, sometimes called swap out, or write to disk, when a page of memory needs to be allocated. Page replacement happens when a requested page is not in memory (page fault) and a free page cannot be used to satisfy the allocation, either because there are none, or because the number of free pages is lower than some threshold.
+						When the page that was selected for replacement and paged out is referenced again it has to be paged in (read in from disk), and this involves waiting for I/O completion. This determines the quality of the page replacement algorithm: the less time waiting for page-ins, the better the algorithm. A page replacement algorithm looks at the limited information about accesses to the pages provided by hardware, and tries to guess which pages should be replaced to minimize the total number of page misses, while balancing this with the costs (primary storage and processor time) of the algorithm itself.
+						In an operating system that uses paging for memory management, a page replacement algorithm is needed to decide which page needs to be replaced when new page comes in.
+						<br>
+						<br>
+						Page Fault – A page fault happens when a running program accesses a memory page that is mapped into the virtual address space, but not loaded in physical memory.
+						Since actual physical memory is much smaller than virtual memory, page faults happen. In case of page fault, Operating System might have to replace one of the existing pages with newly needed page. Different page replacement algorithms suggest different ways to decide which page to replace. The target for all algorithms is to reduce number of page faults.
+						<br><br>There are 3 algorithms demonstrated here: First In First Out, Least Recently Used, Optimal Page Replacement
+					</div>
+			</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+				function change(but_num){
+
+					if(but_num == 0)
+					{
+						window.location = "fifo.html";
+					}
+
+					if(but_num == 1)
+					{
+						window.location = "lru.html";
+					}
+
+					if(but_num == 2)
+					{
+						window.location = "optimal.html";
+					}
+
+					if(but_num == 3)
+					{
+						window.location = "all.html";
+					}
+
+				}
+			</script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	</body>
+		</html>
