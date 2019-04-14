@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html>
+<link href="bootstrap.min.css" rel="stylesheet">
+
 <head>
-	<title>LRU</title>
+	<title>Least Recently Used</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-	</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</style>
+</head>
 <body>
-<!--Header of soham--> 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-	   <div class="navbar-header">
-		<a class="navbar-brand" href="#">OS simulator</a>
-		 </div>
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="index.html">Home</a></li>
-		   <li class="active"><a href="#">Wiki</a></li>
-		 </ul>
+<!-- Nav bar  -->
+<div class="container-fluid">
+	<nav class="navbar fixed-top navbar-dark bg-dark">
+		<a class="navbar-brand" href="pegerephome.html">Page Replacement Algorithms</a>
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a href="#wikiModal" data-toggle="modal" data-target="#wikiModal"><font color="white">Wiki</font></a></li>
+		</ul>
+	</nav>
+</div>
+<!--Wiki Modal-->
+<div class="modal fade" id="wikiModal" tabindex="-1" role="dialog" aria-labelledby="wikiModalLabel" aria-hidden="true" style="margin-top:300px">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wikiModalLabel">LEAST RECENTLY USED</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        In Least Recently Used (LRU) algorithm is a Greedy algorithm where the page to be replaced is least recently used. The idea is based on locality of reference, the least recently used page is not likely.
+      </div>
+    </div>
+  </div>
+</div>
+<body>
+	<div class="imageContainer container-fluid">
+		<div class="centered">
+			<h1>
+				<font color="white">Page Replacement Algorithms</font>
+			</h1>
 		</div>
-	  </nav>
+		<div class="centered" style="margin-top:60px">
+			<font color="white" size="5px">Least Recently Used</font>
+		</div>
+		<div class="centered" style="margin-top:150px">
+			<font color="white">In Least Recently Used (LRU) algorithm is a Greedy algorithm where the page to be replaced is least recently used. The idea is based on locality of reference, the least recently used page is not likely.</font>
+		</div>
+	</div>
 	  <br><br><br>
-	  <div class="page-header" >
-		 <h1 style="text-align:center;color:limegreen">PAGE REPLACEMENT ALGORITHM</h1> 
-		    
-	  </div>
-	  <body>
-			<h1 style="text-align:center;color:limegreen"> LRU</h1>    
-	  <br>
-<br>
 <form>
-    <div class"container" >
+    <div class"container-fluid" >
         <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
             <input type = "number" id="frames"class="form-control" placeholder="Enter the number of frames:">
         </div>
@@ -37,7 +62,8 @@
         <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
                 <input type = "text" id="rs" class="form-control" placeholder="Enter the Reference string:">
         </div>
-            <input type = "button" style="margin-left:70px; margin-bottom:20px" class="btn btn-success btn-lg" onclick = "lru()" value = "Compute">
+            <input type = "button" style="margin-left:70px; margin-bottom:20px" class="btn btn-primary" onclick = "lru()" value = "Compute">
+						<input type="reset" style="margin-left:40px; margin-bottom:20px; display:none;" class="btn btn-outline-primary animated fadeIn" value="New Test Case" onClick="window.location.reload()" id="resetbtn">
 		<div id="div1" class="table-responsive" style="width:80vw;margin:auto;text-align:center"></div>
 		<div id="sp1"></div>
 		<div id="sp2"></div>
@@ -45,10 +71,13 @@
 </form>
  </body>
  <!-- <script type="text/javascript" src="index.js"></script> -->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>
 
 <script>
-		
+
 	var count=0;
 var pages = [];
 var pf;
@@ -70,17 +99,17 @@ var l;
 var least;
 var index;
 	var i,row=Number(f)+1,j,col=rs.length;
-	
+
 	pages = new Array(row);
 	for(i=0;i<row;i++)
 		pages[i]=new Array(col);
-	
+
 	for(i=0;i<row-1;i++)
-	{ 
+	{
     for(j=0 ; j<col;j++)
 		pages[i][j]= "--";
 	}
-	
+
 	for(j=0;j<col;j++)
 	{
 		var smallest=-1;
@@ -121,26 +150,26 @@ var index;
 			  			least = l;
 			  			break;
 			  		}
-			  		
+
 			  	}
 			  	if(index > least)
 			  		index = least;
-			  	
+
 			  }
-			  
+
 			  for(i=0;i<row-1;i++)
 			  {
 			  	if(pages[i][j]==rs[index])
 			  		break;
 			  }
-			  
+
 			  pages[i][j] = rs[k];
 			}
 		pages[row-1][j]="PF";
 		k++;
 		pf++;
 		console.log("pf=",pf);
-        }		
+        }
 		else
         {
         ph++;
@@ -154,33 +183,33 @@ var index;
 	$table.addClass('table table-striped');
 	$tbody = $("<tbody></tbody>");
 		for ( i=0; i<row;i++)
-		  { 
+		  {
 			var line =$("<tr></tr>");
-			line.css({'background-color': getRandomColor()});  
+			// line.css({'background-color': getRandomColor()});
 			  for(j=0; j<col;j++){
-		   
+
 			if(i==row-1) {
-				   
-					
-					if(("PH".localeCompare(pages[i][j])==0)){	
+
+
+					if(("PH".localeCompare(pages[i][j])==0)){
 						line.append('<td style="color:green">'+'PH'+'</td>');
 					}
 					else{
 						line.append('<td style="color:red">'+'PF'+'</td>');
 					}
-				
+
 				$tbody.append(line);
-				
-				}      
+
+				}
 			else{
 				line.append($("<td></td>").html(pages[i][j]+""));
 				$tbody.append(line);
 			}
-		   
-			 
+
+
 			  }
 			}
-		  
+
 		  $table.append($tbody);
 		  $table.appendTo($("#div1"));
 		  $("#sp1").html('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf+'</span>'+'</p>')
@@ -200,7 +229,7 @@ var index;
 			  if(m==4){
 				  color='LightGray';
 			  }
-			
+
 			return color;
 			 }
 			 console.log(m);
