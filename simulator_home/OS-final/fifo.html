@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	</style>
 </head>
 
 <div class="container-fluid">
@@ -76,7 +75,7 @@ The algorithm suffers from Belady's Anomaly
 				<input type="text" id="rs" class="form-control" placeholder="Enter the Reference string:">
 			</div>
 			<input type="button" id ="calcbtn" style="margin-left:40px; margin-bottom:20px" class="btn btn-primary" onclick="fifo()"
-				value="Compute"><br>
+				value="Simulate"><br>
 			<input type="reset" style="margin-left:45%; margin-bottom:20px; display:none;" class="btn btn-outline-primary animated fadeIn" value="New Test Case" onClick="window.location.reload()" id="resetbtn">
 			<div id="div" class="table-hover" style="width:80vw;margin:auto;text-align:center"></div>
 			<div id="sp1"></div>
@@ -97,6 +96,15 @@ The algorithm suffers from Belady's Anomaly
 	function fifo() {
 		f = document.getElementById("frames").value;
 		rs = document.getElementById("rs").value;
+		var isnum = /^\d+$/.test(rs);
+		if(f <= 0){
+			alert( "Please provide proper input" );
+			return;
+		}
+		else if(!isnum){
+			alert( "Please use numbers in reference string" );
+			return;
+		}
 		var x = document.getElementById("resetbtn").style.display = "block";
 		console.log(f);
 		console.log(rs);

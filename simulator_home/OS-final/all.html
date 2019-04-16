@@ -1,60 +1,87 @@
 <!DOCTYPE html>
 <html>
-	<head>
-			<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-			<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="bootstrap.min.css" rel="stylesheet">
 
-
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<head>
+	<title>All ALGORITHMS</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <script src="https://cdn.bootcss.com/typed.js/1.1.4/typed.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head>
+</head>
+
+<div class="container-fluid">
+	<nav class="navbar fixed-top navbar-dark bg-dark">
+		<a class="navbar-brand" href="pegerephome.html">Page Replacement Algorithms</a>
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a href="#wikiModal" data-toggle="modal" data-target="#wikiModal"><font color="white">Wiki</font></a></li>
+		</ul>
+	</nav>
+</div>
+<div class="modal fade" id="wikiModal" tabindex="-1" role="dialog" aria-labelledby="wikiModalLabel" aria-hidden="true" style="margin-top:200px">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wikiModalLabel">COMPARISON OF ALL ALGORITHMS</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+				<font color="black">
+					First-In First-Out: The simplest page-replacement algorithm is a first-in, first-out ( FIFO ) algorithm.
+	A FIFO replacement algorithm associates with each page the time when that
+	page was brought into memory. When a page must be replaced, the oldest
+	page is chosen.
+<br /><br />
+Least Recently Used: LRU replacement associates with each page the time of that page’s last use.
+When a page must be replaced, LRU chooses the page that has not been used
+for the longest period of time. We can think of this strategy as the optimal
+page-replacement algorithm looking backward in time, rather than forward.
+<br /><br />
+Optimal Page Replacement: One result of the discovery of Belady’s anomaly was the search for an optimal
+page-replacement algorithm—the algorithm that has the lowest page-fault
+rate of all algorithms and will never suffer from Belady’s anomaly. Such an
+algorithm does exist and has been called OPT or MIN . It is simply this:
+Replace the page that will not be used for the longest period of time.
+Use of this page-replacement algorithm guarantees the lowest possible page-
+fault rate for a fixed number of frames.
+ </font>
+      </div>
+    </div>
+  </div>
+</div>
 
 <body>
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">
-	   <div class="navbar-header">
-		<a class="navbar-brand" href="#">OS simulator</a>
-		 </div>
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="index.html">Home</a></li>
-		   <li class="active"><a href="#">Wiki</a></li>
-		 </ul>
+	<div class="imageContainer container-fluid">
+		<div class="centered">
+			<h1>
+				<font color="white">Page Replacement Algorithms</font>
+			</h1>
 		</div>
-	  </nav>
+		<div class="centered" style="margin-top:60px">
+			<font color="white" size="5px">Comparison of all Algorithms</font>
+		</div>
+		<div class="centered" style="margin-top:150px">
+			<font color="white">The First-In First-Out, Least Recently Used, Optimal Page Replacement and Second Chance Algorithm. <br />
+			A graph is then generated comparing the page faults occuring in each algorithm</font>
+		</div>
+	</div>
 	  <br><br><br>
-	  <div class="page-header" >
-		 <h1 style="text-align:center;color:limegreen">COMPARISON OF  ALGORITHMS</h1>
-
-	  </div>
-	  <body>
-			<h1 style="text-align:center;color:limegreen"> PAGE-REPLACEMENT</h1>
-	  <br>
-
-<div id="tutorSignupModal" class="modal fade" style="display: none;">
+<div id="tutorSignupModal" class="modal fade" style="display: none; margin-top: 250px">
 		<div class="modal-dialog modal-login">
 		  <div class="modal-content">
-			<!-- ========================================== -->
-			<div id="chartContainer" style="width:50vw;">
+			<div id="chartContainer">
 				</div>
 			</div>
-			<!-- ========================================== -->
-
-
-
-
-
 			</div>
 		  </div>
-		</div>
-		</div>
 		<form>
-				<div class"container">
+				<div class"container-fluid">
 
 					<div class="form-group row" style="margin-left:40px;width:25vw;display:block">
 						<input type = "number" id="frames"class="form-control" placeholder="Enter the number of frames:">
@@ -63,8 +90,9 @@
 					<div class="form-group row" style="margin-left:40px;width:25vw;display:block">
 							<input type = "text" id="rs" class="form-control" placeholder="Enter the Reference string:">
 					</div>
-						<input type = "button" style="margin-left:40px; margin-bottom:20px" class="btn btn-success btn-lg" onclick = "comaprison()" value = "Compute">
-						<a href="#tutorSignupModal" class="btn btn-success btn-lg" style="margin-left:40px; margin-bottom:20px" value = "Graph" data-toggle="modal" style="text-decoration:none;">Graph</a>
+						<input type = "button" style="margin-left:40px; margin-bottom:20px" class="btn btn-primary" onclick = "comaprison()" value = "Simulate">
+						<a href="#tutorSignupModal" class="btn btn-primary animated fadeIn" style="margin-left:40px; margin-bottom:20px; width: 125px; display: none" value = "Graph" data-toggle="modal" style="text-decoration:none;" id="graphbtn">Graph</a>
+						<input type="reset" style="margin-left:45%; margin-bottom:20px; display:none;" class="btn btn-outline-primary animated fadeIn" value="New Test Case" onClick="window.location.reload()" id="resetbtn">
 					<div id="div" class="table-responsive" style="width:80vw;margin:auto;text-align:center;"></div>
 
 				</div>
@@ -72,6 +100,7 @@
 
 
 		</form>
+		<div id="bottom"></div>
 
 </body>
 
@@ -88,6 +117,17 @@ var rs;
 var txt;
  f = document.getElementById("frames").value;
  rs=document.getElementById("rs").value;
+ var isnum = /^\d+$/.test(rs);
+ if(f <= 0){
+	 alert( "Please provide proper input" );
+	 return;
+ }
+ else if(!isnum){
+	 alert( "Please use numbers in reference string" );
+	 return;
+ }
+ var x = document.getElementById("graphbtn").style.display = "block";
+ var ymn = document.getElementById("resetbtn").style.display = "block";
 console.log(f);
 console.log(rs);
 var prev;
@@ -160,7 +200,7 @@ var k=0;
 		for ( i=0; i<row;i++)
 		  {
 			var line =$("<tr></tr>");
-			line.css({'background-color': getRandomColor()});
+			//line.css({'background-color': getRandomColor()});
 			  for(j=0; j<col;j++){
 
 			if(i==row-1) {
@@ -186,11 +226,12 @@ var k=0;
 			}
 		  for(i=0;i<1;i++)
 		  {
-		  $table.append('<caption style="text-align:center;color:black;text-decoration:underline">'+"<b>FIFO TABLE</b>"+'</caption>');
+		  $table.append('<caption  style="caption-side:top; text-align:center"><font color = "black" size = "5px">'+"<b>FIRST-IN FIRST-OUT</b>"+'</font>	</caption><br />');
 			$table.append($tbody);
 			$table.appendTo($("#div"));
 			$("#div").append('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf1+'</span>'+'</p>');
-			$("#div").append('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>')
+			$("#div").append('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>');
+			$("#div").append('<hr />');
 		  }
 
 		  function getRandomColor() {
@@ -212,6 +253,8 @@ var k=0;
 			return color;
 			 }
 			 console.log(m);
+			 document.getElementById("frames").disabled = true;
+	 		document.getElementById("rs").disabled = true;
 txt = txt + "\n";
 console.log(txt);
 //document.getElementById("answer").innerHTML=txt;
@@ -305,7 +348,7 @@ for(i=0;i<row-1;i++)
 		for ( i=0; i<row;i++)
 		  {
 			var line =$("<tr></tr>");
-			line.css({'background-color': getRandomColor()});
+			//line.css({'background-color': getRandomColor()});
 			  for(j=0; j<col;j++){
 
 			if(i==row-1) {
@@ -332,11 +375,12 @@ for(i=0;i<row-1;i++)
 
 			for(i=0;i<1;i++)
 			{
-				$table.append('<caption style="text-align:center;color:black;text-decoration:underline">'+"<b>OPTIMAL TABLE</b>"+'</caption>');
+				 $table.append('<caption  style="caption-side:top; text-align:center"><font color = "black" size = "5px">'+"<b>OPTIMAL PAGE REPLACEMENT</b>"+'</font>	</caption><br />');
 			  $table.append($tbody);
 			  $table.appendTo($("#div"));
 			  $("#div").append('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf2+'</span>'+'</p>');
-			  $("#div").append('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>')
+			  $("#div").append('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>');
+				$("#div").append('<hr />');
 			}
 		  function getRandomColor() {
 			m=m+1;
@@ -448,7 +492,7 @@ ref = new Array(row-1);
 		for ( i=0; i<row;i++)
 		  {
 			var line =$("<tr></tr>");
-			line.css({'background-color': getRandomColor()});
+			//line.css({'background-color': getRandomColor()});
 			  for(j=0; j<col;j++){
 
 			if(i==row-1) {
@@ -475,11 +519,12 @@ ref = new Array(row-1);
 
 			for(i=0;i<1;i++)
 			{
-				$table.append('<caption style="text-align:center;color:black;text-decoration:underline">'+"<b>LRU TABLE</b>"+'</caption>');
+				 $table.append('<caption  style="caption-side:top; text-align:center"><font color = "black" size = "5px">'+"<b>LEAST RECENTLY USED</b>"+'</font>	</caption><br />');
 			  $table.append($tbody);
 			  $table.appendTo($("#div"));
 			  $("#div").append('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf3+'</span>'+'</p>');
-			  $("#div").append('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>')
+			  $("#div").append('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>');
+				$("#div").append('<hr />');
 			}
 		  function getRandomColor() {
 			m=m+1;
@@ -588,7 +633,7 @@ $tbody = $("<tbody></tbody>");
 	for ( i=0; i<row;i++)
 	  {
         var line =$("<tr></tr>");
-        line.css({'background-color': getRandomColor()});
+        //line.css({'background-color': getRandomColor()});
 	  	for(j=0; j<col;j++){
 
         if(i==row-1) {
@@ -615,11 +660,12 @@ $tbody = $("<tbody></tbody>");
 
 		for(i=0;i<1;i++)
 		{
-			$table.append('<caption style="text-align:center;color:black;text-decoration:underline">'+"<b>SECOND CHANCE TABLE</b>"+'</caption>');
+			 $table.append('<caption  style="caption-side:top; text-align:center"><font color = "black" size = "5px">'+"<b>SECOND CHANCE ALGORITHM</b>"+'</font>	</caption><br />');
 		  $table.append($tbody);
 		  $table.appendTo($("#div"));
 		  $("#div").append('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf4+'</span>'+'</p>');
-		  $("#div").append('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>')
+		  $("#div").append('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>');
+			$("#div").append('<hr />');
 		}
 	  function getRandomColor() {
 		m=m+1;
@@ -640,15 +686,32 @@ $tbody = $("<tbody></tbody>");
 		return color;
 		 }
 		 console.log(m);
+		 document.getElementById( 'bottom' ).scrollIntoView();
 
 
 
 $('input[type="button"]').attr('disabled','disabled');
 console.log(txt);
 var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2",
+	width: 650,
+	height: 350,
+
 	title:{
-		text: "PAGE FAULTS OF ALGORITHMS"
+		text: "Comparison of Page Replacement Algorithms",
+		fontSize: "20"
 	},
+	axisX:{
+       title: "Algorithms",
+       gridThickness: 1,
+       tickLength: 10
+      },
+
+	axisY:{
+ 			title:"Page Faults",
+			gridThickness: 1,
+			tickLength: 10
+ 		},
 	data: [
 	{
 		// Change type to "doughnut", "line", "splineArea", etc.
@@ -657,7 +720,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 			{ label: "FIFO",  y:pf1  },
 			{ label: "OPTIMAL", 	y: pf2  },
 			{ label: "LRU", y:pf3  },
-			{ label: "SECOND_CHANCE", y:pf4  }
+			{ label: "SECOND CHANCE", y:pf4  }
 
 		]
 	}
@@ -667,4 +730,7 @@ chart.render();
 			}
 
 </script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>

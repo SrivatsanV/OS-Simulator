@@ -100,6 +100,15 @@ function lru()
 {
  f = document.getElementById("frames").value;
  rs=document.getElementById("rs").value;
+ var isnum = /^\d+$/.test(rs);
+ if(f <= 0){
+	 alert( "Please provide proper input" );
+	 return;
+ }
+ else if(!isnum){
+	 alert( "Please use numbers in reference string" );
+	 return;
+ }
  var x = document.getElementById("resetbtn").style.display = "block";
 console.log(f);
 console.log(rs);
