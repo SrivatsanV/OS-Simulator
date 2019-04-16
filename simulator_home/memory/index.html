@@ -4,7 +4,7 @@
 <style>
 .button {
   border-radius: 8px;
-  background-color: #258ff1;
+  background-color: #258522	;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -32,14 +32,14 @@
   transition: 0.5s;
 }
 
-.button:hover span {
+/*.button:hover span {
   padding-right: 25px;
 }
-
-.button:hover span:after {
+*/
+/*.button:hover span:after {
   opacity: 1;
   right: 0;
-}
+}*/
 
 .btn-row {
     margin-top: 50px;
@@ -64,24 +64,15 @@
 }
 
 .heading {
-  font-size: 60px;
+  font-size: 80px;
   text-align: center;
   margin-top: 50px;
   opacity: 1;
   animation-name: FadeOut;
   animation-duration: 5s;
-  color: rgb(226, 27, 27);
+  color: rgb(6, 27, 27);
 }
 
-.choose {
-  font-size: 30px;
-  text-align: center;
-  margin-top: 90px;
-  opacity: 1;
-  animation-name: FadeOut;
-  animation-duration: 5s;
-  color: rgb(133, 133, 133);
-}
 
 </style>
 
@@ -96,7 +87,7 @@
 
 </head>
 
-<body>
+<body style="background-color:    #F0FFFF">
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <a class="navbar-brand" href="../os_sim.html">OS simulator</a>
@@ -111,19 +102,33 @@
       </nav>
       <br><br><br>
 
-<p class="heading">Memory Management</p>
+<p class="heading">Memory Management in Operating System</p>
 
-<p class="choose">Choose any one</p>
 
 <div class="container btn-row">
-    <div class="row">
-        <div class="offset-md-2 col-md-3">
-          <button class="button" onclick="window.location.href='./mft.html'"><span>MFT</span></button>
+
+	<p>In operating systems, memory management is the function responsible for managing the computer's primary memory. The memory management function keeps track of the status of each memory location, either allocated or free. It determines how memory is allocated among competing processes, deciding which gets memory, when they receive it, and how much they are allowed. When memory is allocated it determines which memory locations will be assigned. It tracks when memory is freed or unallocated and updates the status.
+	</p>  
+
+		<P>Partitioned allocation divides primary memory into multiple memory partitions, usually contiguous areas of memory. Each partition might contain all the information for a specific job or task. Memory management consists of allocating a partition to a job when it starts and unallocating it when the job ends.
+	Partitioned allocation usually requires some hardware support to prevent the jobs from interfering with one another or with the operating system. The IBM System/360 used a lock-and-key technique. Other systems used base and bounds registers which contained the limits of the partition and flagged invalid accesses. The UNIVAC 1108 Storage Limits Register had separate base/bound sets for instructions and data. The system took advantage of memory interleaving to place what were called the i bank and d bank in separate memory modules.
+	Partitions may be either static, that is defined at Initial Program Load (IPL) or boot time or by the computer operator, or dynamic, that is automatically created for a specific job. IBM System/360 Operating System Multiprogramming with a Fixed Number of Tasks (MFT) is an example of static partitioning, and Multiprogramming with a Variable Number of Tasks (MVT) is an example of dynamic. MVT and successors use the term region to distinguish dynamic partitions from static ones in other systems.
+	Partitions may be relocatable using hardware typed memory, like the Burroughs Corporation B5500, or base and bounds registers like the PDP-10 or GE-635. Relocatable partitions are able to be compacted to provide larger chunks of contiguous physical memory. Compaction moves "in-use" areas of memory to eliminate "holes" or unused areas of memory caused by process termination in order to create larger contiguous free areas.
+	Some systems allow partitions to be swapped out to secondary storage to free additional memory. Early versions of IBM's Time Sharing Option (TSO) swapped users in and out of a single time-sharing partition.</P>
+	
+
+	<div align="center">
+     <div class="row">
+        <div class="offset-md-2 col-md-3" style="padding-left: 260px">
+          <button class="button" onclick="window.location.href='./mft.html'"><span>GO</span></button>
         </div>
-        <div class="col-md-3"></div>
+        <!-- <div class="col-md-3"></div>
             <button class="button" onclick="window.location.href='./mvt.html'"><span>MVT</span></button>
-        </div>
-    </div>    
+        </div> -->
+</div> 
+  </div>
+    
+
 </div>
 </body>
-</html>
+</html>	
