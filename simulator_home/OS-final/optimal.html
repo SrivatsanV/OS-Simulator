@@ -73,8 +73,8 @@ studies.
 					<div class="form-group row" style="margin-left:40px;width:25vw;display:block">
 							<input type = "text" id="rs" class="form-control" placeholder="Enter the Reference string:">
 					</div>
-						<input type = "button" style="margin-left:70px; margin-bottom:20px" class="btn btn-primary" onclick = "optimal()" value = "Compute">
-						<input type="reset" style="margin-left:40px; margin-bottom:20px; display:none;" class="btn btn-outline-primary animated fadeIn" value="New Test Case" onClick="window.location.reload()" id="resetbtn">
+						<input type = "button" style="margin-left:40px; margin-bottom:20px" class="btn btn-primary" onclick = "optimal()" value = "Compute">
+						<input type="reset" style="margin-left:45%; margin-bottom:20px; display:none;" class="btn btn-outline-primary animated fadeIn" value="New Test Case" onClick="window.location.reload()" id="resetbtn">
 					<div id="div1" class="table-responsive" style="width:80vw;margin:auto;text-align:center"></div>
 					<div id="sp1"></div>
 					<div id="sp2"></div>
@@ -250,6 +250,8 @@ var index=-9999;
 txt = txt + "\n";
 
 $('input[type="button"]').attr('disabled','disabled');
+document.getElementById("frames").disabled = true;
+document.getElementById("rs").disabled = true;
 }
 
 
