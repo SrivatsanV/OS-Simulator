@@ -79,6 +79,7 @@ hardware assistance.
 		<div id="sp2"></div>
     </div>
 </form>
+<div id="bottom"></div>
  </body>
  <!-- <script type="text/javascript" src="index.js"></script> -->
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -244,6 +245,7 @@ var index;
 			return color;
 			 }
 			 console.log(m);
+			 document.getElementById( 'bottom' ).scrollIntoView();
 txt = txt + "\n";
 console.log(txt);
 $('input[type="button"]').attr('disabled','disabled');

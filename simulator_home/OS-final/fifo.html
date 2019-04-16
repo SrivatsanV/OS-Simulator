@@ -83,6 +83,7 @@ The algorithm suffers from Belady's Anomaly
 			<div id="sp2"></div>
 		</div>
 	</form>
+	<div id="bottom"></div>
 </body>
 <script>
 	var count = 0;
@@ -188,7 +189,9 @@ The algorithm suffers from Belady's Anomaly
 		$("#sp2").html('<p style="text-align:center">' + "<b>The no of page hits is:</b>" + "   " +
 			'<span style="color:green">' + ph + '</span>' + '</p>')
 
+
 		console.log(m);
+		document.getElementById( 'bottom' ).scrollIntoView();
 		txt = txt + "\n";
 		console.log(txt);
 		console.log(txt.length);
