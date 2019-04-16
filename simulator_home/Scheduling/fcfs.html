@@ -268,6 +268,10 @@ $(document).ready(function(){
   }
   else
   {
+    var cardAdd = document.getElementById("cardAdd");
+     cardAdd.classList.add("card");
+     var element = document.getElementById("Average");
+    element.classList.add("card-body");
     $("#Average").append("<b>The average waiting time of the given processes is "+average_wt+"</b><br>");
     $("#Average").append("<b>The average turn around time of the given processes is "+average_tat+"</b><br>");
     $("#Average").append("<b>The throughput of the given processes is "+throughput+"</b><br>");
@@ -315,7 +319,6 @@ body{
 
 p{
   font-size: 3 em;
-  font-style: italic;
 }
 
 #outer-div{
@@ -369,7 +372,7 @@ p{
     First Come First Serve Scheduling
   </h1>
   
-    <div style="text-align:center;">
+    <div>
       <h3>Entered Processes:</h3>
       <table id="ep" class="table table-bordered table-striped" style="width:70%;" align="center">
         <thead>
@@ -384,12 +387,20 @@ p{
     </thead>
   </table>
 
-  <input type='number' class="form-control form-control-sm" style="width:20%;margin-left: 200px" min='0' id='at1' placeholder="arrival time"></input>
-  <input type='number'  class="form-control form-control-sm" style="width:20%;" id='bt1' placeholder="burst time 1"></input>
-  <!-- <input type='number' id='io' placeholder="io time"></input>
-  <input type='number' id='bt2' placeholder="burst time 2"></input> -->
-  <button id="add" class="btn btn-secondary" onclick="AddtoList()">Add</button>
-  <button id="start" class="btn btn-secondary">Start</button>
+    <div style="width:400px; margin: auto; ">
+      <div class="form-group">
+        <input type='number' class="form-control" min='0' id='at1' placeholder="arrival time"></input>
+      </div>
+
+      <div class="form-group">
+        <input type='number'  class="form-control " id='bt1' placeholder="burst time 1"></input>
+      </div>
+      </div>
+      <!-- <input type='number' id='io' placeholder="io time"></input>
+      <input type='number' id='bt2' placeholder="burst time 2"></input> -->
+    </div>
+      <button id="add" class="btn btn-secondary" onclick="AddtoList()">Add</button>
+      <button id="start" class="btn btn-secondary">Start</button>
   <br>
   <br>
 
@@ -400,22 +411,23 @@ p{
   </div>
   <br><br><br>
   
+      <div id="cardAdd">
+      <table id="ptab" class="table table-bordered table-striped" style="width:70%;margin-top:20px; " align="center">
+      <thead>
+      <th>PNO.</th>
+      <th>Arrival time</th>
+      <th>Burst time1</th>
+      <!-- <th>I/O time</th>
+      <th>Burst time2</th> -->
+      <th>Waiting time</th>
+      <th>Turn Around Time</th>
+    </thead>
 
-  <table id="ptab" class="table table-bordered table-striped" style="width:70%;" align="center">
-  <thead>
-  <th>PNO.</th>
-  <th>Arrival time</th>
-  <th>Burst time1</th>
-  <!-- <th>I/O time</th>
-  <th>Burst time2</th> -->
-  <th>Waiting time</th>
-  <th>Turn Around Time</th>
-</thead>
-
-  <tbody id="ptable">
-  </tbody>
-  </table>
-    <p id="Average"></p>
+      <tbody id="ptable">
+      </tbody>
+      </table>
+        <div id="Average"></div>
+      </div>
   </div>
 
 </div>
