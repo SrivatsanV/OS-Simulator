@@ -20,13 +20,16 @@
 				<div class="centered">
 					<h1><font color = "white">Page Replacement Algorithms</font></h1>
 				</div>
-				<div class="centered" style="margin-top:120px">
+				<div class="centered" style="margin-top:130px">
 					<font color = "white" size = "5px">Pick any page replacement algorithm to simulate</font><br><br>
-					<div class="btn-group" role="group" aria-label="Basic example" style="margin-top: 50px">
-							<button type="button" class="btn btn-secondary" onclick="change(0)">First-in First-out</button>
-							<button type="button" class="btn btn-secondary" onclick="change(1)">Least Recently Used</button>
-							<button type="button" class="btn btn-secondary" onclick="change(2)">Optimal page replacement</button>
-					</div>
+				</div>
+				<div class="btn-group" role="group" aria-label="Basic example" style="margin-top: 400px">
+						<button type="button" class="btn btn-secondary" onclick="change(0)">First-in First-out</button>
+						<button type="button" class="btn btn-secondary" onclick="change(1)">Least Recently Used</button>
+						<button type="button" class="btn btn-secondary" onclick="change(2)">Optimal page replacement</button>
+						<button type="button" class="btn btn-secondary" onclick="change(4)">Second Chance Algorithm</button>
+						<button type="button" class="btn btn-secondary" onclick="change(5)">Belady's Anomaly</button>
+						<button type="button" class="btn btn-secondary" onclick="change(3)">Compare All</button>
 				</div>
 			</div>
 			<div class="container-fluid">
@@ -66,6 +69,16 @@
 					if(but_num == 3)
 					{
 						window.location = "all.html";
+					}
+
+					if(but_num == 4)
+					{
+						window.location = "sc.html";
+					}
+
+					if(but_num == 5)
+					{
+						window.location = "belady.html";
 					}
 
 				}
