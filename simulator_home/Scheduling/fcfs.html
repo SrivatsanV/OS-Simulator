@@ -43,9 +43,8 @@ $(document).ready(function(){
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
     var burstTime=parseInt(document.getElementById("bt1").value);
-<<<<<<< Updated upstream
-    var ioTime=parseInt(document.getElementById("io").value);
-    var FinalburstTime=parseInt(document.getElementById("bt2").value);
+    // var ioTime=parseInt(document.getElementById("io").value);
+    // var FinalburstTime=parseInt(document.getElementById("bt2").value);
 
     if(arrivalTime < 0) {
       alert("Arrival time cannot be negative!");
@@ -57,12 +56,10 @@ $(document).ready(function(){
       return;
     }
 
-=======
     // var ioTime=parseInt(document.getElementById("io").value);
     // var FinalburstTime=parseInt(document.getElementById("bt2").value);
     var ioTime=parseInt("0");
     var FinalburstTime=parseInt("0");
->>>>>>> Stashed changes
     console.log(arrivalTime);
     console.log(burstTime);
     var rtj=[];
