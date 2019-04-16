@@ -45,6 +45,17 @@ $(document).ready(function(){
     var burstTime=parseInt(document.getElementById("bt1").value);
     var ioTime=parseInt(document.getElementById("io").value);
     var FinalburstTime=parseInt(document.getElementById("bt2").value);
+
+    if(arrivalTime < 0) {
+      alert("Arrival time cannot be negative!");
+      return;
+    }
+
+    if(burstTime < 0) {
+      alert("Burst time cannot be negative!");
+      return;
+    }
+
     console.log(arrivalTime);
     console.log(burstTime);
     var rtj=[];
