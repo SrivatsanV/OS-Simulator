@@ -21,7 +21,7 @@
 		</ul>
 	</nav>
 </div>
-<div class="modal fade" id="wikiModal" tabindex="-1" role="dialog" aria-labelledby="wikiModalLabel" aria-hidden="true" style="margin-top:300px">
+<div class="modal fade" id="wikiModal" tabindex="-1" role="dialog" aria-labelledby="wikiModalLabel" aria-hidden="true" style="margin-top:250px">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -31,7 +31,22 @@
         </button>
       </div>
       <div class="modal-body">
-        This is the simplest page replacement algorithm. In this algorithm, operating system keeps track of all pages in the memory in a queue, oldest page is in the front of the queue. When a page needs to be replaced page in the front of the queue is selected for removal.
+				<font color="black">
+								The simplest page-replacement algorithm is a first-in, first-out ( FIFO ) algorithm.
+				A FIFO replacement algorithm associates with each page the time when that
+				page was brought into memory. When a page must be replaced, the oldest
+				page is chosen. Notice that it is not strictly necessary to record the time when
+				a page is brought in. We can create a FIFO queue to hold all pages in memory.
+				We replace the page at the head of the queue. When a page is brought into
+				memory, we insert it at the tail of the queue.
+				<br /><br />
+				However, its performance is not always good. On the one hand, the page
+replaced may be an initialization module that was used a long time ago and is
+no longer needed. On the other hand, it could contain a heavily used variable
+that was initialized early and is in constant use.
+<br /><br />
+The algorithm suffers from Belady's Anomaly
+</font>
       </div>
     </div>
   </div>
@@ -69,13 +84,6 @@
 		</div>
 	</form>
 </body>
-<!-- <script type="text/javascript" src="index.js"></script> -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-</html>
-
 <script>
 	var count = 0;
 	var pages = [];
@@ -208,3 +216,10 @@
 }
 
 </script>
+
+<!-- <script type="text/javascript" src="index.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>

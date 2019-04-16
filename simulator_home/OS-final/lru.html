@@ -33,7 +33,17 @@
         </button>
       </div>
       <div class="modal-body">
-        In Least Recently Used (LRU) algorithm is a Greedy algorithm where the page to be replaced is least recently used. The idea is based on locality of reference, the least recently used page is not likely.
+        <font color="black">
+					LRU replacement associates with each page the time of that page’s last use.
+	When a page must be replaced, LRU chooses the page that has not been used
+	for the longest period of time. We can think of this strategy as the optimal
+	page-replacement algorithm looking backward in time, rather than forward.
+<br /><br />
+The LRU policy is often used as a page-replacement algorithm and
+is considered to be good. The major problem is how to implement LRU
+replacement. An LRU page-replacement algorithm may require substantial
+hardware assistance.
+</font>
       </div>
     </div>
   </div>
@@ -89,6 +99,7 @@ function lru()
 {
  f = document.getElementById("frames").value;
  rs=document.getElementById("rs").value;
+ var x = document.getElementById("resetbtn").style.display = "block";
 console.log(f);
 console.log(rs);
 var prev;
