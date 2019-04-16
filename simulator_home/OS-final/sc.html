@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
+		<link href="bootstrap.min.css" rel="stylesheet">
+
 <head>
 	<title>Second Chance</title>
 	<meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
 
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
-<!--Header of soham--> 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+ 
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-dark bg-dark">
   <div class="container-fluid">
  <div class="navbar-header">
   <a class="navbar-brand" href="#">OS simulator</a>
    </div>
   <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-     <li class="active"><a href="#">Wiki</a></li>
+      <li class="active"><a href="index.html" style="color: white">Home</a></li>
+     <li class="active"><a href="#" style="color: white">Wiki</a></li>
    </ul>
   </div>
 </nav>
 <br><br><br>
 <div class="page-header" >
-   <h1 style="text-align:center;color:limegreen">Page Replacement Algorithm</h1>      
+   <h1 style="text-align:center;color:black">Page Replacement Algorithm</h1>      
 </div>
-<body>
-<h1 style="text-align:center;color:limegreen">Second Chance</h1>      
+<body style="color:black">
+<h1 style="text-align:center;color:black">Second Chance</h1>    
 <br>
+<div style="text-align:center;color:black">The Second Chance Page Replacement Algorithm. A simple modification to FIFO that avoids the problem of throwing out a heavily used page is to inspect the R bit of the oldest page. <br>If it is 0, the page is both old and unused, so it is replaced immediately.</div> 
+<br><br><br><br>
 <form>
     <div class"container">
         <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
@@ -40,7 +45,7 @@
         <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
                 <input type = "text" id="rs" class="form-control" placeholder="Enter the Reference string:">
         </div>
-            <input type = "button" style="margin-left:40px; margin-bottom:20px" class="btn btn-success btn-lg" onclick = "fifo()" value = "Compute">
+            <input type = "button" style="margin-left:70px; margin-bottom:20px" class="btn btn-primary" onclick = "fifo()" value = "Compute">
 		<div id="div" class="table-responsive" style="width:80vw;margin:auto;text-align:center"></div>
 		<div id="sp1"></div>
 		<div id="sp2"></div>
@@ -158,14 +163,14 @@ $tbody = $("<tbody></tbody>");
 	for ( i=0; i<row;i++)
 	  { 
         var line =$("<tr></tr>");
-        line.css({'background-color': getRandomColor()});  
+        
 	  	for(j=0; j<col;j++){
        
         if(i==row-1) {
            	
 				
                 if(("PH".localeCompare(pages[i][j])==0)){	
-					line.append('<td style="color:green">'+'PH'+'</td>');
+					line.append('<td style="color:#008000">'+'PH'+'</td>');
                 }
                 else{
 					line.append('<td style="color:red">'+'PF'+'</td>');
@@ -187,24 +192,7 @@ $tbody = $("<tbody></tbody>");
 	  $table.appendTo($("#div"));
 	  $("#sp1").html('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf+'</span>'+'</p>')
 	  $("#sp2").html('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>')
-      function getRandomColor() {
-		m=m+1;
-		var color ='';
-		  if(m==1){
-			  color='blue';
-		  }
-		  if(m==2){
-			  color='yellow';
-		  }
-		  if(m==3){
-			  color='pink';
-		  }
-		  if(m==4){
-			  color='white';
-		  }
-		
-		return color;
-		 }
+      
 		 console.log(m);
 txt = txt + "\n";
 console.log(txt);

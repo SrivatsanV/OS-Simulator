@@ -4,7 +4,7 @@
 <style>
 .button {
   border-radius: 8px;
-  background-color: #258ff1;
+  background-color: #258522 ;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -32,14 +32,14 @@
   transition: 0.5s;
 }
 
-.button:hover span {
+/*.button:hover span {
   padding-right: 25px;
 }
 
 .button:hover span:after {
   opacity: 1;
   right: 0;
-}
+}*/
 
 .btn-row {
     margin-top: 50px;
@@ -70,7 +70,7 @@
   opacity: 1;
   animation-name: FadeOut;
   animation-duration: 5s;
-  color: rgb(226, 27, 27);
+  color: rgb(6, 27, 27);
 }
 
 .choose {
@@ -96,7 +96,7 @@
 
 </head>
 
-<body>
+<body style="background-color:    #F0FFFF">
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <a class="navbar-brand" href="../os_sim.html">OS simulator</a>
@@ -111,11 +111,25 @@
       </nav>
       <br><br><br>
 
-<p class="heading">MFT</p>
+<p class="heading">Multiprogramming with a Fixed Number of Tasks (MFT)</p>
 
-<p class="choose">Choose any one</p>
+<!-- <p class="choose">Choose any one</p> -->
 
 <div class="container btn-row">
+
+    <p>First fit. Allocate the first hole that is big enough. Searching can start either
+  at the beginning of the set of holes or at the location where the previous
+  first-fit search ended. We can stop searching as soon as we find a free hole
+  that is large enough. </p>
+
+  <P>Best fit. Allocate the smallest hole that is big enough. We must search the
+  entire list, unless the list is ordered by size. This strategy produces the
+  smallest leftover hole. </P>
+  <p>Worst fit. Allocate the largest hole. Again, we must search the entire list,
+  unless it is sorted by size. This strategy produces the largest leftover hole,
+  which may be more useful than the smaller leftover hole from a best-fit
+  approach.</p>
+  <p>Next fit is a modified version of ‘first fit’. It begins as first fit to find a free partition but when called next time it starts searching from where it left off, not from the beginning. This policy makes use of a roving pointer. The pointer roves along the memory chain to search for a next fit. This helps in, to avoid the usage of memory always from the head (beginning) of the free block chain.</p>
     <div class="row">
         <div class="col-md-3">
             <button class="button" onclick="window.location.href='./mft/ff/ff.html'"><span>First Fit</span></button>

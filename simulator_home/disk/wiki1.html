@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>	<!-- dont remove this  -->
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="./bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style >
+	body{
+		font-family: 'PT Sans' , sans-serif;
+		background: #DCDCDC;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-bottom: 3%;
+		font-size: 20px;
+		animation-name: FadeOut;
+	animation-duration: 2s;  
+	}
+	.options button{
+		font-family: 'PT Sans' , sans-serif;
+		font-size:20px;
+		font-weight: bold;
+	}
+	@keyframes FadeOut{
+	0% {
+    /* position: absolute; */
+    opacity: 0;
+  }
+
+  75% {
+    /* position: absolute; */
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+</style>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+ <div class="navbar-header">
+  <a class="navbar-brand" href="../os_sim.html">OS simulator</a>
+   </div>
+  <ul class="nav navbar-nav">
+  	<li class="hover"><a href="disk_scheduling.html">Disk-Scheduling</a></li>
+      <li class="active"><a href="wiki1.html">Wiki</a></li>
+   </ul>
+  </div>
+</nav>
+<div style="margin-top: 8%">
+<p>Disk scheduling is is done by operating systems to schedule I/O requests arriving for disk. Disk scheduling is also known as I/O scheduling.</p>
+<p>Important terms related to Disk Scheduling :</p>
+<ul>
+<li><strong><em>Seek time</em></strong> : Seek time is the time taken in locating the disk arm to a specified track where the read/write request will be satisfied.</li>
+<li><em><strong>Rotational Latency</strong></em> : It is the time taken by the desired sector to rotate itself to the position from where it can access the R/W heads.</li>
+<li><em><strong>Transfer time</strong></em> : It is the time taken to transfer the data.</li>
+<li><em><strong>Disk access time</strong></em> : Disk Access Time = Rotational Latency + Seek Time + Transfer Time</li>
+<li><em><strong>Disk Response time</strong></em> : It is the average of time spent by each request waiting for the IO operation.</li>
+</ul>
+<p><span style="text-decoration: underline; font-size: 30px;"><strong>Disk Scheduling Algorithms :</strong></span></p>
+<p>To show how each Disk Scheduling algorithm works, we take the following example. Consider the following disk request sequence for a disk with 100 tracks 45, 21, 67, 90, 4, 50, 89, 52, 61, 87, 25. Head pointer starting at 50 and moving in left direction.</p>
+<p><span style="text-decoration: underline; font-size: 26px;"><strong>FCFS ( First Come First Serve ) :</strong></span></p>
+<p>It services the IO requests in the order in which they arrive. There is no starvation in this algorithm, every request is serviced.</p>
+<p>Characteristics :</p>
+<ul class="points">
+<li>The scheme does not optimize the seek time.</li>
+<li>The request may come from different processes therefore there is the possibility of inappropriate movement of the head.</li>
+</ul>
+<p>Working :</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://static.javatpoint.com/operating-system/images/os-fcfs-scheduling-algorithm.png" alt="os fcfs scheduling algorithm" /></p>
+<p>&nbsp;</p>
+<p>Number of cylinders moved by the head</p>
+<p>= (50-45)+(45-21)+(67-21)+(90-67)+(90-4)+(50-4)+(89-50)+(61-52)+(87-61)+(87-25)</p>
+<p>= 5 + 24 + 46 + 23 + 86 + 46 + 49 + 9 + 26 + 62</p>
+<p>= 376</p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; font-size: 26px;"><strong>SSTF (Shortest seek time first) :</strong></span></p>
+<p>It selects the disk I/O request which requires the least disk arm movement from its current position regardless of the direction.</p>
+<p>Characteristics :</p>
+<ul class="points">
+<li>It reduces the total seek time as compared to FCFS.</li>
+<li>It allows the head to move to the closest track in the service queue.</li>
+<li>It may cause starvation for some requests.</li>
+<li>Switching direction on the frequent basis slows the working of algorithm.</li>
+<li>It is not the most optimal algorithm.</li>
+</ul>
+<p>Working :</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://static.javatpoint.com/operating-system/images/os-sstf-scheduling-algorithm.png" alt="os sstf scheduling algorithm" /></p>
+<p>Number of cylinders = 5 + 7 + 9 + 6 + 20 + 2 + 1 + 65 + 4 + 17 = 136</p>
+<p>For the following algorithms, consider the following example. Consider the following disk request sequence for a disk with 100 tracks - 98, 137, 122, 183, 14, 133, 65, 78.Head pointer starting at 54 and moving in left direction.&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 26px;"><strong><span style="text-decoration: underline;">SCAN :</span></strong></span></p>
+<p>It is also called as Elevator Algorithm. In this algorithm, the disk arm moves into a particular direction till the end, satisfying all the requests coming in its path,and then it turns backand moves in the reverse direction satisfying requests coming in its path.</p>
+<p>Characteristics : It works in the way an elevator works, elevator moves in a direction completely till the last floor of that direction and then turns back.</p>
+<p>Working :</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://static.javatpoint.com/operating-system/images/os-scan-and-c-scan-algorithm.png" alt="OS SCAN and C-SCAN algorithm" /></p>
+<p>Number of Cylinders = 40 + 14 + 65 + 13 + 20 + 24 + 11 + 4 + 46 = 237</p>
+<p><span style="text-decoration: underline; font-size: 26px;"><strong>CSCAN :</strong></span></p>
+<p>In C-SCAN algorithm, the arm of the disk moves in a particular direction servicing requests until it reaches the last cylinder, then it jumps to the last cylinder of the opposite direction without servicing any request then it turns back and start moving in that direction servicing the remaining requests.</p>
+<p>Working :</p>
+<p style="text-align: center;"><img src="https://static.javatpoint.com/operating-system/images/os-scan-and-c-scan-algorithm1.png" alt="OS SCAN and C-SCAN algorithm1" /></p>
+<p style="text-align: left;">No. of cylinders crossed = 40 + 14 + 199 + 16 + 46 + 4 + 11 + 24 + 20 + 13 = 387</p>
+<p style="text-align: left;"><span style="text-decoration: underline; font-size: 26px;"><strong>LOOK :</strong></span></p>
+<p>It is like SCAN scheduling Algorithm to some extant except the difference that, in this scheduling algorithm, the arm goes only as far as the final or initial request. Then, it reverses its direction, without going all the way to the end of the disk.</p>
+<p>Working :</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://static.javatpoint.com/operating-system/images/os-look-scheduling.png" alt="OS Look Scheduling" /></p>
+<p>Number of cylinders crossed = 40 + 51 + 13 + +20 + 24 + 11 + 4 + 46 = 209</p>
+<p><span style="text-decoration: underline; font-size: 26px;"><strong>CLOOK :</strong></span></p>
+<p>It is like CSCAN scheduling Algorithm to some extant except the difference that, in this scheduling algorithm, the arm goes only as far as the final or initial request. Then, it reverses its direction, without going all the way to the end of the disk.</p>
+<p>Working :</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://static.javatpoint.com/operating-system/images/os-look-scheduling1.png" alt="OS Look Scheduling1" /></p>
+<p>Number of cylinders crossed = 11 + 13 + 20 + 24 + 11 + 4 + 46 + 169 = 298</p>
+<p><span style="text-decoration: underline; font-size: 25px;"><strong>Goals of Disk Scheduling Algorithms :</strong></span></p>
+<p>The main purpose of disk scheduling algorithm is to select a disk request from the queue of IO requests and decide the schedule when this request will be processed.</p>
+<ul class="points">
+<li>Fairness</li>
+<li>High throughout</li>
+<li>Minimal traveling head time</li>
+</ul>
+<p>&nbsp;</p>
+</div>
+</body>

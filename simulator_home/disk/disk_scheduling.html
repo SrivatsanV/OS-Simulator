@@ -322,7 +322,8 @@ h3{
   <a class="navbar-brand" href="../os_sim.html">OS simulator</a>
    </div>
   <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Wiki</a></li>
+  	<li class="active"><a href="disk_scheduling.html">Disk-Scheduling</a></li>
+      <li class="hover"><a href="wiki1.html">Wiki</a></li>
    </ul>
   </div>
 </nav>
@@ -647,13 +648,13 @@ function calculate_fcfs()
  		
  		if(head > max)
  		{
- 			alert("fcfs head is larger than last cylinder number");
+ 			alert("Head value is larger than last cylinder number");
  			return -10;
  		}
 
  		if(head < min)
  		{
- 			alert("fcfs head is smaller than first cylinder number");
+ 			alert("Head value is smaller than first cylinder number");
  			return -10;
  		}
  		
@@ -705,13 +706,13 @@ function calculate_sstf()
  		var min = parseInt(document.getElementsByTagName("input")[1].value);
 		if(head > max)
  		{
- 			alert("sstf head is larger than last cylinder number");
+ 			alert("Head value is larger than last cylinder number");
  			return -10;
  		}
 
  		if(head < min)
  		{
- 			alert("sstf head is smaller than first cylinder number");
+ 			alert("Head value is smaller than first cylinder number");
  			return -10;
  		}
  		//dp_sstf.push([head,0]);
@@ -781,7 +782,7 @@ function calculate_sstf()
  		var min = parseInt(document.getElementsByTagName("input")[1].value);
 		if(head > max)
  		{
- 			alert("scan head is larger than last cylinder number");
+ 			alert("Head value is larger than last cylinder number");
  			return -10;
  		}
 
@@ -814,7 +815,7 @@ function calculate_sstf()
 		//sort the inputs
 		in_arr.sort(function(a, b){return a - b});
 		
-		sum = sum + (max - head);
+		
 		
 		var temp;
 		var i,j,flag;
@@ -828,7 +829,8 @@ function calculate_sstf()
 				break;
 			}
 		}
-
+		if((head-in_arr[flag-1])>=(in_arr[flag]-head)){
+			sum = sum + (max - head);
 		var p_i;
 		for(j=flag;j<in_arr.length;++j)
 		{
@@ -854,6 +856,29 @@ function calculate_sstf()
 		return sum;
 	}
 
+	else{
+		sum=sum+(head-min);
+		var p_i;
+		for(j=flag-1;j>=0;j--){
+			y_i++;
+			p_i = parseInt(in_arr[j]);
+			scan_values.push(p_i);
+		}
+		y_i++;
+		scan_values.push(min);
+		for(j=flag;j<in_arr.length;++j)
+		{
+			y_i++;
+			p_i = parseInt(in_arr[j]);
+			scan_values.push(p_i);
+		}
+		var int = parseInt(in_arr[in_arr.length-1]);
+		sum=sum+(int-min);
+		allocate_scan();
+		return sum;
+	}
+	}
+
 	function calculate_cscan()
 	{
 		var in_arr=[];
@@ -864,13 +889,13 @@ function calculate_sstf()
  		var min = parseInt(document.getElementsByTagName("input")[1].value);
 		if(head > max)
  		{
- 			alert("cscan head is larger than last cylinder number");
+ 			alert("Head value is larger than last cylinder number");
  			return -10;
  		}
 
  		if(head < min)
  		{
- 			alert("cscan head is smaller than first cylinder number");
+ 			alert("Head value is smaller than first cylinder number");
  			return -10;
  		}
 		cscan_values.push(head);
@@ -896,9 +921,7 @@ function calculate_sstf()
 
 		//sort the inputs
 		in_arr.sort(function(a, b){return a - b});
-		
-		sum = sum + (max - head);
-		
+				
 		var temp;
 		var i,j,flag;
 
@@ -912,6 +935,8 @@ function calculate_sstf()
 			}
 		}
 
+		if((head-in_arr[flag-1])>=(in_arr[flag]-head)){
+		sum = sum + (max - head);
 		var p_i;
 		for(j=flag;j<in_arr.length;++j)
 		{
@@ -928,10 +953,34 @@ function calculate_sstf()
 		}
 
 		var int = parseInt(in_arr[flag-1]);
-		sum = sum + (int);
+		sum = sum + (int-min);
 
 		allocate_cscan();
 		return sum;
+	}
+	else {
+		sum=sum+(head-min);
+		var p_i;
+		for(j=flag-1; j>=0 ;--j)
+		{
+			y_i++;
+			p_i = parseInt(in_arr[j]);
+			cscan_values.push(p_i);
+		}
+		cscan_values.push(min);
+		for(j=in_arr.length-1;j>=flag;--j)
+		{
+			y_i++;
+			p_i = parseInt(in_arr[j]);
+			cscan_values.push(p_i);
+		}
+		
+		var int = parseInt(in_arr[flag]);
+		sum = sum + (max-int);
+
+		allocate_cscan();
+		return sum;
+	}
 	}
 
 	function calculate_look()
@@ -944,13 +993,13 @@ function calculate_sstf()
  		var min = parseInt(document.getElementsByTagName("input")[1].value);
 		if(head > max)
  		{
- 			alert("look head is larger than last cylinder number");
+ 			alert("Head value is larger than last cylinder number");
  			return -10;
  		}
 
  		if(head < min)
  		{
- 			alert("look head is smaller than first cylinder number");
+ 			alert("Head value is smaller than first cylinder number");
  			return -10;
  		}
 		look_values.push(head);
@@ -987,6 +1036,9 @@ function calculate_sstf()
 				break;
 			}
 		}
+
+		if((head-in_arr[flag-1])>=(in_arr[flag]-head)){
+
 		var p_i;
 		for(j=flag;j<in_arr.length;++j)
 		{
@@ -1011,6 +1063,32 @@ function calculate_sstf()
 
 		allocate_look();
 		return sum;
+	}
+	else{
+		var p_i;
+		for(j=flag-1; j>=0 ;--j)
+		{
+			y_i++;
+			p_i = parseInt(in_arr[j]);
+			look_values.push(p_i);
+		}
+		for(j=flag;j<in_arr.length;++j)
+		{
+			y_i++;
+			p_i = parseInt(in_arr[j]);
+			look_values.push(p_i);
+		}
+
+		var int = parseInt(in_arr[0]);	//last element
+		sum = sum + (head-int); 
+
+		var int = parseInt(in_arr[0]);
+		var int2 = parseInt(in_arr[x-3]);
+		sum = sum + (int2 - int);
+
+		allocate_look();
+		return sum;
+	}
 	}
 	
 	function calculate_clook()
@@ -1056,9 +1134,8 @@ function calculate_sstf()
 		//sort the inputs
 		in_arr.sort(function(a, b){return a - b});
 		
-		var len = in_arr.length-1;
-		var p = parseInt(in_arr[len]);
-		sum = sum + (p - head);
+		
+		
 		
 		var temp;
 		var i,j,flag;
@@ -1072,6 +1149,10 @@ function calculate_sstf()
 				break;
 			}
 		}
+		if((head-in_arr[flag-1])>=(in_arr[flag]-head)){
+			var len = in_arr.length-1;
+		var p = parseInt(in_arr[len]);
+			sum = sum + (p - head);
 		var p_i;
 		for(j=flag;j<in_arr.length;++j)
 		{
@@ -1094,7 +1175,32 @@ function calculate_sstf()
 		allocate_clook();
 		return sum;
 	}
+	else {
+		var len = in_arr.length-1;
+		var p=parseInt(in_arr[0]);
+		sum = sum + (head-p);
+		var p_i;
+		for(j=flag-1; j>=0 ;--j)
+		{
+			y_i++;
+			p_i = parseInt(in_arr[j]);
+			clook_values.push(p_i);
+		}
+		for(j=len;j>=flag;--j)
+		{
+			y_i++;
+			p_i = parseInt(in_arr[j]);
+			clook_values.push(p_i);
+		}
 
+		var int = parseInt(in_arr[len]);
+		var int2 = parseInt(in_arr[flag]);
+		sum = sum + (int - int2);
+
+		allocate_clook();
+		return sum;
+	}
+	}
 	window.onload = function () {
         CanvasJS.addColorSet("myColors",
                 [//colorSet Array

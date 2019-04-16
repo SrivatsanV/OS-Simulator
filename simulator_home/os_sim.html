@@ -5,14 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="./bootstrap.min.css">
+<script>
+    function scrollFunc(){
+    console.log("Hi");
+    const element = document.getElementById("box");
+  element.scrollIntoView({ 
+  behavior: 'smooth' 
+  });
+  }
+  
 
+</script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
     height: 100%;
     line-height: 1.8;
+    scroll-behavior: smooth;
 }
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -32,9 +43,18 @@ body, html {
   font-size: 18px;
 }
 
+.btn {
 
-.images img{
-  height: 150px;
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  /*padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.7);
+  color: white;
 }
 
 .line {
@@ -61,7 +81,7 @@ body, html {
             width: 0;
       }
       to {
-            width: 11em;
+            width: 17em;
       }
 }
 
@@ -81,18 +101,22 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-      <h1 class="line anim-typewriter text-uppercase" style="color:#fff;">OS Simulator 2k19</h1>
+      <h1 class="line anim-typewriter text-uppercase" style="color:#fff;">Operating System Simulator<button onclick="scrollFunc()" class="btn"><i class="fas fa-arrow-down"></i>
+      </button></h1>
+    </div>
+    
+    <div>
+        
     </div>
 </div>
 
 
 
-
-
+<div id="box">
 <!-- Container (Portfolio Section) -->
-<div class="jumbotron" style="text-align:center;">
-  <h2>Below are the topics to SIMULATE</h3>
-  <p ><em>Here are the essential topics<br> Click on the images to simulate the respective topic</em></p><br>
+<div class="jumbotron" style="text-align:center;" >
+  <h2>Topics for Simulation</h3>
+  <p ><em>Here are the essential topics<br> Click on respecive topics for simulation</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
 <div class="images">
@@ -102,9 +126,7 @@ body, html {
               <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Process Scheduling</h4>
-                    <p class="card-text">
-                        Content
-                    </p>
+                    
                     <a href="Scheduling/index.html" class="btn btn-primary">Click</a>
                   </div>
                 </div>
@@ -114,9 +136,7 @@ body, html {
               <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Dealocks</h4>
-                    <p class="card-text">
-                        Content
-                    </p>
+                    
                     <a href="Deadlock/index.html" class="btn btn-primary">Click</a>
                   </div>
                 </div>
@@ -126,9 +146,7 @@ body, html {
               <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Disk Scheduling</h4>
-                    <p class="card-text">
-                        Content
-                    </p>
+                    
                     <a href="disk/disk_scheduling.html" class="btn btn-primary">Click</a>
                   </div>
                 </div>
@@ -139,9 +157,7 @@ body, html {
               <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Synchronization</h4>
-                    <p class="card-text">
-                        Content
-                    </p>
+                    
                     <a href="Syncronization/index.html" class="btn btn-primary">Click</a>
                   </div>
                 </div>
@@ -152,10 +168,8 @@ body, html {
           <div class="col-lg">
               <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">MFT and MVT</h4>
-                    <p class="card-text">
-                        Content
-                    </p>
+                    <h4 class="card-title">MFT</h4>
+                    
                     <a href="memory/index.html" class="btn btn-primary">Click</a>
                   </div>
                 </div>
@@ -164,10 +178,8 @@ body, html {
           <div class="col-lg">
               <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Non-Contiguous Memory Management</h4>
-                    <p class="card-text">
-                        Content
-                    </p>
+                    <h4 class="card-title">Page Replacement Algorithms</h4>
+                    
                     <a href="OS-final/pegerephome.html" class="btn btn-primary">Click</a>
                   </div>
                 </div>
@@ -177,20 +189,25 @@ body, html {
               <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">File allocation</h4>
-                    <p class="card-text">
-                        Content
-                    </p>
+                    
                     <a href="file-allocation/Index page/index._page.html" class="btn btn-primary">Click</a>
                   </div>
                 </div>
           </div>
-
+          <div class="col-lg">
+            <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Socket Programming</h4>
+                  
+                  <a href="Server-Client-Comm/index.html" class="btn btn-primary">Click</a>
+                </div>
+              </div>
+        </div>
         </div>
   </div>
 </div>
 
 </div>
-
 
 
 
@@ -275,10 +292,13 @@ body, html {
     </div>
   </footer>
   <!-- Footer -->
+</div>
 
 
 <!-- Add Google Maps -->
 <script>
+
+  
 function myMap()
 {
   myCenter=new google.maps.LatLng(41.878114, -87.629798);
