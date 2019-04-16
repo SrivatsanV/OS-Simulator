@@ -28,7 +28,7 @@ function addInitialRes(){
 	resources.textContent="";
 	for(var i=0;i<num;i++){
 		var card =document.createElement("div");
-		card.setAttribute("style","width:200px;margin-right:50px;text-align:center;");
+		card.setAttribute("style","width:250px;margin-right:50px;text-align:center;");
 		var p = document.createElement("div");
 		//p.setAttribute("style","width:100px;float:left;");
 		p.setAttribute("class","input-group input-group-lg");

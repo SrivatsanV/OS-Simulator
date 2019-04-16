@@ -33,7 +33,7 @@ function addInitials()
 			d1.innerHTML="";
 			var p = document.createElement("h5");
 			p.setAttribute("style","text-align:center");
-			p.textContent = "Enter allocation matrix ( if allocated(enter 1) else (enter 0)) ";
+			p.textContent = "Enter allocation matrix ( 1 or 0) ";
 			d1.appendChild(p);
 			var br=document.createElement("br");
 			for(var i=0;i<index;i++)
@@ -46,10 +46,25 @@ function addInitials()
 				card.appendChild(p1);
 				for(var j=0;j<num;j++)
 				{
+					// var card =document.createElement("div");
+					// card.setAttribute("style","width:90px;float:left;margin-right:50px;height:50px;");
+					// var p = document.createElement("div");
+					// p.setAttribute("class","input-group input-group-sm");
+					// var subDiv = document.createElement("div");
+					// subDiv.setAttribute("class","input-group-prepend");
+					// var text = document.createElement("span");
+					// text.setAttribute("class","input-group-text");
+					// text.setAttribute("id","inputGroup-sizing-sm");
 					var inp1 = document.createElement("input");
 					inp1.setAttribute("id","AR"+i+","+j);
 					inp1.setAttribute("placeholder","R-"+(j+1));
 					inp1.setAttribute("style","width:50px;text-align:center;margin-right:50px;float:left;");
+					// inp1.setAttribute("class","form-control");
+					// inp1.setAttribute("aria-lable","Small");
+					// inp1.setAttribute("aria-describedby","inputGroup-sizing-sm");
+
+					
+
 					card.appendChild(inp1);
 				}
 				d1.appendChild(card);
@@ -63,7 +78,7 @@ function addInitials()
 			d1.appendChild(c);
 			var p2 = document.createElement("h5");
 			p2.setAttribute("style","text-align:center");
-			p2.textContent = "Enter need matrix ( if need(enter 1) else (enter 0)) ";
+			p2.textContent = "Enter need matrix ( 1 or 0) ";
 			d2.appendChild(p2);
 			var br=document.createElement("br");
 			for(var i=0;i<index;i++)
