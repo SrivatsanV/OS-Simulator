@@ -46,6 +46,16 @@ $(document).ready(function(){
     // var ioTime=parseInt(document.getElementById("io").value);
     // var FinalburstTime=parseInt(document.getElementById("bt2").value);
 
+    if(document.getElementById("at1").value == "") {
+      alert("Arrival time field is empty!");
+      return;
+    }
+
+    if(document.getElementById("bt1").value == "") {
+      alert("Burst time field is empty!");
+      return;
+    }
+
     if(arrivalTime < 0) {
       alert("Arrival time cannot be negative!");
       return;
@@ -272,10 +282,10 @@ $(document).ready(function(){
      cardAdd.classList.add("card");
      var element = document.getElementById("Average");
     element.classList.add("card-body");
-    $("#Average").append("<b>The average waiting time of the given processes is "+average_wt+"</b><br>");
-    $("#Average").append("<b>The average turn around time of the given processes is "+average_tat+"</b><br>");
-    $("#Average").append("<b>The throughput of the given processes is "+throughput+"</b><br>");
-    $("#Average").append("<b>The CPU efficiency is "+cpu_efficiency+"%</b><br>");
+    $("#Average").append("<b>CPU efficiency : "+cpu_efficiency.toFixed(3)+"%</b><br>");
+    $("#Average").append("<b>Overall throughput : "+throughput.toFixed(3)+"</b><br>");
+    $("#Average").append("<b>Average Turn Around time : "+average_tat.toFixed(3)+"</b><br>");
+    $("#Average").append("<b>Average Waiting time: "+average_wt.toFixed(3)+"</b><br>");
   }
 
 }
@@ -291,11 +301,11 @@ $(document).ready(function(){
     var processName = sequence[i].n;
     if(sequence[i].n==null)
     {
-      $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'">CPU Idle<div class="bottom">'+ sequence[i+1].start +'</div></div>');
+      $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'" style="background-color:rgba(112, 128, 144, 0.44);">CPU Idle<div class="bottom">'+ sequence[i+1].start +'</div></div>');
     }
     else
     {
-      $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'">P-'+ sequence[i].n +'<div class="bottom">'+ sequence[i+1].start +'</div></div>');
+      $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'">P'+ sequence[i].n +'<div class="bottom">'+ sequence[i+1].start +'</div></div>');
     }
     $('#process-'+sequence[i].start).css('width',blockWidth);
 
@@ -334,7 +344,7 @@ p{
   border-right: 1px solid black;
   float: left;
   text-align: center;
-  background-color: rgba(112, 128, 144, 0.44);
+  background-color: rgba(218, 152, 11, 0.44);
   height: 98px;
 }
 #ptab{
@@ -378,7 +388,7 @@ p{
         <thead>
         <th>PNO.</th>
         <th>Arrival Time </th>
-        <th>Burst Time 1 </th>
+        <th>Burst Time </th>
         <!-- <th>IO </th>
         <th>Burst Time 2 </th> -->
       </tr>
@@ -393,7 +403,7 @@ p{
       </div>
 
       <div class="form-group">
-        <input type='number'  class="form-control " id='bt1' placeholder="burst time 1"></input>
+        <input type='number'  class="form-control " id='bt1' placeholder="burst time"></input>
       </div>
       </div>
       <!-- <input type='number' id='io' placeholder="io time"></input>
@@ -416,7 +426,7 @@ p{
       <thead>
       <th>PNO.</th>
       <th>Arrival time</th>
-      <th>Burst time1</th>
+      <th>Burst time</th>
       <!-- <th>I/O time</th>
       <th>Burst time2</th> -->
       <th>Waiting time</th>
