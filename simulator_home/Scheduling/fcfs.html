@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="./bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
 </head>
@@ -38,11 +38,12 @@ $(document).ready(function(){
   function DisplayList(){
     var table = document.getElementById("ept");
     console.log(stuff[stuff.length-1].no);
-    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td><td>"+stuff[stuff.length-1].io+"</td><td>"+stuff[stuff.length-1].bt2+"</td></tr>");
+    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
   }
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
     var burstTime=parseInt(document.getElementById("bt1").value);
+<<<<<<< Updated upstream
     var ioTime=parseInt(document.getElementById("io").value);
     var FinalburstTime=parseInt(document.getElementById("bt2").value);
 
@@ -56,6 +57,12 @@ $(document).ready(function(){
       return;
     }
 
+=======
+    // var ioTime=parseInt(document.getElementById("io").value);
+    // var FinalburstTime=parseInt(document.getElementById("bt2").value);
+    var ioTime=parseInt("0");
+    var FinalburstTime=parseInt("0");
+>>>>>>> Stashed changes
     console.log(arrivalTime);
     console.log(burstTime);
     var rtj=[];
@@ -79,8 +86,7 @@ $(document).ready(function(){
     index=index+1;
     document.getElementById("at1").value="";
     document.getElementById("bt1").value="";
-    document.getElementById("io").value="";
-    document.getElementById("bt2").value="";
+    
     console.log(stuff);
     DisplayList();
   };
@@ -260,7 +266,7 @@ $(document).ready(function(){
     if(i<stuff.length){
     var table = document.getElementById("ptable");
     console.log(stuff[i].wt);
-    $("#ptable").append("<tr><td>"+stuff[i].no+"</td><td>"+stuff[i].at+"</td><td>"+stuff[i].bt1+"</td><td>"+stuff[i].io+"</td><td>"+stuff[i].bt2+"</td><td>"+stuff[i].wt+"</td><td>"+stuff[i].tat+"</td></tr>");
+    $("#ptable").append("<tr><td>"+stuff[i].no+"</td><td>"+stuff[i].at+"</td><td>"+stuff[i].bt1+"</td><td>"+stuff[i].wt+"</td><td>"+stuff[i].tat+"</td></tr>");
     drawTable(i+1);
   }
   else
@@ -365,43 +371,46 @@ p{
   <h1>
     First Come First Serve Scheduling
   </h1>
-  <h2>
-    Gantt Chart
-  </h2>
+  
     <div style="text-align:center;">
       <h3>Entered Processes:</h3>
-      <table id="ep" class="table table-bordered table-striped" style="width:100%;">
+      <table id="ep" class="table table-bordered table-striped" style="width:70%;" align="center">
         <thead>
         <th>PNO.</th>
         <th>Arrival Time </th>
         <th>Burst Time 1 </th>
-        <th>IO </th>
-        <th>Burst Time 2 </th>
+        <!-- <th>IO </th>
+        <th>Burst Time 2 </th> -->
       </tr>
       <tbody id="ept">
       </tbody>
     </thead>
   </table>
-  <input type='number' id='at1' placeholder="arrival time"></input>
-  <input type='number' id='bt1' placeholder="burst time 1"></input>
-  <input type='number' id='io' placeholder="io time"></input>
-  <input type='number' id='bt2' placeholder="burst time 2"></input>
+
+  <input type='number' class="form-control form-control-sm" style="width:20%;margin-left: 200px" min='0' id='at1' placeholder="arrival time"></input>
+  <input type='number'  class="form-control form-control-sm" style="width:20%;" id='bt1' placeholder="burst time 1"></input>
+  <!-- <input type='number' id='io' placeholder="io time"></input>
+  <input type='number' id='bt2' placeholder="burst time 2"></input> -->
   <button id="add" class="btn btn-secondary" onclick="AddtoList()">Add</button>
   <button id="start" class="btn btn-secondary">Start</button>
   <br>
   <br>
+
+  <h2>
+    Gantt Chart
+  </h2>
   <div id="outer-div">
   </div>
   <br><br><br>
+  
 
-
-  <table id="ptab" class="table table-bordered table-striped" style="width: 100%;">
+  <table id="ptab" class="table table-bordered table-striped" style="width:70%;" align="center">
   <thead>
   <th>PNO.</th>
   <th>Arrival time</th>
   <th>Burst time1</th>
-  <th>I/O time</th>
-  <th>Burst time2</th>
+  <!-- <th>I/O time</th>
+  <th>Burst time2</th> -->
   <th>Waiting time</th>
   <th>Turn Around Time</th>
 </thead>
