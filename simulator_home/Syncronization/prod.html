@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="./bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <title>Producer_Consumer</title>
+  <title>Producer Consumer</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,6 +15,27 @@
 
     <style>
         body{ font-family: 'PT Sans', sans-serif; } 
+        @keyframes FadeOut {
+  0% {
+    /* position: absolute; */
+    opacity: 0;
+  }
+
+  75% {
+    /* position: absolute; */
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.heading{
+opacity: 1;
+  animation-name: FadeOut;
+  animation-duration: 5s;
+
+	}
     </style>	
 
 <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -47,41 +68,70 @@
 		</div>
 	</nav>
  <br><br><br>
-  <div class="page-header" >
-    <h1 style="float:center">Producer Consumer</h1>      
+  <div class="page-header">
+    <h1 align="center">Producer Consumer</h1>      
   </div>
 
   <div>
       <form>
-        <textarea id="doc" style="height:28%;width:15%;position:absolute;left:3%;font-size:17px; color : white; background-color:black;border:solid 2px orange; " disabled="">
+        <textarea id="doc" 
+        style="height:28%;
+        width:15%;
+        position:
+        absolute;
+        left:3%;
+        font-size:17px;
+        color : white;
+        background-color:black;
+        border:solid 2px #BBDEFB;
+        " disabled="">
 while(1)
   {
-      /* produce an item in next_produced */
+    do{
 
-      while (counter==BUFFER_SIZE)
-        ; /* do nothing */
-
-      buffer[in] = next_produced;
-      in = (in + 1) % BUFFER_SIZE;
-      counter++;
+      //produce an item
+      
+      wait(empty);
+      wait(mutex);
+      
+      //place in buffer
+      
+      signal(mutex);
+      signal(full);
+      
+      }while(true)
   }
         </textarea>
       </form>
-    </div>
+   </div>
 
     <div>
       <form>
-        <textarea id="doc" style="height:28%;width:15%;position:absolute;right:3%;font-size:17px;color : white; background-color:black;border:solid 2px orange; " disabled="">
+        <textarea id="doc" style="height:28%;
+        width:15%;
+        position:absolute;
+        right:3%;
+        font-size:17px;
+        color : white; 
+        background-color:black;
+        border:solid 2px#BBDEFB;
+         " disabled="">
+
  while(1)
   {
-      while(counter == 0)
-        ; /* do nothing */
+      do{
 
-      next_consumed = buffer[out];
-      out = (out+1) % BUFFER_SIZE;
-      counter--;
+wait(full);
+wait(mutex);
 
-      /* consume an item in next_consumed */
+// remove item from buffer
+
+signal(mutex);
+signal(empty);
+
+// consumes item
+
+}while(true)
   }
         </textarea>
       </form>
@@ -91,29 +141,30 @@ while(1)
 
 
 
- <button class="btn btn-primary" id ="prod", type ="button", onclick ="barrieradd()", style ="height:10%;width:15%;position:absolute;top:25%;left:45%;font-size:25px;">Next Chance</button>
+ <button class="btn btn-primary" id ="produce button", type ="button", onclick ="produce()", style ="height:10%;border-radius: 20px;width:165px;position:absolute;top:40%;left:30%;font-size:25px;">Produce</button>
+ <button class="btn btn-primary" id ="consume button", type ="button", onclick ="consume()", style ="height:10%;border-radius: 20px;width:165px;position:absolute;top:40%;left:60%;font-size:25px;" disabled="true">Consume</button>
 
-<button class="btn btn-primary" id ="prod1", type ="button", style ="height:10%;width:12%;position:absolute;top:80%;left:15%;font-size:25px;background: red;" disabled="">Produce</button>
+<button class="btn btn-primary" id ="prod1", type ="button", style ="height:10%;border-radius: 20px;width:165px;position:absolute;top:80%;left:15%;font-size:25px;background: white;border: none" disabled="">Produce</button>
 
- <button class="btn btn-primary" id ="con", type ="button", style ="height:10%;width:12%;position:absolute;top:80%;right:15%;font-size:25px;background: red;" disabled="">Consume</button>
+ <button class="btn btn-primary" id ="con", type ="button", style ="height:10%;border-radius: 20px;width:165px;position:absolute;top:80%;left:75%;font-size:25px;background: white;border: none" disabled="">Consume</button>
 
 
 
-<button class="btn btn-primary" type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:30%;left:20%;font-size:17px">Press on Produce </button>
-<button class="btn btn-primary" type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:22%;left:20%;font-size:17px">Buffer size:5 </button>
+<button class="btn btn-primary" type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:30%;left:20%;background-color:white;font-size:17px;border: none">Press on Produce </button>
+<button class="btn btn-primary" type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:30%;left:20%;background-color:white;font-size:17px;border: none">Buffer size:5 </button>
 
-<button type = "button", id ="one", name = "one", style="height:100px;width:165px;position:absolute;top:50%;left:45%;background-color:white"> </button>
+<button type = "button", id ="one", name = "one", style="height:100px;border-radius: 20px;width:165px;position:absolute;top:60%;left:15%;font-size:25px;background-color:white;color: white">Item 1 </button>
   
-    <button type = "button", id ="two", name = "two", style="height:100px;width:165px;position:absolute;top:65%;left:45%;background-color:white"> </button>
+    <button type = "button", id ="two", name = "two", style="height:100px;border-radius: 20px;width:165px;position:absolute;top:60%;left:30%;font-size:25px;background-color:white;color: white">Item 2 </button>
   
-    <button type = "button", id ="three", name = "three", style="height:100px;width:165px;position:absolute;top:80%;left:45%;background-color:white"> </button>
+    <button type = "button", id ="three", name = "three", style="height:100px;border-radius: 20px;width:165px;position:absolute;top:60%;left:45%;font-size:25px;background-color:white;color: white">Item 3 </button>
   
-    <button type = "button", id ="four", name = "four", style="height:100px;width:165px;position:absolute;top:95%;left:45%;background-color:white"> </button>
+    <button type = "button", id ="four", name = "four", style="height:100px;border-radius: 20px;width:165px;position:absolute;top:60%;left:60%;font-size:25px;background-color:white;color: white">Item 4 </button>
   
-    <button type = "button", id ="five", name = "five", style="height:100px;width:165px;position:absolute;top:110%;left:45%;background-color:white"> </button>
+    <button type = "button", id ="five", name = "five", style="height:100px;border-radius: 20px;width:165px;position:absolute;top:60%;left:75%;font-size:25px;background-color:white;color: white">Item 5 </button>
 
 
-    <button class="btn btn-warning" id ="count", type ="button" style ="height:100px;width:165px;position:absolute;top:30%;left:66%;">counter = 0</button>
+    <button class="btn btn-warning" id ="count", type ="button" style ="height:100px;width:165px;position:absolute;top:25%;left:66%;;background: white;border: none">counter = 0</button>
 
    </body>
 
@@ -146,6 +197,7 @@ while(1)
           var change = document.getElementById("count");
           change.innerHTML ="counter = 3"
         }
+
         if(counter==4)
         {
           var change = document.getElementById("count");
@@ -162,11 +214,11 @@ while(1)
       {
         if(flag>0)
         {
-          document.getElementById("con").disabled = false;
+          document.getElementById("consume button").disabled = false;
         }
         if(flag<4)
         {
-          document.getElementById("prod1").disabled = false;
+          document.getElementById("produce button").disabled = false;
         }
       }
 
@@ -174,23 +226,23 @@ while(1)
       {
         if(queue[0]==1)
         {
-          document.getElementById("one").style.backgroundColor = '#00BFFF';
+          document.getElementById("one").style.backgroundColor = '#8BC34A';
         }
         if(queue[1]==1)
         {
-          document.getElementById("two").style.backgroundColor = '#00BFFF';
+          document.getElementById("two").style.backgroundColor = '#8BC34A';
         }
         if(queue[2]==1)
         {
-          document.getElementById("three").style.backgroundColor = '#00BFFF';
+          document.getElementById("three").style.backgroundColor = '#8BC34A';
         }
         if(queue[3]==1)
         {
-          document.getElementById("four").style.backgroundColor = '#00BFFF';
+          document.getElementById("four").style.backgroundColor = '#8BC34A';
         }
         if(queue[4]==1)
         {
-          document.getElementById("five").style.backgroundColor = '#00BFFF';
+          document.getElementById("five").style.backgroundColor = '#8BC34A';
         }
       
 
@@ -215,16 +267,18 @@ while(1)
           document.getElementById("five").style.backgroundColor = '#FFFFFF';
         }
    
-        check();
+        //check();
       }
 
 
  function produce()
       {
-        flag++;
+        // flag++;
           if(flag==5)
           {
-            document.getElementById("prod1").disabled = true;
+            document.getElementById("produce button").disabled = true;
+            alert("Buffer full can't add the produced item to the buffer!");
+            return ;
           }
          // document.getElementById("prod1").style.color=green;
           if(front == -1 && rear ==-1)
@@ -232,14 +286,21 @@ while(1)
             front =0;
             rear =0;
             queue[rear] =1;
+            flag++;
           }
           else
           {
               rear = (rear+1)%5;
               queue[rear]=1;
+              flag++;
           }
 
         color();
+
+        if(flag==1)
+        {
+          document.getElementById("consume button").disabled = false;
+        }
         counter();
       }
 
@@ -247,26 +308,49 @@ while(1)
         function consume()
       {
         //   myMove();
-        flag--;
         if(flag==0)
         {
-          document.getElementById("con").disabled = true;
+          document.getElementById("consume button").disabled = true;
+          alert("No item to consume for the consumer!");
+          return ;
         }
+
+        
     
         if(front==rear)
         {
           queue[front] =0;
           front =-1;
           rear =-1;
+          flag--;
         }
         else
         {
-          queue[front]=0;
-          front = (front+1)%5;
+          if(flag==5)
+          {
+            document.getElementById("produce button").disabled = true;
+            queue[front]=0;
+            front = (front+1)%5;
+            flag--;
+          }else
+          {
+            queue[front]=0;
+            front = (front+1)%5;
+            flag--;
+          }
+         
         }
         color();
         counter();
+
+        if(flag==4)
+        {
+            document.getElementById("produce button").disabled = false;
+        }
       }
+      
+
+
    function barrieradd()
       {
              var n = Math.random();
@@ -288,7 +372,7 @@ while(1)
                   {     
 
                   	document.getElementById("prod1").style.backgroundColor='green';
-           document.getElementById("con").style.backgroundColor='red';
+           document.getElementById("con").style.backgroundColor='white';
 
                   	document.getElementById("num").innerHTML = "producer";
        				produce();
@@ -296,7 +380,7 @@ while(1)
            else
            {
 					document.getElementById("con").style.backgroundColor='green';
-          		  document.getElementById("prod1").style.backgroundColor='red';
+          		  document.getElementById("prod1").style.backgroundColor='white';
 
 
                     document.getElementById("num").innerHTML = "consumer";

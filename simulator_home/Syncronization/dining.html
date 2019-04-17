@@ -47,14 +47,14 @@
 	</nav>
  <br><br><br>
   <div class="page-header" style="float:center">
-    <h1>Dining Philosopher's</h1>      
+    <h1 style="left:39%;position:absolute;top:14%">Dining Philosopher</h1>      
   </div>
 
 
      <div>
       <form>
-        <textarea id="doc" style="height:230px;width:265px;position:absolute;left:7%;font-size:17px;
-        color : white; background-color:black;border:solid 2px orange; " disabled="">
+        <textarea id="doc" style="height:230px;width:265px;position:absolute;left:3%;font-size:17px;
+        color : white; background-color:black;border:solid 2px white; " disabled="">
  process P[i]
  while true do
    {  THINK;
@@ -66,9 +66,9 @@
       </form>
     </div>
 
-    <button type ="button", class = "btn btn-primary", onclick ="initiate()", style="height:125px;width:200px;position:absolute;top:20%;left:25%;font-size:25px"  >Next!</button>
+    <button type ="button", class = "btn btn-primary", onclick ="initiate()", style="height:115px;width:180px;border-radius: 20px;position:absolute;top:113%;left:42%;font-size:28px"  >Next!</button>
 
-    <button type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:20%;left:75%;font-size:17px">Number generated: </button>
+    <button type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;border-radius: 20px;position:absolute;top:87%;left:75%;font-size:17px">Number generated: </button>
 
     <button type = "button", id ="table", name = "table", style="height:435px;width:435px;position:absolute;top:50%;left:35%;border-radius:435px;border:1px solid #000;background-color:#CD853F"> </button>
     <img src="food.png" alt="" style="position:absolute;left:41%;top:37%;width:250px;height:250px;">
@@ -78,7 +78,7 @@
 	<!-- <p id="hungry1" style="position:absolute;top:60%;right:23%; font-size: 25px">ter</p>
 	<p id="eating1" style="position:absolute;top:60%;right:3%; font-size: 25px">ter</p>
  -->
-<div style="position:absolute;top:50%;left:70%">
+<div style="position:absolute;top:62%;left:70%">
 
 <!-- <p>rvervboewovbuoewuvowrvuoe</p>
  -->
@@ -137,17 +137,17 @@
         <p style="position:absolute;top:106%;left:38%;">Philosopher 4</p>
         <p style="position:absolute;top:96%;left:56%;">Philosopher 3</p>
 
-    <button type = "button", id ="one", name = "one", style="height:125px;width:125px;position:absolute;top:39%;left:40%;border-radius:125px;border:1px solid #000;  background-image: url('http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-icon.png')">  </button>
+    <button type = "button", id ="one", name = "one", style="height:125px;width:125px;position:absolute;top:39%;left:40%;border-radius:125px;border:1px solid #000;  background-image: url(dining.png);background-size: 100%;background-position: center">  </button>
    
 
    
-    <button type = "button", id ="five", name = "one", style="height:125px;width:125px;position:absolute;top:65%;left:29%;border-radius:125px;border:1px solid #000; background-image: url('http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Bowler-Hat-icon.png')"> </button>
+    <button type = "button", id ="five", name = "one", style="height:125px;width:125px;position:absolute;top:65%;left:29%;border-radius:125px;border:1px solid #000; background-image: url(dining.png);background-size: 100%;background-position: center"> </button>
    
-    <button type = "button", id ="two", name = "one", style="height:125px;width:125px;position:absolute;top:50%;left:55.5%;border-radius:125px;border:1px solid #000;background-image: url('http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Goatee-Beard-icon.png')">   </button>
+    <button type = "button", id ="two", name = "one", style="height:125px;width:125px;position:absolute;top:50%;left:55.5%;border-radius:125px;border:1px solid #000;background-image: url(dining.png);background-size: 100%;background-position: center">   </button>
    
-    <button type = "button", id ="four", name = "one", style="height:125px;width:125px;position:absolute;top:92%;left:37%;border-radius:125px;border:1px solid #000;background-image: url('http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Emo-Haircut-icon.png')">  </button>
+    <button type = "button", id ="four", name = "one", style="height:125px;width:125px;position:absolute;top:92%;left:37%;border-radius:125px;border:1px solid #000;background-image: url(dining.png);background-size: 100%;background-position: center">  </button>
    
-    <button type = "button", id ="three", name = "one", style="height:125px;width:125px;position:absolute;top:83%;left:55%;border-radius:125px;border:1px solid #000;background-image: url('http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Hair-icon.png')">  </button>
+    <button type = "button", id ="three", name = "one", style="height:125px;width:125px;position:absolute;top:83%;left:55%;border-radius:125px;border:1px solid #000;background-image: url(dining.png);background-size: 100%;background-position: center">  </button>
 
    
   <img src="http://icons.iconarchive.com/icons/cute-little-factory/breakfast/128/sugar-bowl-filled-icon.png" style="position: absolute;height: 100px;width: 100px; top: 51%;left:42%;visibility: hidden;"  id="bowl1">
@@ -449,23 +449,23 @@
 
 		          if(phils[0]==2)
 		          {
-		            document.getElementById("one").style.backgroundColor = '#FF0000';
+		            document.getElementById("one").style.backgroundColor = 'green';
 		          }
 		          if(phils[1]==2)
 		          {
-		            document.getElementById("two").style.backgroundColor = '#FF0000';
+		            document.getElementById("two").style.backgroundColor = 'green';
 		          }
 		          if(phils[2]==2)
 		          {
-		            document.getElementById("three").style.backgroundColor = '#FF0000';
+		            document.getElementById("three").style.backgroundColor = 'green';
 		          }
 		          if(phils[3]==2)
 		          {
-		            document.getElementById("four").style.backgroundColor = '#FF0000';
+		            document.getElementById("four").style.backgroundColor = 'green';
 		          }
 		          if(phils[4]==2)
 		          {
-		            document.getElementById("five").style.backgroundColor = '#FF0000';
+		            document.getElementById("five").style.backgroundColor = 'green';
 		          }
 
 		          if(forks[0]==0)
@@ -493,23 +493,23 @@
 
 		          if(forks[0]==1)
 		          {
-		            document.getElementById("first").style.backgroundColor = '#FF0000';
+		            document.getElementById("first").style.backgroundColor = 'green';
 		          }
 		          if(forks[1]==1)
 		          {
-		            document.getElementById("second").style.backgroundColor = '#FF0000';
+		            document.getElementById("second").style.backgroundColor = 'green';
 		          }
 		          if(forks[2]==1)
 		          {
-		            document.getElementById("third").style.backgroundColor = '#FF0000';
+		            document.getElementById("third").style.backgroundColor = 'green';
 		          }
 		          if(forks[3]==1)
 		          {
-		            document.getElementById("fourth").style.backgroundColor = '#FF0000';
+		            document.getElementById("fourth").style.backgroundColor = 'green';
 		          }
 		          if(forks[4]==1)
 		          {
-		            document.getElementById("fifth").style.backgroundColor = '#FF0000';
+		            document.getElementById("fifth").style.backgroundColor = 'green';
 		          }
       
   }
