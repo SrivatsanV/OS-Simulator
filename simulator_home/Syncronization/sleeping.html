@@ -15,6 +15,11 @@
 
     <style>
         body{ font-family: 'PT Sans', sans-serif; } 
+        @keyframes FadeOut {
+  0% {
+    /* position: absolute; */
+    opacity: 0;
+  }
     </style>	
 
 <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -48,13 +53,12 @@
 	</nav>
  <br><br><br>
   <div class="page-header" >
-    <h1 style="float:center">Sleeping Barber</h1>      
+    <h1 align="center" style="float:center">Sleeping Barber</h1>      
   </div>
 
   <div>
       <form>
-        <textarea id="doc" style="height:23%;width:15%;position:absolute;left:3%;font-size:17px; color : white; background-color:black;border:solid 2px orange; " disabled="">
-
+        <textarea id="doc" style="height:23%;width:15%;position:absolute;left:3%;font-size:17px; color : white; background-color:black;border:solid 2px white; " disabled="">
 def Barber():
   while true:                  
     wait(custReady)            
@@ -69,7 +73,7 @@ def Barber():
 
     <div>
       <form>
-        <textarea id="doc" style="height:23%;width:15%;position:absolute;right:3%;font-size:17px;color : white; background-color:black;border:solid 2px orange; " disabled="">
+        <textarea id="doc" style="height:23%;width:15%;position:absolute;right:3%;font-size:17px;color : white; background-color:black;border:solid 2px white; " disabled="">
 def Customer():
     wait(accessWRSeats)         
     if numberOfFreeWRSeats > 0:
@@ -85,19 +89,19 @@ def Customer():
       </form>
     </div>
 
-    <button type = "button", id ="room", name = "room", style="height:50%;width:65%;position:absolute;top:45%;left:15%;background-color:  #CD853F"> </button>
+    <button type = "button", id ="room", name = "room", style="height:50%;width:62%;position:absolute;top:45%;left:19%;background-color:  #90CAF9"> </button>
 
 
-    <button type = "button", id ="mirror", name = "mirror", style="height:40%;width:1%;position:absolute;top:45%;left:15%;background-color:#00BFFF"> </button>
+    <button type = "button", id ="mirror", name = "mirror", style="height:40%;width:1%;position:absolute;top:45%;left:19%;background-color:#00BFFF"> </button>
 
 
 
-<img src="http://icons.iconarchive.com/icons/icons8/ios7/512/Hair-Barbers-Chair-icon.png" style="position: absolute;height: 100px;width: 100px; top: 60%;left:19%; "  id="chair">
+<img src="http://icons.iconarchive.com/icons/icons8/ios7/512/Hair-Barbers-Chair-icon.png" style="position: absolute;height: 100px;width: 100px; top: 60%;left:27%; "  id="chair">
 
-<img src="http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Emo-Haircut-icon.png" style="position: absolute;height: 80px;width: 80px; top: 57%;left:20%; visibility: hidden;"  id="cust">
+<img src="http://icons.iconarchive.com/icons/designbolts/free-male-avatars/128/Male-Avatar-Emo-Haircut-icon.png" style="position: absolute;height: 80px;width: 80px; top: 57%;left:28%; visibility: hidden;"  id="cust">
 
 
-     <img src="http://icons.iconarchive.com/icons/martin-berube/people/128/chef-icon.png" style="position: absolute;height: 100px;width: 100px; top: 60%;left:24%; visibility: hidden;"  id="barber">
+     <img src="http://icons.iconarchive.com/icons/martin-berube/people/128/chef-icon.png" style="position: absolute;height: 100px;width: 100px; top: 60%;left:32%; visibility: hidden;"  id="barber">
   
 
 
@@ -121,19 +125,19 @@ def Customer():
 
 
 
-    <button class="btn btn-primary" id ="prod", type ="button", onclick ="produce()", style ="height:10%;width:13%;position:absolute;top:20%;left:25%;font-size:25px">Enter</button>
-    <button class="btn btn-primary" id ="con", type ="button", onclick ="exit()", style ="height:10%;width:13%;position:absolute;top:20%;left:55%;font-size:25px" disabled>Exit</button>
+    <button class="btn btn-primary" id ="prod", type ="button", onclick ="produce()", style ="height:10%;width:13%;position:absolute;top:30%;left:32%;font-size:25px">Enter</button>
+    <button class="btn btn-primary" id ="con", type ="button", onclick ="exit()", style ="height:10%;width:13%;position:absolute;top:30%;left:55%;font-size:25px" disabled>Exit</button>
 
-    <button class="btn btn-warning" id ="count", type ="button" style ="height:6%;width:9%;position:absolute;top:30%;left:55%;">waiting = 0</button>
+    <button class="btn btn-success" id ="count", type ="button" style ="height:6%;width:9%;position:absolute;top:55%;right:6%;">waiting = 0</button>
 
 
-    <button class="btn btn-warning" id ="buffer-size", type ="button" style ="height:6%;width:9%;position:absolute;top:30%;left:25%;">Waiting Seats =5</button>
+    <button class="btn btn-success" id ="buffer-size", type ="button" style ="height:6%;width:9%;position:absolute;top:65%;right:6%;">Waiting Seats =5</button>
 
 
 
  <button type = "button", id ="door", name = "door", style="height:3%;width:10%;position:absolute;top:92%;left:25%;background-color:brown"> </button>
 
- <button type = "button", id ="curtain", name = "curtain", style="height:44%;width:0.5%;position:absolute;top:45%;left:55%;background-color:#E0E0E0"> </button>
+ <button type = "button", id ="curtain", name = "curtain", style="height:44%;width:0.5%;position:absolute;top:45%;left:50%;background-color:#E0E0E0"> </button>
 
 
 
@@ -339,3 +343,4 @@ document.getElementById("bed").style.visibility = 'visible';
 
   </div>
 </body>
+</html>
