@@ -32,7 +32,18 @@
         </button>
       </div>
       <div class="modal-body">
-        This algorithm targets the page that won't be used for the longest time. It requires the OS to have information about the incoming requests beforehand.
+				<font color="black">
+					One result of the discovery of Belady’s anomaly was the search for an optimal
+page-replacement algorithm—the algorithm that has the lowest page-fault
+rate of all algorithms and will never suffer from Belady’s anomaly. Such an
+algorithm does exist and has been called OPT or MIN . It is simply this:
+Replace the page that will not be used for the longest period of time.
+Use of this page-replacement algorithm guarantees the lowest possible page-
+fault rate for a fixed number of frames.<br /><br />
+Unfortunately, the optimal page-replacement algorithm is difficult to
+implement, because it requires future knowledge of the reference string. As a result, the optimal algorithm is used mainly for comparison
+studies.
+				</font>
       </div>
     </div>
   </div>
@@ -62,12 +73,14 @@
 					<div class="form-group row" style="margin-left:40px;width:25vw;display:block">
 							<input type = "text" id="rs" class="form-control" placeholder="Enter the Reference string:">
 					</div>
-						<input type = "button" style="margin-left:70px; margin-bottom:20px" class="btn btn-primary" onclick = "optimal()" value = "Compute">
+						<input type = "button" style="margin-left:40px; margin-bottom:20px" class="btn btn-primary" onclick = "optimal()" value = "Compute">
+						<input type="reset" style="margin-left:45%; margin-bottom:20px; display:none;" class="btn btn-outline-primary animated fadeIn" value="New Test Case" onClick="window.location.reload()" id="resetbtn">
 					<div id="div1" class="table-responsive" style="width:80vw;margin:auto;text-align:center"></div>
 					<div id="sp1"></div>
 					<div id="sp2"></div>
 				</div>
 			</form>
+			<div id="bottom"></div>
 			 </body>
 			 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 			 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -85,6 +98,16 @@ function optimal()
 {
  f = document.getElementById("frames").value;
  rs=document.getElementById("rs").value;
+ var isnum = /^\d+$/.test(rs);
+ if(f <= 0){
+	 alert( "Please provide proper input" );
+	 return;
+ }
+ else if(!isnum){
+	 alert( "Please use numbers in reference string" );
+	 return;
+ }
+ var x = document.getElementById("resetbtn").style.display = "block";
 console.log(f);
 console.log(rs);
 var prev;
@@ -232,9 +255,12 @@ var index=-9999;
 			return color;
 			 }
 			 console.log(m);
+			 document.getElementById( 'bottom' ).scrollIntoView();
 txt = txt + "\n";
 
 $('input[type="button"]').attr('disabled','disabled');
+document.getElementById("frames").disabled = true;
+document.getElementById("rs").disabled = true;
 }
 
 

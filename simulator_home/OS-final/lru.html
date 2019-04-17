@@ -33,7 +33,17 @@
         </button>
       </div>
       <div class="modal-body">
-        In Least Recently Used (LRU) algorithm is a Greedy algorithm where the page to be replaced is least recently used. The idea is based on locality of reference, the least recently used page is not likely.
+        <font color="black">
+					LRU replacement associates with each page the time of that page’s last use.
+	When a page must be replaced, LRU chooses the page that has not been used
+	for the longest period of time. We can think of this strategy as the optimal
+	page-replacement algorithm looking backward in time, rather than forward.
+<br /><br />
+The LRU policy is often used as a page-replacement algorithm and
+is considered to be good. The major problem is how to implement LRU
+replacement. An LRU page-replacement algorithm may require substantial
+hardware assistance.
+</font>
       </div>
     </div>
   </div>
@@ -62,13 +72,14 @@
         <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
                 <input type = "text" id="rs" class="form-control" placeholder="Enter the Reference string:">
         </div>
-            <input type = "button" style="margin-left:70px; margin-bottom:20px" class="btn btn-primary" onclick = "lru()" value = "Compute">
-						<input type="reset" style="margin-left:40px; margin-bottom:20px; display:none;" class="btn btn-outline-primary animated fadeIn" value="New Test Case" onClick="window.location.reload()" id="resetbtn">
+            <input type = "button" style="margin-left:40px; margin-bottom:20px" class="btn btn-primary" onclick = "lru()" value = "Compute">
+						<input type="reset" style="margin-left:45%; margin-bottom:20px; display:none;" class="btn btn-outline-primary animated fadeIn" value="New Test Case" onClick="window.location.reload()" id="resetbtn">
 		<div id="div1" class="table-responsive" style="width:80vw;margin:auto;text-align:center"></div>
 		<div id="sp1"></div>
 		<div id="sp2"></div>
     </div>
 </form>
+<div id="bottom"></div>
  </body>
  <!-- <script type="text/javascript" src="index.js"></script> -->
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -89,6 +100,16 @@ function lru()
 {
  f = document.getElementById("frames").value;
  rs=document.getElementById("rs").value;
+ var isnum = /^\d+$/.test(rs);
+ if(f <= 0){
+	 alert( "Please provide proper input" );
+	 return;
+ }
+ else if(!isnum){
+	 alert( "Please use numbers in reference string" );
+	 return;
+ }
+ var x = document.getElementById("resetbtn").style.display = "block";
 console.log(f);
 console.log(rs);
 var prev;
@@ -233,8 +254,11 @@ var index;
 			return color;
 			 }
 			 console.log(m);
+			 document.getElementById( 'bottom' ).scrollIntoView();
 txt = txt + "\n";
 console.log(txt);
 $('input[type="button"]').attr('disabled','disabled');
+document.getElementById("frames").disabled = true;
+document.getElementById("rs").disabled = true;
 }
 </script>
