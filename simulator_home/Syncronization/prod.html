@@ -7,48 +7,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="producer.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <script src ="producer.js"></script>
 </head>
 <body style="height:1500px">
 
     <style>
-        body{ font-family: 'PT Sans', sans-serif; } 
-        @keyframes FadeOut {
-  0% {
-    /* position: absolute; */
-    opacity: 0;
-  }
-
-  75% {
-    /* position: absolute; */
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-.heading{
-opacity: 1;
-  animation-name: FadeOut;
-  animation-duration: 5s;
-
-	}
+        
     </style>	
-
-<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">OS simulator</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-      <li class="active"><a href="#">Wiki</a></li>
-    </ul>
-  </div>
-</nav> -->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
 		<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
@@ -73,7 +41,7 @@ opacity: 1;
   </div>
 
   <div>
-      <form>
+      <!-- <form>
         <textarea id="doc" 
         style="height:28%;
         width:15%;
@@ -102,11 +70,11 @@ while(1)
       }while(true)
   }
         </textarea>
-      </form>
+      </form> -->
    </div>
 
     <div>
-      <form>
+      <!-- <form>
         <textarea id="doc" style="height:28%;
         width:15%;
         position:absolute;
@@ -134,11 +102,8 @@ signal(empty);
 }while(true)
   }
         </textarea>
-      </form>
+      </form> -->
     </div>
-
-
-
 
 
  <button class="btn btn-primary" id ="produce button", type ="button", onclick ="produce()", style ="height:10%;border-radius: 20px;width:165px;position:absolute;top:40%;left:30%;font-size:25px;">Produce</button>
@@ -170,225 +135,225 @@ signal(empty);
 
 
 <script type="text/javascript">
-	 var queue = [0,0,0,0,0]; var flag=0;
-      var rear =-1; var front =-1;
+// 	 var queue = [0,0,0,0,0]; var flag=0;
+//       var rear =-1; var front =-1;
 
-      function counter()
-      {
-        var counter = rear-front +1;
-       // console.log(rear)
-        if(rear == -1 )
-        {
-          var change = document.getElementById("count");
-          change.innerHTML ="counter = 0"
-        }
-        else if(counter==1)
-        {
-          var change = document.getElementById("count");
-          change.innerHTML ="counter = 1"
-        }
-        if(counter==2)
-        {
-          var change = document.getElementById("count");
-          change.innerHTML ="counter = 2"
-        }
-        if(counter==3)
-        {
-          var change = document.getElementById("count");
-          change.innerHTML ="counter = 3"
-        }
+//       function counter()
+//       {
+//         var counter = rear-front +1;
+//        // console.log(rear)
+//         if(rear == -1 )
+//         {
+//           var change = document.getElementById("count");
+//           change.innerHTML ="counter = 0"
+//         }
+//         else if(counter==1)
+//         {
+//           var change = document.getElementById("count");
+//           change.innerHTML ="counter = 1"
+//         }
+//         if(counter==2)
+//         {
+//           var change = document.getElementById("count");
+//           change.innerHTML ="counter = 2"
+//         }
+//         if(counter==3)
+//         {
+//           var change = document.getElementById("count");
+//           change.innerHTML ="counter = 3"
+//         }
 
-        if(counter==4)
-        {
-          var change = document.getElementById("count");
-          change.innerHTML ="counter = 4"
-        }
-        if(counter==5)
-        {
-          var change = document.getElementById("count");
-          change.innerHTML ="counter = 5"
-        }
-    }
+//         if(counter==4)
+//         {
+//           var change = document.getElementById("count");
+//           change.innerHTML ="counter = 4"
+//         }
+//         if(counter==5)
+//         {
+//           var change = document.getElementById("count");
+//           change.innerHTML ="counter = 5"
+//         }
+//     }
 
-    function check()
-      {
-        if(flag>0)
-        {
-          document.getElementById("consume button").disabled = false;
-        }
-        if(flag<4)
-        {
-          document.getElementById("produce button").disabled = false;
-        }
-      }
+//     function check()
+//       {
+//         if(flag>0)
+//         {
+//           document.getElementById("consume button").disabled = false;
+//         }
+//         if(flag<4)
+//         {
+//           document.getElementById("produce button").disabled = false;
+//         }
+//       }
 
-       function color()
-      {
-        if(queue[0]==1)
-        {
-          document.getElementById("one").style.backgroundColor = '#8BC34A';
-        }
-        if(queue[1]==1)
-        {
-          document.getElementById("two").style.backgroundColor = '#8BC34A';
-        }
-        if(queue[2]==1)
-        {
-          document.getElementById("three").style.backgroundColor = '#8BC34A';
-        }
-        if(queue[3]==1)
-        {
-          document.getElementById("four").style.backgroundColor = '#8BC34A';
-        }
-        if(queue[4]==1)
-        {
-          document.getElementById("five").style.backgroundColor = '#8BC34A';
-        }
+//        function color()
+//       {
+//         if(queue[0]==1)
+//         {
+//           document.getElementById("one").style.backgroundColor = '#8BC34A';
+//         }
+//         if(queue[1]==1)
+//         {
+//           document.getElementById("two").style.backgroundColor = '#8BC34A';
+//         }
+//         if(queue[2]==1)
+//         {
+//           document.getElementById("three").style.backgroundColor = '#8BC34A';
+//         }
+//         if(queue[3]==1)
+//         {
+//           document.getElementById("four").style.backgroundColor = '#8BC34A';
+//         }
+//         if(queue[4]==1)
+//         {
+//           document.getElementById("five").style.backgroundColor = '#8BC34A';
+//         }
       
 
-        if(queue[0]==0)
-        {
-          document.getElementById("one").style.backgroundColor = '#FFFFFF';
-        }
-        if(queue[1]==0)
-        {
-          document.getElementById("two").style.backgroundColor = '#FFFFFF';
-        }
-        if(queue[2]==0)
-        {
-          document.getElementById("three").style.backgroundColor = '#FFFFFF';
-        }
-        if(queue[3]==0)
-        {
-          document.getElementById("four").style.backgroundColor = '#FFFFFF';
-        }
-        if(queue[4]==0)
-        {
-          document.getElementById("five").style.backgroundColor = '#FFFFFF';
-        }
+//         if(queue[0]==0)
+//         {
+//           document.getElementById("one").style.backgroundColor = '#FFFFFF';
+//         }
+//         if(queue[1]==0)
+//         {
+//           document.getElementById("two").style.backgroundColor = '#FFFFFF';
+//         }
+//         if(queue[2]==0)
+//         {
+//           document.getElementById("three").style.backgroundColor = '#FFFFFF';
+//         }
+//         if(queue[3]==0)
+//         {
+//           document.getElementById("four").style.backgroundColor = '#FFFFFF';
+//         }
+//         if(queue[4]==0)
+//         {
+//           document.getElementById("five").style.backgroundColor = '#FFFFFF';
+//         }
    
-        //check();
-      }
+//         //check();
+//       }
 
 
- function produce()
-      {
-        // flag++;
-          if(flag==5)
-          {
-            document.getElementById("produce button").disabled = true;
-            alert("Buffer full can't add the produced item to the buffer!");
-            return ;
-          }
-         // document.getElementById("prod1").style.color=green;
-          if(front == -1 && rear ==-1)
-          {
-            front =0;
-            rear =0;
-            queue[rear] =1;
-            flag++;
-          }
-          else
-          {
-              rear = (rear+1)%5;
-              queue[rear]=1;
-              flag++;
-          }
+//  function produce()
+//       {
+//         // flag++;
+//           if(flag==5)
+//           {
+//             document.getElementById("produce button").disabled = true;
+//             alert("Buffer full can't add the produced item to the buffer!");
+//             return ;
+//           }
+//          // document.getElementById("prod1").style.color=green;
+//           if(front == -1 && rear ==-1)
+//           {
+//             front =0;
+//             rear =0;
+//             queue[rear] =1;
+//             flag++;
+//           }
+//           else
+//           {
+//               rear = (rear+1)%5;
+//               queue[rear]=1;
+//               flag++;
+//           }
 
-        color();
+//         color();
 
-        if(flag==1)
-        {
-          document.getElementById("consume button").disabled = false;
-        }
-        counter();
-      }
+//         if(flag==1)
+//         {
+//           document.getElementById("consume button").disabled = false;
+//         }
+//         counter();
+//       }
 
 
-        function consume()
-      {
-        //   myMove();
-        if(flag==0)
-        {
-          document.getElementById("consume button").disabled = true;
-          alert("No item to consume for the consumer!");
-          return ;
-        }
+//         function consume()
+//       {
+//         //   myMove();
+//         if(flag==0)
+//         {
+//           document.getElementById("consume button").disabled = true;
+//           alert("No item to consume for the consumer!");
+//           return ;
+//         }
 
         
     
-        if(front==rear)
-        {
-          queue[front] =0;
-          front =-1;
-          rear =-1;
-          flag--;
-        }
-        else
-        {
-          if(flag==5)
-          {
-            document.getElementById("produce button").disabled = true;
-            queue[front]=0;
-            front = (front+1)%5;
-            flag--;
-          }else
-          {
-            queue[front]=0;
-            front = (front+1)%5;
-            flag--;
-          }
+//         if(front==rear)
+//         {
+//           queue[front] =0;
+//           front =-1;
+//           rear =-1;
+//           flag--;
+//         }
+//         else
+//         {
+//           if(flag==5)
+//           {
+//             document.getElementById("produce button").disabled = true;
+//             queue[front]=0;
+//             front = (front+1)%5;
+//             flag--;
+//           }else
+//           {
+//             queue[front]=0;
+//             front = (front+1)%5;
+//             flag--;
+//           }
          
-        }
-        color();
-        counter();
+//         }
+//         color();
+//         counter();
 
-        if(flag==4)
-        {
-            document.getElementById("produce button").disabled = false;
-        }
-      }
+//         if(flag==4)
+//         {
+//             document.getElementById("produce button").disabled = false;
+//         }
+//       }
       
 
 
-   function barrieradd()
-      {
-             var n = Math.random();
-              num = Math.floor(n*2);
+//    function barrieradd()
+//       {
+//              var n = Math.random();
+//               num = Math.floor(n*2);
 
-              if(flag==0 && num==1)
-              {
-              	              	 		              alert("No item to consume for the consumer!");		          
-              	                  	document.getElementById("num").innerHTML = "No item to consume";
-              }
+//               if(flag==0 && num==1)
+//               {
+//               	              	 		              alert("No item to consume for the consumer!");		          
+//               	                  	document.getElementById("num").innerHTML = "No item to consume";
+//               }
 
-            else if(flag==5 && num==0)
-              {
+//             else if(flag==5 && num==0)
+//               {
 
-              	                  	document.getElementById("num").innerHTML = "buffer Full to produce";
- 										alert("Buffer full can't add the produced item to the buffer!");		                            
-              }
-           else if(num==0)
-                  {     
+//               	                  	document.getElementById("num").innerHTML = "buffer Full to produce";
+//  										alert("Buffer full can't add the produced item to the buffer!");		                            
+//               }
+//            else if(num==0)
+//                   {     
 
-                  	document.getElementById("prod1").style.backgroundColor='green';
-           document.getElementById("con").style.backgroundColor='white';
+//                   	document.getElementById("prod1").style.backgroundColor='green';
+//            document.getElementById("con").style.backgroundColor='white';
 
-                  	document.getElementById("num").innerHTML = "producer";
-       				produce();
-       			}
-           else
-           {
-					document.getElementById("con").style.backgroundColor='green';
-          		  document.getElementById("prod1").style.backgroundColor='white';
-
-
-                    document.getElementById("num").innerHTML = "consumer";
-           			consume();
-           }
+//                   	document.getElementById("num").innerHTML = "producer";
+//        				produce();
+//        			}
+//            else
+//            {
+// 					document.getElementById("con").style.backgroundColor='green';
+//           		  document.getElementById("prod1").style.backgroundColor='white';
 
 
-      }  
+//                     document.getElementById("num").innerHTML = "consumer";
+//            			consume();
+//            }
+
+
+//       }  
 
 
       

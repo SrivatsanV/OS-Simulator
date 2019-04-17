@@ -57,42 +57,17 @@
   </div>
 
   <div>
-      <form>
-        <textarea id="doc" style="height:23%;width:15%;position:absolute;left:3%;font-size:17px; color : white; background-color:black;border:solid 2px white; " disabled="">
-def Barber():
-  while true:                  
-    wait(custReady)            
-    wait(accessWRSeats)         
-    numberOfFreeWRSeats += 1    
-    signal(barberReady)        
-    signal(accessWRSeats)       
-    # (Cut hair here.
-        </textarea>
-      </form>
+      
     </div>
 
     <div>
-      <form>
-        <textarea id="doc" style="height:23%;width:15%;position:absolute;right:3%;font-size:17px;color : white; background-color:black;border:solid 2px white; " disabled="">
-def Customer():
-    wait(accessWRSeats)         
-    if numberOfFreeWRSeats > 0:
-      numberOfFreeWRSeats -= 1 
-      signal(custReady)        
-      signal(accessWRSeats)    
-      wait(barberReady)        
-      # (Have hair cut here.)
-    else:                       
-          signal(accessWRSeats)    
-      # (Leave without a haircut.)
-        </textarea>
-      </form>
+      
     </div>
 
-    <button type = "button", id ="room", name = "room", style="height:50%;width:62%;position:absolute;top:45%;left:19%;background-color:  #90CAF9"> </button>
+    <button type = "button", id ="room", name = "room", style="height:50%;width:62%;position:absolute;top:45%;left:19%;background-color:  #EEEEEE"> </button>
 
 
-    <button type = "button", id ="mirror", name = "mirror", style="height:40%;width:1%;position:absolute;top:45%;left:19%;background-color:#00BFFF"> </button>
+    <button type = "button", id ="mirror", name = "mirror", style="height:40%;width:0.5%;position:absolute;top:45%;left:19%;background-color:#424242"> </button>
 
 
 
@@ -128,16 +103,16 @@ def Customer():
     <button class="btn btn-primary" id ="prod", type ="button", onclick ="produce()", style ="height:10%;border-radius: 20px;width:13%;position:absolute;top:30%;left:32%;font-size:25px">Enter</button>
     <button class="btn btn-primary" id ="con", type ="button", onclick ="exit()", style ="height:10%;width:13%;border-radius: 20px;position:absolute;top:30%;left:55%;font-size:25px" disabled>Exit</button>
 
-    <button class="btn btn-success" id ="count", type ="button" style ="height:6%;border-radius: 20px;width:9%;position:absolute;top:55%;right:6%;">waiting = 0</button>
+    <button class="btn btn-success" id ="count", type ="button" style ="height:6%;border-radius: 20px;width:9%;position:absolute;top:62%;right:6%;">waiting = 0</button>
 
 
-    <button class="btn btn-success" id ="buffer-size", type ="button" style ="height:6%;border-radius: 20px;width:9%;position:absolute;top:65%;right:6%;">Waiting Seats =5</button>
+    <button class="btn btn-success" id ="buffer-size", type ="button" style ="height:6%;border-radius: 20px;width:9%;position:absolute;top:72%;right:6%;">Waiting Seats =5</button>
 
 
 
- <button type = "button", id ="door", name = "door", style="height:3%;width:10%;position:absolute;top:92%;left:25%;background-color:brown"> </button>
+ <button type = "button", id ="door", name = "door", style="height:3%;width:10%;position:absolute;top:92%;left:25%;background-color:#424242"> </button>
 
- <button type = "button", id ="curtain", name = "curtain", style="height:44%;width:0.5%;position:absolute;top:45%;left:50%;background-color:#E0E0E0"> </button>
+ <button type = "button", id ="curtain", name = "curtain", style="height:40%;width:0.5%;position:absolute;top:45%;left:50%;background-color:#424242"> </button>
 
 
 
