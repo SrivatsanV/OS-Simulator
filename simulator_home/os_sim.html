@@ -42,17 +42,19 @@ body, html {
   color: #000;
   font-size: 18px;
 }
-
-.btn {
-
+a{
+  font-size: 20px;
+}
+.btn1 {
+  background: none;
   border: none; /* Remove borders */
   color: white; /* White text */
-  /*padding: 12px 16px; /* Some padding */
+  margin-left:6px; /* Some padding */
   font-size: 16px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
 }
 
-.btn:hover {
+.btn1:hover {
   -webkit-transform: scale(1.7);
   color: white;
 }
@@ -101,7 +103,7 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-      <h1 class="line anim-typewriter text-uppercase" style="color:#fff;">Operating System Simulator<button onclick="scrollFunc()" class="btn"><i class="fas fa-arrow-down"></i>
+      <h1 class="line anim-typewriter text-uppercase" style="color:#fff;">Operating System Simulator<button onclick="scrollFunc()" class="btn1"><i class="fas fa-arrow-down"></i>
       </button></h1>
     </div>
     
@@ -112,98 +114,90 @@ body, html {
 
 
 
-<div id="box">
+<div id="box" style="height:100%;">
 <!-- Container (Portfolio Section) -->
 <div class="jumbotron" style="text-align:center;" >
-  <h2>Topics for Simulation</h3>
-  <p ><em>Here are the essential topics<br> Click on respecive topics for simulation</em></p><br>
+  <h2 style="padding-top:60px;">Topics for Simulation</h2>
+  <p ><em>Click on respecive topics for simulation</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-<div class="images">
+<div class="images" style="padding:60px 0px;">
     <div class="container">
         <div class="row">
-          <div class="col">
-              <div class="card">
+          <div class="col-md-3">
+              <!-- <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Process Scheduling</h4>
                     
                     <a href="Scheduling/index.html" class="btn btn-primary">Click</a>
                   </div>
+                </div> -->
+                <div style="text-align:center">
+                  <div id="file">
+                      <i class="fas fa-folder" style="font-size: 40px;"></i>
+                  </div>
+                  <a href="Scheduling/index.html" style="text-decoration:none;">Process Scheduling</a>
                 </div>
+                <div style="text-align:center;padding-top: 20px;">
+                    <div id="file">
+                        <i class="fas fa-folder" style="font-size: 40px;"></i>
+                    </div>
+                    <a href="Server-Client-Comm/index.html" style="text-decoration:none;">Socket Programming</a>
+                  </div>
           </div>
 
-          <div class="col">
-              <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Dealocks</h4>
-                    
-                    <a href="Deadlock/index.html" class="btn btn-primary">Click</a>
+          <div class="col-md-3">
+                <div style="text-align:center">
+                    <div id="file">
+                        <i class="fas fa-folder" style="font-size: 40px;"></i>
+                    </div>
+                    <a href="Deadlock/index.html" style="text-decoration:none;">Deadlocks</a>
                   </div>
-                </div>
+
+                  <div style="text-align:center;padding-top: 20px;">
+                      <div id="file">
+                          <i class="fas fa-folder" style="font-size: 40px;"></i>
+                      </div>
+                      <a href="OS-final/pegerephome.html" style="text-decoration:none;">Page Replacement Algorithms</a>
+                    </div>
           </div>
 
-          <div class="col">
-              <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Disk Scheduling</h4>
-                    
-                    <a href="disk/disk_scheduling.html" class="btn btn-primary">Click</a>
+          <div class="col-md-3">
+              
+                <div style="text-align:center">
+                    <div id="file">
+                        <i class="fas fa-folder" style="font-size: 40px;"></i>
+                    </div>
+                    <a href="Syncronization/index.html" style="text-decoration:none;">Process Synchronization</a>
                   </div>
-                </div>
+
+                  <div style="text-align:center;padding-top: 20px;">
+                      <div id="file">
+                          <i class="fas fa-folder" style="font-size: 40px;"></i>
+                      </div>
+                      <a href="memory/index.html" style="text-decoration:none;">MFT</a>
+                    </div>
           </div>
 
 
-          <div class="col">
-              <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Synchronization</h4>
-                    
-                    <a href="Syncronization/index.html" class="btn btn-primary">Click</a>
+          <div class="col-md-3">
+                <div style="text-align:center">
+                    <div id="file">
+                        <i class="fas fa-folder" style="font-size: 40px;"></i>
+                    </div>
+                    <a href="disk/disk_scheduling.html" style="text-decoration:none;">Disk Scheduling</a>
                   </div>
-                </div>
+
+                  <div style="text-align:center;padding-top: 20px;">
+                      <div id="file">
+                          <i class="fas fa-folder" style="font-size: 40px;"></i>
+                      </div>
+                      <a href="file-allocation/Index page/index._page.html" style="text-decoration:none;">File Allocation</a>
+                    </div>
           </div>
         </div>
 
-        <div class="row" style="margin:10px 0px;">
-          <div class="col-lg">
-              <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">MFT</h4>
-                    
-                    <a href="memory/index.html" class="btn btn-primary">Click</a>
-                  </div>
-                </div>
-          </div>
-
-          <div class="col-lg">
-              <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Page Replacement Algorithms</h4>
-                    
-                    <a href="OS-final/pegerephome.html" class="btn btn-primary">Click</a>
-                  </div>
-                </div>
-          </div>
-
-          <div class="col-lg">
-              <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">File allocation</h4>
-                    
-                    <a href="file-allocation/Index page/index._page.html" class="btn btn-primary">Click</a>
-                  </div>
-                </div>
-          </div>
-          <div class="col-lg">
-            <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Socket Programming</h4>
-                  
-                  <a href="Server-Client-Comm/index.html" class="btn btn-primary">Click</a>
-                </div>
-              </div>
-        </div>
-        </div>
+      
   </div>
 </div>
 
