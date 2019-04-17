@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<style>
+
+.button1 {
+  background-color: #000000;
+  border: 1px solid rgb(0, 0, 0);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.button1:hover {opacity: 1}
+
+
+  #container {
+  width: 953px;
+  height: 5px;
+  position: absolute;
+  background: white;
+  top: 58%;
+  left: 18%;
+  }
+  #animate {
+  width: 50px;
+  height: 5px;
+  position: absolute;
+  background-color: white;
+  top: 0%;
+  left: 95%;
+  opacity: 0;
+  }
+</style>
+
+<head>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <center><h1 style="background-color:black ;color: white; padding:5px; height:45px;width:450px; border: 2px solid gray;">UDP socket programming <br /></h1></center>
+  <div class="container-fluid" style="background-color:ivory ;padding: 5px;  border: 2px solid rgb(0, 0, 0);font-family:serif">
+    
+
+    <button class="button1" type ="button", onclick ="socket()", style ="height:25px;width:125px;line-height:1">Create Socket</button> This shall create a socket for communication.
+    <br/><br/>
+    <button id ="bind" class="button1" type ="button", onclick ="bind()", style ="height:25px;width:125px;line-height:1" disabled>Bind</button> This shall assign a local socket address address to a socket identified by descriptor socket that has no local socket address assigned.
+    <br/><br/>
+    <button id ="receive" class="button1" type ="button", onclick ="receive()", style ="height:25px;width:125px;line-height:1" disabled>Receive</button> This function receives a message from a connectionless-mode socket.
+    <br/><br/>
+    <button id="send" class="button1" type ="button", onclick ="send()", style ="height:25px;width:125px;line-height:1" disabled>Send</button> This function sends a message to a gived destination address through a connectionless-mode socket.
+    <br/><br/>
+    <button id ="close" class="button1" type ="button", onclick ="closee()", style ="height:25px;width:125px;line-height:1" disabled>Close</button> This function closes the communication.
+
+    <button type = "button", id ="server", name = "server", style="height:125px;width:125px;position:absolute;top:50%;left:10%;border-radius:10px;border:1px solid #000">SERVER </button>
+    <button type = "button", id ="client", name = "client", style="height:125px;width:125px;position:absolute;top:50%;left:80%;border-radius:10px;border:1px solid #000">CLIENT </button>
+
+    <button type = "button", id ="connection", name = "connection", style="height:5px;width:953px;position:absolute;top:58%;left:18%;background-color:white;border:1px solid #FFFFFF"> </button>
+
+    <div id ="container">
+      <div id ="animate"></div>
+    </div>
+
+    <script type ="text/javascript">
+
+    function socket()
+    {
+      var col = "rgb(255, 163, 26)";
+      document.getElementById("server").style.backgroundColor = col;
+      document.getElementById("client").style.backgroundColor = col;
+      document.getElementById("bind").disabled = false;
+    }
+
+    function bind()
+    {
+      document.getElementById("server").style.backgroundColor = '#FF0000';
+      document.getElementById("receive").disabled = false;
+      document.getElementById("close").disabled = false;
+    }
+
+    function receive()
+    {
+      document.getElementById("animate").style.backgroundColor = '#FF0000';
+      document.getElementById("animate").style.opacity = "1.0";
+      document.getElementById("animate").style.height = "15px";
+      document.getElementById("animate").style.width = "15px";
+      document.getElementById("animate").style.borderRadius = "15px";
+      var elem = document.getElementById("animate");
+      var pos = 903;
+      var id = setInterval(frame, 1);
+      function frame()
+      {
+        if (pos == 0)
+        {
+          clearInterval(id);
+          document.getElementById("animate").style.backgroundColor = '#FFFFFF';
+        }
+        else
+        {
+          pos--;
+          elem.style.left = pos + 'px';
+        }
+      }
+      document.getElementById("send").disabled = false;
+    }
+
+    function send()
+    {
+      document.getElementById("animate").style.backgroundColor = '#0000FF'
+      document.getElementById("animate").style.opacity = "1.0";
+      document.getElementById("animate").style.height = "15px";
+      document.getElementById("animate").style.width = "15px";
+      document.getElementById("animate").style.borderRadius = "15px";
+      var elem = document.getElementById("animate");
+      var pos = 0;
+      var id = setInterval(frame, 1);
+      function frame()
+      {
+        if (pos == 903)
+        {
+          clearInterval(id);
+          document.getElementById("animate").style.backgroundColor = '#FFFFFF';
+        }
+        else
+        {
+          pos++;
+          elem.style.left = pos + 'px';
+        }
+      }
+    }
+
+    function closee()
+    {
+      document.getElementById("animate").style.backgroundColor = '#FFFFFF'
+      document.getElementById("server").style.backgroundColor = '#DCDCDC'
+      document.getElementById("client").style.backgroundColor = '#DCDCDC';
+      
+      document.getElementById("bind").disabled = true;
+      document.getElementById("receive").disabled = true;
+      document.getElementById("send").disabled = true;
+      document.getElementById("close").disabled = true;
+    }
+
+
+    </script>
+  </div>
+</body>

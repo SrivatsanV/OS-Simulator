@@ -36,7 +36,7 @@ function displayPartSize() {
     }
     htmlText += 
     `
-    <button type="submit" class="btn btn-primary" id="parts-size-btn">Go</button>
+    <button type="submit" class="btn btn-primary" id="parts-size-btn">Submit</button>
     `;
     $("#parts-size-form").html(htmlText);
     $(document).ready(function() {
@@ -54,8 +54,8 @@ function startColumn2() {
     `;
     $("#add-rem-pro-btns").html(htmlText);
     var htmlText = 
-    `
-    <canvas id="myCanvas" width="170" height="520" style="border:1px solid #d3d3d3;">
+    `<h3>Physical Memory</h3>
+    <canvas id="myCanvas" width="170" height="520" style="border:2px solid red;">
                 Your browser does not support the HTML5 canvas tag.</canvas>
     `;
     $("#canvas").html(htmlText);
@@ -127,7 +127,7 @@ function drawPart(pro_size, pro_id, index) {
                 
     ctx.beginPath();
     ctx.rect(myCanvas_x_start, part_myCanvas_start[index], myCanvas_width, part_size[index]*(500/total_mem_size));
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "#A9A9A9 ";
     ctx.fill();
     
     ctx.beginPath();
@@ -136,7 +136,7 @@ function drawPart(pro_size, pro_id, index) {
     ctx.fill();
 
     ctx.font = "14px Arial bold";
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "#00FA9A";
     ctx.fillText("P-"+ String(pro_id), myCanvas_width/2, part_myCanvas_start[index] + pro_size*(500/total_mem_size)/2);   
 }
 

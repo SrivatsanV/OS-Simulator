@@ -39,13 +39,35 @@ $(document).ready(function(){
   function DisplayList(){
     var table = document.getElementById("ept");
     console.log(stuff[stuff.length-1].no);
-    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td><td>"+stuff[stuff.length-1].io+"</td><td>"+stuff[stuff.length-1].bt2+"</td></tr>");
+    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
   }
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
     var burstTime=parseInt(document.getElementById("bt1").value);
-    var ioTime=parseInt(document.getElementById("io").value);
-    var FinalburstTime=parseInt(document.getElementById("bt2").value);
+    
+
+    if(document.getElementById("at1").value == "") {
+      alert("Arrival time field is empty!");
+      return;
+    }
+
+    if(document.getElementById("bt1").value == "") {
+      alert("Burst time field is empty!");
+      return;
+    }
+
+    if(arrivalTime < 0) {
+      alert("Arrival time cannot be negative!");
+      return;
+    }
+
+    if(burstTime < 0) {
+      alert("Burst time cannot be negative!");
+      return;
+    }
+    var ioTime=parseInt("0");
+    var FinalburstTime=parseInt("0");
+
     console.log(arrivalTime);
     console.log(burstTime);
     var rtj=[];
@@ -70,8 +92,7 @@ $(document).ready(function(){
     console.log(stuff);
     document.getElementById("at1").value="";
     document.getElementById("bt1").value="";
-    document.getElementById("io").value="";
-    document.getElementById("bt2").value="";
+    
     DisplayList();
   };
   $('#start').click(function(){
@@ -220,15 +241,19 @@ $(document).ready(function(){
     if(i<stuff.length){
     var table = document.getElementById("ptable");
     console.log(stuff[i].wt);
-    $("#ptable").append("<tr><td>"+stuff[i].no+"</td><td>"+stuff[i].at+"</td><td>"+stuff[i].bt1+"</td><td>"+stuff[i].io+"</td><td>"+stuff[i].bt2+"</td><td>"+stuff[i].wt+"</td><td>"+stuff[i].tat+"</td></tr>");
+    $("#ptable").append("<tr><td>"+stuff[i].no+"</td><td>"+stuff[i].at+"</td><td>"+stuff[i].bt1+"</td><td>"+stuff[i].wt+"</td><td>"+stuff[i].tat+"</td></tr>");
     drawTable(i+1);
   }
   else
   {
-    $("#Average").append("<b>The average waiting time of the given processes is "+average_wt+"</b><br>");
-    $("#Average").append("<b>The average turn around time of the given processes is "+average_tat+"</b><br>");
-    $("#Average").append("<b>The throughput of the given processes is "+throughput+"</b><br>");
-    $("#Average").append("<b>The CPU efficiency is "+cpu_efficiency+"%</b><br>");
+    var cardAdd = document.getElementById("cardAdd");
+     cardAdd.classList.add("card");
+     var element = document.getElementById("Average");
+    element.classList.add("card-body");
+    $("#Average").append("<b>CPU utilization : "+cpu_efficiency.toFixed(3)+"%</b><br>");
+    $("#Average").append("<b>Overall throughput : "+throughput.toFixed(3)+"</b><br>");
+    $("#Average").append("<b>Average Turn Around time : "+average_tat.toFixed(3)+"</b><br>");
+    $("#Average").append("<b>Average Waiting time: "+average_wt.toFixed(3)+"</b><br>");
   }
 
 }
@@ -268,12 +293,10 @@ body{
   font-size:2 em;
 }
 h1{
-  font-style: italic;
 }
 
 p{
   font-size: 3 em;
-  font-style: italic;
 }
 #ptab{
   display:none;
@@ -328,46 +351,47 @@ p{
   <h1>
     Largest Remaining Time First
   </h1>
-  <h2>
-    Gantt Chart
-  </h2>
   <br>
   <div>
       <h3>Entered Processes:</h3>
-    <table id="ep" class="table table-bordered" style="width:100%">
+    <table id="ep" class="table table-bordered table-striped" style="width:70%;" align="center">
       <thead>
       <th>PNO.</th>
       <th>Arrival Time </th>
-      <th>Burst Time 1 </th>
-      <th>IO </th>
-      <th>Burst Time 2 </th>
+      <th>Burst Time</th>
     </tr>
     <tbody id="ept">
     </tbody>
   </thead>
 </table>
   </div>
-  <input type='number' id='at1' placeholder="arrival time"></input>
-  <input type='number' id='bt1' placeholder="burst time 1"></input>
-  <input type='number' id='io' placeholder="io time"></input>
-  <input type='number' id='bt2' placeholder="burst time 2"></input>
+  <div style="width:400px; margin: auto; ">
+    <div class="form-group">
+      <input type='number' class="form-control" min='0' id='at1' placeholder="arrival time"></input>
+    </div>
+
+    <div class="form-group">
+      <input type='number'  class="form-control " id='bt1' placeholder="burst time"></input>
+    </div>
+    </div>
   <button id="add" class="btn btn-secondary" onclick="AddtoList()">Add</button>
   <br>
   <button id="start" class="btn btn-secondary">Start</button>
   <br>
   <br>
+  <h2>
+    Gantt Chart
+  </h2>
   <div id="outer-div">
   </div>
   <br><br><br>
-  <div class="panel-content">
-  <table id="ptab" class="table table-bordered" style="width:100%">
+  <div class="panel-content" id="cardAdd">
+  <table id="ptab" class="table table-bordered table-striped" style="width:70%;margin-top:20px;" align="center">
   <thead>
   <tr id="thead">
   <th>PNO.</th>
   <th>Arrival time</th>
-  <th>Burst time1</th>
-  <th>I/O time</th>
-  <th>Burst time2</th>
+  <th>Burst time</th>
   <th>Waiting time</th>
   <th>Turn Around Time</th>
   </tr>
@@ -376,8 +400,9 @@ p{
   </tbody>
   </thead>
   </table>
-    </div>
-    <p id="Average"></p>
+    <div id="Average"></div>
+  </div>
+
 </div>
 </body>
 </html>
