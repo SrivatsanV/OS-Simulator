@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="./bootstrap.min.css">
 
 <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 </head>
 <style>
@@ -13,9 +14,9 @@
 		ul{
 			list-style-type: none;
 		}
-		a:link{
-			text-decoration: none;
-			font-size: 1.5em;
+		a{
+			
+			font-size: 1.2em;
 
 		}
 </style>
@@ -44,23 +45,83 @@
 	<hr class="my-2">
 	<br/>
 	<div>
-		<ul>
-			<li><a href='fcfs.html' class="btn btn-outline-secondary">FCFS</a></li>
-		<br>
-			<li><a href='srtf.html' class="btn btn-outline-secondary">SJF Preemptive</a></li>
-		<br>
-			<li><a href='sjf.html' class="btn btn-outline-secondary">SJF Non-Preemptive</a></li>
-		<br>
-		<li><a href='ljf.html'class="btn btn-outline-secondary">Longest Job first</a></li>
-		<br>
-		<li><a href='lrtf.html'class="btn btn-outline-secondary">Largest Remaining Time first</a></li>
-		<br>
-		<li><a href='priority.html' class="btn btn-outline-secondary">Priority Preemptive</a></li>
-		<br>
-		<li><a href='prioritynonpre.html' class="btn btn-outline-secondary">Priority Non-Preemptive</a></li>
-		<br>
-			<li><a href="round-robin.html" class="btn btn-outline-secondary">Round robin scheduling</a></li>
-	</ul>
+		
+	<div class="container">
+			<div class="row">
+			  <div class="col-md-3">
+				  <!-- <div class="card">
+					  <div class="card-body">
+						<h4 class="card-title">Process Scheduling</h4>
+						
+						<a href="Scheduling/index.html" class="btn btn-primary">Click</a>
+					  </div>
+					</div> -->
+					<div style="text-align:center">
+					  <div id="file">
+						  <i class="far fa-file" style="font-size: 40px;"></i>
+					  </div>
+					  <a href="fcfs.html" style="text-decoration:none;">First Come First Serve</a>
+					</div>
+					<div style="text-align:center;padding-top: 20px;">
+						<div id="file">
+							<i class="far fa-file" style="font-size: 40px;"></i>
+						</div>
+						<a href="sjf.html" style="text-decoration:none;">Shortest Job First</a>
+					  </div>
+			  </div>
+	
+			  <div class="col-md-3">
+					<div style="text-align:center">
+						<div id="file">
+							<i class="far fa-file" style="font-size: 40px;"></i>
+						</div>
+						<a href="srtf.html" style="text-decoration:none;">Shortest Remaining Time First</a>
+					  </div>
+	
+					  <div style="text-align:center;padding-top: 20px;">
+						  <div id="file">
+							  <i class="far fa-file" style="font-size: 40px;"></i>
+						  </div>
+						  <a href="ljf.html" style="text-decoration:none;">Longest Job First</a>
+						</div>
+			  </div>
+	
+			  <div class="col-md-3">
+				  
+					<div style="text-align:center">
+						<div id="file">
+							<i class="far fa-file" style="font-size: 40px;"></i>
+						</div>
+						<a href="lrtf.html" style="text-decoration:none;">Longest Remaining Time First</a>
+					  </div>
+	
+					  <div style="text-align:center;padding-top: 20px;">
+						  <div id="file">
+							  <i class="far fa-file" style="font-size: 40px;"></i>
+						  </div>
+						  <a href="priority.html" style="text-decoration:none;">Priority</a>
+						</div>
+			  </div>
+	
+	
+			  <div class="col-md-3">
+					<div style="text-align:center">
+						<div id="file">
+							<i class="far fa-file" style="font-size: 40px;"></i>
+						</div>
+						<a href="round-robin.html" style="text-decoration:none;">Round Robin</a>
+					  </div>
+	
+					  <div style="text-align:center;padding-top: 20px;">
+						  <div id="file">
+							  <i class="far fa-file" style="font-size: 40px;"></i>
+						  </div>
+						  <a href="prioritynonpre.html" style="text-decoration:none;">Priority Non Premptive</a>
+						</div>
+			  </div>
+			</div>
+	
+		  
 	</div>
 </div>
 </body>
