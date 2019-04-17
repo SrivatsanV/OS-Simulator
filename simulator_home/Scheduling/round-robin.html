@@ -297,6 +297,10 @@ function Dequeue(){
   }
   else
   {
+    var cardAdd = document.getElementById("cardAdd");
+     cardAdd.classList.add("card");
+     var element = document.getElementById("Average");
+    element.classList.add("card-body");
     $("#Average").append("<b>CPU utilization : "+cpu_efficiency.toFixed(3)+"%</b><br>");
     $("#Average").append("<b>Overall throughput : "+throughput.toFixed(3)+"</b><br>");
     $("#Average").append("<b>Average Turn Around time : "+average_tat.toFixed(3)+"</b><br>");
