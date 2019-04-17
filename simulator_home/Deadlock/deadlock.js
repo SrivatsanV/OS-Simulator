@@ -32,8 +32,8 @@ function addInitials()
 			var d1=document.getElementById("allocated");
 			d1.innerHTML="";
 			var p = document.createElement("h5");
-			p.setAttribute("style","text-align:center");
-			p.textContent = "Enter allocation matrix ( 1 or 0) ";
+			p.setAttribute("style","text-align:left");
+			p.textContent = "Allocation matrix ( 1 or 0) ";
 			d1.appendChild(p);
 			var br=document.createElement("br");
 			for(var i=0;i<index;i++)
@@ -77,8 +77,8 @@ function addInitials()
 			c.setAttribute("style","width:100%;height:50px;");
 			d1.appendChild(c);
 			var p2 = document.createElement("h5");
-			p2.setAttribute("style","text-align:center");
-			p2.textContent = "Enter need matrix ( 1 or 0) ";
+			p2.setAttribute("style","text-align:left");
+			p2.textContent = "Need matrix ( 1 or 0) ";
 			d2.appendChild(p2);
 			var br=document.createElement("br");
 			for(var i=0;i<index;i++)

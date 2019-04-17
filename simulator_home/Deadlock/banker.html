@@ -17,10 +17,13 @@
 		h5 {
 			text-align: center;
 		}
+
+		
 	</style>
 </head>
 
 <body>
+	
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
 		<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -39,9 +42,8 @@
 			</ul>
 		</div>
 	</nav>
-	<br><br><br>
 	<div >
-		<h1> Banker's Algorithm</h1>
+		<h1> Banker's Algorithm Simulation</h1>
 	</div>
 
 	<!-- <div style = "width: 100%;;margin-left:10px;text-align:left;">
@@ -50,22 +52,18 @@
 	   	<button class="btn btn-primary btn-success" style ="float:right;margin-right:20px;" onclick="clear_data()"  >Clear Data</button>
 		</div> -->
 
-	<div class="input-group input-group-lg" style="width: 350px; margin-left: 10px;">
+	<div class="input-group input-group-lg" style="width: 350px; margin-left: 10px;padding-bottom: 20px">
 		<div class="input-group-prepend">
 			<span class="input-group-text" id="inputGroup-sizing-lg">Number of Resources:</span>
 		</div>
 		<input id="totalres" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
 			onkeyup="addInitialRes()">
+		
 	</div>
 
 	<!-- <button class="btn btn-primary btn-danger" style="margin: 10px 10px;" onclick="clear_data()">Clear Data</button> -->
-
-	<br><br />
-	<br><br />
-	<br><br />
+	
 	<div id="resources" style="margin-left:10px;"></div>
-	<br><br />
-	<br><br />
 	<div id="table" class="container" style="text-align:center;">
 		<div>
 
@@ -94,32 +92,22 @@
 	<br><br />
 	<div id="inputsection" style="text-align:center">
 	</div>
-	<br><br />
-	<br><br />
 	<div id="firs_alloc" style="margin-left:10px">
 
 	</div>
 	<div id="run" style="text-align:center;">
 		<button class="btn btn-outline-success" style="margin:50px 0px" onclick="banker()">Run</button>
 	</div>
-	<br><br />
-	<br><br />
 	<div id="operations">
 	</div>
-	<br><br />
 	<div id="output1" style="text-align:center">
 	</div>
-	<br><br />
-	<br><br />
 	<div id="output" style="text-align:center">
 
 	</div>
-	<br><br />
-	<br><br />
 	<div id="output2" style="text-align:center">
 
 	</div>
-	<br><br />
 </body>
 
 </html>

@@ -1,0 +1,248 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+            text-align: center;
+        }
+
+        .flex-container>* {
+            padding: 15px;
+            -webkit-flex: 1 100%;
+            flex: 1 100%;
+        }
+
+        .article {
+            text-align: left;
+        }
+
+        header {
+            background: black;
+            color: white;
+        }
+
+        footer {
+            background: #aaa;
+            color: white;
+        }
+
+        .nav {
+            background: #eee;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav ul a {
+            text-decoration: none;
+        }
+
+        @media all and (min-width: 768px) {
+            .nav {
+                text-align: left;
+                -webkit-flex: 1 auto;
+                flex: 1 auto;
+                -webkit-order: 1;
+                order: 1;
+            }
+
+            .article {
+                -webkit-flex: 5 0px;
+                flex: 5 0px;
+                -webkit-order: 2;
+                order: 2;
+            }
+
+            footer {
+                -webkit-order: 3;
+                order: 3;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="../os_sim.html">OS simulator</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Wiki</a>
+            </li>
+        </ul>
+    </nav>
+    <br><br><br>
+
+    <div class="flex-container">
+        <header>
+            <h1>Deadlock</h1>
+        </header>
+
+
+
+        <div class="container">
+            <article class="article">
+                <div>
+                    <h1>About</h1>
+                    <p> In concurrent computing, a deadlock is a state in which each member of a group is waiting for
+                        another member, including itself, to take action, such as sending a message or more commonly
+                        releasing a lock. Deadlock is a common problem in multiprocessing systems, parallel computing,
+                        and distributed systems, where software and hardware locks are used to arbitrate shared
+                        resources and implement process synchronization.
+
+                        In an operating system, a deadlock occurs when a process or thread enters a waiting state
+                        because a requested system resource is held by another waiting process, which in turn is waiting
+                        for another resource held by another waiting process. If a process is unable to change its state
+                        indefinitely because the resources requested by it are being used by another waiting process,
+                        then the system is said to be in a deadlock</p>
+                </div>
+
+
+
+                <div>
+                    <h3>Necessary Conditions</h3>
+                    <p>A deadlock situation on a resource can arise if and only if all of the following conditions hold
+                        simultaneously in a system:</p>
+                    <ul>
+                        <li>
+                            <p><b>Mutual exclusion</b>: At least one resource must be held in a non-shareable mode.
+                                Otherwise, the processes would not be prevented from using the resource when necessary.
+                                Only one process can use the resource at any given instant of time.</p>
+                        </li>
+                        <li>
+                            <p><b>Hold and wait or resource holding</b>: a process is currently holding at least one
+                                resource and requesting additional resources which are being held by other processes</p>
+                        </li>
+                        <li>
+                            <p><b>No preemption</b>: a resource can be released only voluntarily by the process holding
+                                it.</p>
+                        </li>
+                        <li>
+                            <p><b>Circular wait</b>: each process must be waiting for a resource which is being held by
+                                another process, which in turn is waiting for the first process to release the resource.
+                                In general, there is a set of waiting processes, P = {P1, P2, …, PN}, such that P1 is
+                                waiting for a resource held by P2, P2 is waiting for a resource held by P3 and so on
+                                until PN is waiting for a resource held by P1</p>
+                        </li>
+                    </ul>
+                    <p>These four conditions are known as the Coffman conditions from their first description in a 1971
+                        article by <i><b>Edward G. Coffman, Jr</i></b>.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <div style="text-align: center">
+                        <img src="deadlock.jpg" alt="deadlock image">
+                    </div>
+                    <div style="text-align: center">
+                        <p><i>A real life example of Deadlock</i></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h1>Deadlock Handling</h1>
+                    <p>Most current operating systems cannot prevent deadlocks. When a deadlock occurs, different
+                        operating systems respond to them in different non-standard manners. Most approaches work by
+                        preventing one of the four Coffman conditions from occurring, especially the fourth one. Major
+                        approaches are as follows. </p>
+                    <h4>Ignoring deadlock</h4>
+                    <p>In this approach, it is assumed that a deadlock will never occur. This is also an application of
+                        the Ostrich algorithm. This approach was initially used by MINIX and UNIX. This is used when the
+                        time intervals between occurrences of deadlocks are large and the data loss incurred each time
+                        is tolerable.</p>
+
+                    <h4>Detection</h4>
+                    <p>Under the deadlock detection, deadlocks are allowed to occur. Then the state of the system is
+                        examined to detect that a deadlock has occurred and subsequently it is corrected. An algorithm
+                        is employed that tracks resource allocation and process states, it rolls back and restarts one
+                        or more of the processes in order to remove the detected deadlock. Detecting a deadlock that has
+                        already occurred is easily possible since the resources that each process has locked and/or
+                        currently requested are known to the resource scheduler of the operating system.</p>
+                    <p>After a deadlock is detected, it can be corrected by using one of the following methods:</p>
+                    <ul>
+                        <li><i>Process termination</i>: one or more processes involved in the deadlock may be aborted.
+                            One could choose to abort all competing processes involved in the deadlock. This ensures
+                            that deadlock is resolved with certainty and speed. But the expense is high as partial
+                            computations will be lost. Or, one could choose to abort one process at a time until the
+                            deadlock is resolved. This approach has high overhead because after each abort an algorithm
+                            must determine whether the system is still in deadlock. Several factors must be considered
+                            while choosing a candidate for termination, such as priority and age of the process.</li>
+                        <li><i>Resource preemption</i>: resources allocated to various processes may be successively
+                            preempted and allocated to other processes until the deadlock is broken.</li>
+                    </ul>
+
+                    <h4>Prevention</h4>
+                    <p>Deadlock prevention works by preventing one of the four Coffman conditions from occurring.</p>
+
+                    <ul>
+                        <li>Removing the mutual exclusion condition means that no process will have exclusive access to
+                            a resource. This proves impossible for resources that cannot be spooled. But even with
+                            spooled resources, deadlock could still occur. Algorithms that avoid mutual exclusion are
+                            called non-blocking synchronization algorithms.</li>
+                        <li>The hold and wait or resource holding conditions may be removed by requiring processes to
+                            request all the resources they will need before starting up (or before embarking upon a
+                            particular set of operations). This advance knowledge is frequently difficult to satisfy
+                            and, in any case, is an inefficient use of resources. Another way is to require processes to
+                            request resources only when it has none. Thus, first they must release all their currently
+                            held resources before requesting all the resources they will need from scratch. This too is
+                            often impractical. It is so because resources may be allocated and remain unused for long
+                            periods. Also, a process requiring a popular resource may have to wait indefinitely, as such
+                            a resource may always be allocated to some process, resulting in resource starvation. (These
+                            algorithms, such as serializing tokens, are known as the all-or-none algorithms.)</li>
+                        <li>The no preemption condition may also be difficult or impossible to avoid as a process has to
+                            be able to have a resource for a certain amount of time, or the processing outcome may be
+                            inconsistent or thrashing may occur. However, inability to enforce preemption may interfere
+                            with a priority algorithm. Preemption of a "locked out" resource generally implies a
+                            rollback, and is to be avoided, since it is very costly in overhead. Algorithms that allow
+                            preemption include lock-free and wait-free algorithms and optimistic concurrency control. If
+                            a process holding some resources and requests for some another resource(s) that cannot be
+                            immediately allocated to it, the condition may be removed by releasing all the currently
+                            being held resources of that process</li>
+                        <li>The final condition is the circular wait condition. Approaches that avoid circular waits
+                            include disabling interrupts during critical sections and using a hierarchy to determine a
+                            partial ordering of resources. If no obvious hierarchy exists, even the memory address of
+                            resources has been used to determine ordering and resources are requested in the increasing
+                            order of the enumeration.[3] Dijkstra's solution can also be used.</li>
+                    </ul>
+
+                </div>
+
+
+
+
+            </article>
+        </div>
+    </div>
+
+</body>
+
+</html>
