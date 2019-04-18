@@ -54,24 +54,22 @@
   <center><h1 style="background-color:black;color: white; padding:5px; height:45px;width:450px; border: 2px solid gray;">TCP socket programming</h1></center>
   <div class="container-fluid" style="background-color:ivory ;padding: 5px;  border: 2px solid rgb(0, 0, 0);font-family:serif">
     
-    <button class="button1" type ="button", onclick ="socket()", style ="height:25px;width:125px;line-height:1">Create Socket</button> This  function shall create an unbound socket in a communications domain.
-    <br/><br/>
-    <button id  = "bind" class="button1" type ="button", onclick ="bind()", style ="height:25px;width:125px;line-height:1" disabled>Bind</button> This function shall assign a local socket address to a socket identified by descriptor socket.
-    <br/><br/>
-    <button id ="listen" class="button1" type ="button", onclick ="listen()", style ="height:25px;width:125px;line-height:1" disabled>Listen</button> This marks the connection of socket.
-    <br/><br/>
-    <button id ="connect" class="button1" type ="button", onclick ="connect()", style ="height:25px;width:125px;line-height:1" disabled>Connect</button> This attempts to make a connection over the socket.
-    <br/><br/>
-    <button id  ="accept"  class="button1" type ="button", onclick ="accept()", style ="height:25px;width:125px;line-height:1" disabled>Accept</button> This extracts the first connection on the queue of pending connections, create a new socket with the same address as the specified socket.
-    <br/><br/>
-    <button id ="move" class="button1" type ="button", onclick ="myMove()", style ="height:25px;width:125px;line-height:1" disabled>Send</button> This sends a message over the socket.
-    <br/><br/>
-    <button id ="close" class="button1" type ="button", onclick ="closee()", style ="height:25px;width:125px;line-height:1" disabled>Close</button> This is to close the connection
+    <button class="button1" type ="button", onclick ="socket()", style ="height:25px;width:125px;line-height:1">Create Socket</button> 
+    
+    <button id  = "bind" class="button1" type ="button", onclick ="bind()", style ="height:25px;width:125px;line-height:1;visibility: hidden" >Bind</button>
+    
+    <button id ="listen" class="button1" type ="button", onclick ="listen()", style ="height:25px;width:125px;line-height:1;visibility: hidden" >Listen</button> 
+    
+    <button id ="connect" class="button1" type ="button", onclick ="connect()", style ="height:25px;width:125px;line-height:1;visibility: hidden" >Connect</button> 
+    
+    <button id  ="accept"  class="button1" type ="button", onclick ="accept()", style ="height:25px;width:125px;line-height:1;visibility: hidden" >Accept</button>
+    
+    <button id ="move" class="button1" type ="button", onclick ="myMove()", style ="height:25px;width:125px;line-height:1;visibility: hidden" >Send</button> 
+    
+    <button id ="close" class="button1" type ="button", onclick ="closee()", style ="height:25px;width:125px;line-height:1;visibility: hidden" >Close</button>
 
     <br>
 
-
-    <div>
     <button type = "button", id ="server", name = "server", style="height:125px;width:125px;position:absolute;top:60%;left:10%;border-radius:10px;border:1px solid #000">SERVER </button>
     <button type = "button", id ="client", name = "client", style="height:125px;width:125px;position:absolute;top:60%;left:80%;border-radius:10px;border:1px solid #000">CLIENT </button>
 
@@ -83,7 +81,7 @@
     <button type = "button", id ="six", name = "six", style="height:30px;width:30px;position:absolute;top:75%;left:20%;border-radius:30px;border:1px solid #FFFFFF;background-color:#FFFFFF"></button>
 
     <button type = "button", id ="connection", name = "connection", style="height:5px;width:953px;position:absolute;top:68%;left:18%;background-color:white;border:1px solid #FFFFFF"> </button>
-  </div>
+
     <div id ="container">
       <div id ="animate"></div>
     </div>
@@ -96,12 +94,14 @@
       document.getElementById("server").style.backgroundColor = col;
       document.getElementById("client").style.backgroundColor = col;
       document.getElementById("bind").disabled = false;
+      document.getElementById("bind").style.visibility = "visible";
     }
 
     function bind()
     {
       document.getElementById("server").style.backgroundColor = '#FF0000';
       document.getElementById("listen").disabled = false;
+      document.getElementById("listen").style.visibility = "visible";
     }
 
     function listen()
@@ -113,6 +113,7 @@
       document.getElementById("five").style.backgroundColor = '#FFFF00';
       document.getElementById("six").style.backgroundColor = '#FFFF00';
       document.getElementById("connect").disabled = false;
+      document.getElementById("connect").style.visibility = "visible";
 
       var colors = ["yellow","blue"];
       var i = 0;
@@ -137,7 +138,7 @@
           document.getElementById("six").style.backgroundColor =  "white";
           return;
         }
-       }, 700);
+       }, 200);
        cnt++;
     
   }
@@ -148,6 +149,7 @@
       document.getElementById("container").style.border = '5px solid #000000';
       document.getElementById("accept").disabled = false;
       document.getElementById("close").disabled = false;
+      document.getElementById("accept").style.visibility = "visible";
     }
 
     function accept()
@@ -155,6 +157,7 @@
       //document.getElementById("connection").style.backgroundColor = '#00FF00';
       document.getElementById("container").style.backgroundColor = '#00FF00';
       document.getElementById("move").disabled = false;
+      document.getElementById("move").style.visibility = "visible";
     }
 
     function myMove() {
@@ -163,6 +166,7 @@
       document.getElementById("animate").style.height = "15px";
       document.getElementById("animate").style.width = "15px";
       document.getElementById("animate").style.borderRadius = "15px";
+      document.getElementById("close").style.visibility = "visible";
 
     var elem = document.getElementById("animate");
     var pos = 0;
@@ -179,6 +183,15 @@
 
     function closee()
     {
+
+      document.getElementById("bind").style.visibility = "hidden";
+      document.getElementById("listen").style.visibility = "hidden";
+      document.getElementById("connect").style.visibility = "hidden";
+      document.getElementById("accept").style.visibility = "hidden";
+      document.getElementById("move").style.visibility = "hidden";
+      document.getElementById("close").style.visibility = "hidden";
+
+
       document.getElementById("animate").style.backgroundColor = '#FFFFFF'
       document.getElementById("server").style.backgroundColor = '#DCDCDC'
       document.getElementById("client").style.backgroundColor = '#DCDCDC';

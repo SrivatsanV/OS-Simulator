@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<link href="bootstrap.min.css" rel="stylesheet">
+
+<head>
+	<title>Most Recently Used</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</style>
+</head>
+<body>
+<!-- Nav bar  -->
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-dark bg-dark">
+    <div class="container-fluid">
+   <div class="navbar-header">
+    <a class="navbar-brand" href="#">OS simulator</a>
+     </div>
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html" style="color: white">Home</a></li>
+       <li class="active"><a href="#" style="color: white">Wiki</a></li>
+     </ul>
+    </div>
+  </nav>
+  <br><br><br>
+  <div class="page-header" >
+     <h1 style="text-align:center;color:black">Page Replacement Algorithm</h1>      
+  </div>
+  <body style="color:black">
+  <h1 style="text-align:center;color:black">Most Recently Used</h1>    
+  <br>
+  <div style="text-align:center;color:black">In Most Recently Used (MRU) algorithm the page to be replaced is most recently used. It is the opposite of LRU.</div> 
+  <br><br><br><br>
+<form>
+    <div class"container-fluid" >
+        <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
+            <input type = "number" id="frames"class="form-control" placeholder="Enter the number of frames:">
+        </div>
+
+        <div class="form-group row" style="margin-left:40px;width:25vw;display:block">
+                <input type = "text" id="rs" class="form-control" placeholder="Enter the Reference string:">
+        </div>
+            <input type = "button" style="margin-left:40px; margin-bottom:20px" class="btn btn-primary" onclick = "mru()" value = "Simulate">
+						<input type="reset" style="margin-left:45%; margin-bottom:20px; display:none;" class="btn btn-outline-primary animated fadeIn" value="New Test Case" onClick="window.location.reload()" id="resetbtn">
+		<div id="div1" class="table-responsive" style="width:80vw;margin:auto;text-align:center"></div>
+		<div id="sp1"></div>
+		<div id="sp2"></div>
+    </div>
+</form>
+<div id="bottom"></div>
+ </body>
+ <!-- <script type="text/javascript" src="index.js"></script> -->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
+
+<script>
+
+	var count=0;
+var pages = [];
+var pf;
+var ph;
+var f;
+var rs;
+var txt;
+function mru()
+{
+ f = document.getElementById("frames").value;
+ rs=document.getElementById("rs").value;
+ var isnum = /^\d+$/.test(rs);
+ if(f <= 0){
+	 alert( "Please provide proper input" );
+	 return;
+ }
+ else if(!isnum){
+	 alert( "Please use numbers in reference string" );
+	 return;
+ }
+ var x = document.getElementById("resetbtn").style.display = "block";
+console.log(f);
+console.log(rs);
+var prev;
+ pf=0;
+ ph=0;
+var k=0;
+var l;
+
+var index;
+	var i,row=Number(f)+1,j,col=rs.length;
+
+	pages = new Array(row);
+	for(i=0;i<row;i++)
+		pages[i]=new Array(col);
+
+	for(i=0;i<row-1;i++)
+	{
+    for(j=0 ; j<col;j++)
+		pages[i][j]= "--";
+	}
+
+	for(j=0;j<col;j++)
+	{
+		var smallest=-1;
+		var flag=false;
+		if(j>0)
+		{
+		    for(i=0;i<row-1;i++)
+			pages[i][j]=pages[i][j-1];
+		}
+		    for(i=0;i<row-1;i++)
+	    	{
+		    	if(rs[k]==pages[i][j])
+		    	flag=true;
+		    }
+		if(flag==false)
+		{
+			for(i=0;i<row-1;i++)
+			{
+				if(pages[i][j]== "--")
+				{
+					smallest=i;
+					break;
+				}
+			}
+			if(smallest!=-1)
+			{
+		        pages[smallest][j]=rs[k];
+			}
+		    else
+			{
+				index=-1;
+                var most_rec = -1;
+			  for(i=0;i<row-1;i++)
+			  {
+                  for(m=0;m<=j-1;m++){
+                      if(pages[i][j]==rs[m]){
+                            most_rec = m;
+                      }
+                  }
+			  	
+			  	if(index < most_rec)
+			  		index = most_rec;
+
+			  }
+
+			  for(i=0;i<row-1;i++)
+			  {
+			  	if(pages[i][j]==rs[index])
+			  		break;
+			  }
+
+			  pages[i][j] = rs[k];
+			}
+	    	pages[row-1][j]="PF";
+	    	k++;
+	    	pf++;
+	    	console.log("pf=",pf);
+        }
+		else
+        {
+            ph++;
+            k++;
+	    	console.log("ph=",ph);
+	    	pages[row-1][j]="PH";
+        }
+	}
+	txt= " ";var real;var m=0;
+	var $table=$("<table border='1'></table>");
+	$table.addClass('table table-striped');
+	$tbody = $("<tbody></tbody>");
+		for ( i=0; i<row;i++)
+		  {
+			var line =$("<tr></tr>");
+			// line.css({'background-color': getRandomColor()});
+			  for(j=0; j<col;j++){
+
+			if(i==row-1) {
+
+
+					if(("PH".localeCompare(pages[i][j])==0)){
+						line.append('<td style="color:green">'+'PH'+'</td>');
+					}
+					else{
+						line.append('<td style="color:red">'+'PF'+'</td>');
+					}
+
+				$tbody.append(line);
+
+				}
+			else{
+				line.append($("<td></td>").html(pages[i][j]+""));
+				$tbody.append(line);
+			}
+
+
+			  }
+			}
+
+		  $table.append($tbody);
+		  $table.appendTo($("#div1"));
+		  $("#sp1").html('<p style="text-align:center">'+"<b>The no of page faults is:</b>"+"   "+'<span style="color:red">'+pf+'</span>'+'</p>')
+		  $("#sp2").html('<p style="text-align:center">'+"<b>The no of page hits is:</b>"+"   "+'<span style="color:green">'+ph+'</span>'+'</p>')
+		  
+		 console.log(m);
+		 document.getElementById( 'bottom' ).scrollIntoView();
+txt = txt + "\n";
+console.log(txt);
+$('input[type="button"]').attr('disabled','disabled');
+document.getElementById("frames").disabled = true;
+document.getElementById("rs").disabled = true;
+}
+</script>
