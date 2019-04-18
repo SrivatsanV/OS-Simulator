@@ -7,14 +7,12 @@
 
   <link rel="stylesheet" href="./bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
 </head>
 
 
 <script>
-  /*SRTF SCHEDULING*/
 
 var sequence;
 var complete;
@@ -44,8 +42,6 @@ $(document).ready(function(){
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
     var burstTime=parseInt(document.getElementById("bt1").value);
-    //var ioTime=parseInt(document.getElementById("io").value);
-    //var FinalburstTime=parseInt(document.getElementById("bt2").value);
 
     if(document.getElementById("at1").value == "") {
       alert("Arrival time field is empty!");
@@ -314,7 +310,7 @@ p{
 #outer-div{
   margin: auto;
   display: none;
-  
+
   width: 802px;
   height: 50px;
   border: 1px solid black;
@@ -372,8 +368,6 @@ p{
       <th>PNO.</th>
       <th>Arrival Time </th>
       <th>Burst Time</th>
-      <!-- <th>IO </th> -->
-      <!-- <th>Burst Time 2 </th> -->
     </tr>
     <tbody id="ept">
     </tbody>
@@ -388,8 +382,6 @@ p{
     <input type='number'  class="form-control " id='bt1' placeholder="burst time"></input>
   </div>
   </div>
-  <!-- <input type='number' id='io' placeholder="io time"></input>
-  <input type='number' id='bt2' placeholder="burst time 2"></input> -->
 </div>
   <button id="add" class="btn btn-secondary" onclick="AddtoList()">Add</button>
   <button id="start" class="btn btn-secondary">Start</button>
@@ -408,8 +400,7 @@ p{
     <th>PNO.</th>
     <th>Arrival time</th>
     <th>Burst time</th>
-    <!-- <th>I/O time</th>
-    <th>Burst time2</th> -->
+   
     <th>Waiting time</th>
     <th>Turn Around Time</th>
   </thead>
