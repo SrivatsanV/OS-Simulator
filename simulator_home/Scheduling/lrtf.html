@@ -267,6 +267,14 @@ $(document).ready(function(){
 
     var blockWidth = (sequence[i+1].start - sequence[i].start)*pixel;
     var processName = sequence[i].n;
+    document.getElementById("gantt").style.display='block';
+    document.getElementById("outer-div").style.display='inline-block';
+    document.getElementById("bt1").style.display='none';
+    document.getElementById("at1").style.display='none';
+    document.getElementById("add").style.display='none';
+    document.getElementById("start").style.display='none';
+
+
     if(sequence[i].n==null)
     {
       $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'">CPU Idle<div class="bottom">'+ sequence[i+1].start +'</div></div>');
@@ -292,8 +300,7 @@ body{
 #b{
   font-size:2 em;
 }
-h1{
-}
+
 
 p{
   font-size: 3 em;
@@ -305,7 +312,7 @@ p{
 #outer-div{
   margin: auto;
   width: 802px;
-  height: 100px;
+  height: 50px;
   position: relative;
   border: 1px solid black;
 }
@@ -317,13 +324,13 @@ p{
   float: left;
   text-align: center;
   background-color: rgba(112, 128, 144, 0.44);
-  height: 98px;
+  height: 48px;
 }
 
 .bottom{
  /* position: absolute;*/
   width: 100%;
-  margin-top: 100px;
+  margin-top: 38px;
   text-align: right;
   margin-bottom: 1;
 }
@@ -348,12 +355,11 @@ p{
         </div>
       </nav>
 <div class="container">
-  <h1>
+  <h1 style="padding:40px;">
     Largest Remaining Time First
   </h1>
   <br>
   <div>
-      <h3>Entered Processes:</h3>
     <table id="ep" class="table table-bordered table-striped" style="width:70%;" align="center">
       <thead>
       <th>PNO.</th>
@@ -379,7 +385,7 @@ p{
   <button id="start" class="btn btn-secondary">Start</button>
   <br>
   <br>
-  <h2>
+  <h2 id="gantt" style="display:none;">
     Gantt Chart
   </h2>
   <div id="outer-div">

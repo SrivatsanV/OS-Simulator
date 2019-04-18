@@ -285,6 +285,16 @@ $(document).ready(function(){
 
     var blockWidth = (sequence[i+1].start - sequence[i].start)*pixel;
     var processName = sequence[i].n;
+
+    document.getElementById("gantt").style.display='block';
+    document.getElementById("outer-div").style.display='inline-block';
+    document.getElementById("bt1").style.display='none';
+    document.getElementById("at1").style.display='none';
+    document.getElementById("priority").style.display='none';
+    document.getElementById("add").style.display='none';
+    document.getElementById("start").style.display='none';
+
+
    if(sequence[i].n==null)
     {
       $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'" style="background-color:rgba(112, 128, 144, 0.44);">CPU Idle<div class="bottom">'+ sequence[i+1].start +'</div></div>');
@@ -320,9 +330,10 @@ p{
 }
 
 #outer-div{
+  display: none;
   margin: auto;
   width: 802px;
-  height: 100px;
+  height: 50px;
   border: 1px solid black;
 }
 
@@ -333,13 +344,13 @@ p{
   float: left;
   text-align: center;
   background-color: rgba(218, 152, 11, 0.44);
-  height: 98px;
+  height: 48px;
 }
 
 .bottom{
  /* position: absolute;*/
   width: 100%;
-  margin-top: 100px;
+  margin-top: 38px;
   text-align: right;
   margin-bottom: 1;
 }
@@ -403,14 +414,13 @@ p{
     </div>
     <!-- <input type='number' id='io' placeholder="io time"></input>
     <input type='number' id='bt2' placeholder="burst time 2"></input> -->
-  </div>
     <button id="add" class="btn btn-secondary" onclick="AddtoList()">Add</button>
     <button id="start" class="btn btn-secondary">Start</button>
 
   <br>
   <br>
 
-  <h2>
+  <h2 id="gantt" style="display:none;">
     Gantt Chart
   </h2>
   <div id="outer-div">

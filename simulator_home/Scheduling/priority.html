@@ -260,6 +260,10 @@ $(document).ready(function(){
   }
   else
   {
+    var cardAdd = document.getElementById("cardAdd");
+     cardAdd.classList.add("card");
+     var element = document.getElementById("Average");
+    element.classList.add("card-body");
     $("#Average").append("<b>CPU utilization : "+cpu_efficiency.toFixed(3)+"%</b><br>");
     $("#Average").append("<b>Overall throughput : "+throughput.toFixed(3)+"</b><br>");
     $("#Average").append("<b>Average Turn Around time : "+average_tat.toFixed(3)+"</b><br>");
@@ -279,6 +283,16 @@ $(document).ready(function(){
 
     var blockWidth = (sequence[i+1].start - sequence[i].start)*pixel;
     var processName = sequence[i].n;
+
+    document.getElementById("gantt").style.display='block';
+    document.getElementById("outer-div").style.display='inline-block';
+    document.getElementById("bt1").style.display='none';
+    document.getElementById("at1").style.display='none';
+    document.getElementById("priority").style.display='none';
+    document.getElementById("add").style.display='none';
+    document.getElementById("start").style.display='none';
+
+
     if(sequence[i].n==null)
     {
       $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'" style="background-color:rgba(112, 128, 144, 0.44);">CPU Idle<div class="bottom">'+ sequence[i+1].start +'</div></div>');
@@ -304,13 +318,10 @@ body{
 #b{
   font-size:2 em;
 }
-h1{
-  font-style: italic;
-}
+
 
 p{
   font-size: 3 em;
-  font-style: italic;
 }
 #ptab{
   display:none;
@@ -319,7 +330,7 @@ p{
 #outer-div{
   margin: auto;
   width: 802px;
-  height: 100px;
+  height: 50px;
   border: 1px solid black;
 }
 
@@ -330,13 +341,13 @@ p{
   float: left;
   text-align: center;
   background-color: rgba(218, 152, 11, 0.44);
-  height: 98px;
+  height: 48px;
 }
 
 .bottom{
  /* position: absolute;*/
   width: 100%;
-  margin-top: 100px;
+  margin-top: 38px;
   text-align: right;
   margin-bottom: 1;
 }
@@ -362,14 +373,14 @@ p{
       </nav>
   <br>
   <div class="container">
-  <h1>
+  <h1 style="padding: 40px;">
     Priority Preemptive
   </h1>
   <br>
   <div>
       <h3>Entered Processes:</h3>
       <table id="ep" class="table table-bordered table-striped" style="width:70%;" align="center">
-      <thead>
+      <thead class="thead-dark">
       <th>PNO.</th>
       <th>Arrival Time </th>
       <th>Burst time</th>
@@ -405,16 +416,16 @@ p{
   <br>
   <br>
 
-  <h2>
+  <h2 id="gantt" style="display:none;">
     Gantt Chart
   </h2>
 
   <div id="outer-div">
   </div>
   <br><br><br>
-  <div class="panel-content">
-  <table id="ptab" class="table table-bordered" style="width:100%">
-  <thead>
+  <div class="panel-content" id="cardAdd">
+  <table id="ptab" class="table table-bordered table-striped" style="width:100%">
+  <thead class="thead-dark">
   <tr id="thead">
   <th>PNO.</th>
   <th>Arrival time</th>
@@ -431,7 +442,7 @@ p{
   </thead>
   </table>
     </div>
-    <p id="Average"></p>
+    <div id="Average"></div>
     </div>
     </div>
 </body>
