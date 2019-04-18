@@ -238,7 +238,7 @@ function safe_sequence(){
 			var output2 = document.getElementById("output2");
 			var d6=document.createElement("div");
 			h2 = document.createElement("h5");
-			h2.textContent = ".....OS will grant the request..... ";
+			h2.textContent = " OS will grant the request ";
 			output2.appendChild(h2);
 		}
 		count++;
@@ -270,7 +270,7 @@ function safe_sequence(){
 		var output2 = document.getElementById("output2");
 		var d6=document.createElement("div");
 		h2 = document.createElement("h5");
-		h2.textContent = ".....OS will not grant the request..... ";
+		h2.textContent = "!!!!!!OS will not grant the request!!!!! ";
 		output2.appendChild(h2);
 	}
 }
