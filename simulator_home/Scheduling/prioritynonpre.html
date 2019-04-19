@@ -38,7 +38,7 @@ $(document).ready(function(){
   function DisplayList(){
     var table = document.getElementById("ept");
     console.log(stuff[stuff.length-1].no);
-    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td><td>"+stuff[stuff.length-1].p+"</td></tr>");
+    $('#ept').append("<tr style="+"background-color:#fff;"+" ><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td><td>"+stuff[stuff.length-1].p+"</td></tr>");
   }
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
@@ -262,6 +262,7 @@ $(document).ready(function(){
   }
   else
   {
+    console.log("in here");
     var cardAdd = document.getElementById("cardAdd");
      cardAdd.classList.add("card");
      var element = document.getElementById("Average");
@@ -315,6 +316,8 @@ $(document).ready(function(){
 <style>
 body{
   text-align: center;
+  font-family: 'PT Sans' , sans-serif;
+  background-color: #e9e4e6;
 }
 
 #b{
@@ -384,7 +387,7 @@ p{
   <div>
       <h3>Entered Processes:</h3>
       <table id="ep" class="table table-bordered table-striped" style="width:70%;" align="center">
-      <thead>
+      <thead class="thead-dark">
       <th>PNO.</th>
       <th>Arrival Time </th>
       <th>Burst time</th>
@@ -426,9 +429,9 @@ p{
   <div id="outer-div">
   </div>
   <br><br><br>
-  <div class="panel-content">
-  <table id="ptab" class="table table-bordered" style="width:600px">
-  <thead>
+  <div class="panel-content" id="cardAdd">
+  <table id="ptab" class="table table-bordered table-striped" style="width:600px" align="center">
+  <thead class="thead-dark">
   <tr id="thead">
   <th>PNO.</th>
   <th>Arrival time</th>

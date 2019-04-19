@@ -37,7 +37,7 @@ $(document).ready(function(){
   function DisplayList(){
     var table = document.getElementById("ept");
     console.log(stuff[stuff.length-1].no);
-    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td><td>"+stuff[stuff.length-1].p+"</td></tr>");
+    $('#ept').append("<tr style="+"background-color:#fff;"+" ><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td><td>"+stuff[stuff.length-1].p+"</td></tr>");
   }
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
@@ -313,6 +313,8 @@ $(document).ready(function(){
 <style>
 body{
   text-align: center;
+  font-family: 'PT Sans' , sans-serif;
+  background-color: #e9e4e6;
 }
 
 #b{
@@ -328,6 +330,7 @@ p{
 }
 
 #outer-div{
+  display: none;
   margin: auto;
   width: 802px;
   height: 50px;

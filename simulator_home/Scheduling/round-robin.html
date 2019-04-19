@@ -38,7 +38,7 @@ $(document).ready(function(){
   function DisplayList(){
     var table = document.getElementById("ept");
     console.log(stuff[stuff.length-1].no);
-    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
+    $('#ept').append("<tr style="+"background-color:#fff;"+"><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
   }
   function AddtoList(e){
     e.preventDefault();
@@ -348,6 +348,8 @@ function Dequeue(){
 <style>
 body{
   text-align: center;
+  font-family: 'PT Sans' , sans-serif;
+  background-color: #e9e4e6;
 }
 
 #b{
