@@ -7,14 +7,12 @@
 
   <link rel="stylesheet" href="./bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
 </head>
 
 
 <script>
-  /*FCFS SCHEDULING*/
 
 var sequence;
 var complete;
@@ -43,8 +41,7 @@ $(document).ready(function(){
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
     var burstTime=parseInt(document.getElementById("bt1").value);
-    // var ioTime=parseInt(document.getElementById("io").value);
-    // var FinalburstTime=parseInt(document.getElementById("bt2").value);
+    
     var priority=parseInt(document.getElementById("priority").value);
 
     if(document.getElementById("at1").value == "") {
@@ -351,7 +348,6 @@ p{
 }
 
 .bottom{
- /* position: absolute;*/
   width: 100%;
   margin-top: 38px;
   text-align: right;
@@ -391,8 +387,7 @@ p{
       <th>PNO.</th>
       <th>Arrival Time </th>
       <th>Burst time</th>
-      <!-- <th>IO </th>
-      <th>BT2</th> -->
+    
       <th>Priority</th>
     </tr>
     <tbody id="ept">
@@ -415,8 +410,7 @@ p{
     </div>
 
     </div>
-    <!-- <input type='number' id='io' placeholder="io time"></input>
-    <input type='number' id='bt2' placeholder="burst time 2"></input> -->
+    
     <button id="add" class="btn btn-secondary" onclick="AddtoList()">Add</button>
     <button id="start" class="btn btn-secondary">Start</button>
 
@@ -436,8 +430,7 @@ p{
   <th>PNO.</th>
   <th>Arrival time</th>
   <th>Burst time</th>
-  <!-- <th>I/O time</th>
-  <th>Burst time2</th> -->
+  
   <th>Priority</th>
   <th>Waiting time</th>
   <th>Turn around time</th>

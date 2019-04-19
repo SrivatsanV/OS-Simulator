@@ -8,14 +8,12 @@
 
   <link rel="stylesheet" href="./bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
 </head>
 
 
 <script>
-  /*FCFS SCHEDULING*/
 
 var sequence=[];
 var complete;
@@ -40,14 +38,12 @@ $(document).ready(function(){
     var table = document.getElementById("ept");
     console.log(stuff[stuff.length-1].no);
      $('#ept').append("<tr style="+"background-color:#fff;"+"><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
-    // else $('#ept').append("<tr style="+"background-color:;"+"><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
-    // m = (mod + 1)%2;
+ 
   }
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
     var burstTime=parseInt(document.getElementById("bt1").value);
-    // var ioTime=parseInt(document.getElementById("io").value);
-    // var FinalburstTime=parseInt(document.getElementById("bt2").value);
+    
 
     if(document.getElementById("at1").value == "") {
       alert("Arrival time field is empty!");
@@ -69,8 +65,6 @@ $(document).ready(function(){
       return;
     }
 
-    // var ioTime=parseInt(document.getElementById("io").value);
-    // var FinalburstTime=parseInt(document.getElementById("bt2").value);
     var ioTime=parseInt("0");
     var FinalburstTime=parseInt("0");
     console.log(arrivalTime);
@@ -402,8 +396,6 @@ p{
         <th>PNO.</th>
         <th>Arrival Time </th>
         <th>Burst Time </th>
-        <!-- <th>IO </th>
-        <th>Burst Time 2 </th> -->
       </tr>
       <tbody id="ept">
       </tbody>
@@ -419,8 +411,6 @@ p{
         <input type='number'  class="form-control " id='bt1' placeholder="burst time"></input>
       </div>
       </div>
-      <!-- <input type='number' id='io' placeholder="io time"></input>
-      <input type='number' id='bt2' placeholder="burst time 2"></input> -->
     </div>
       <button id="add" class="btn btn-secondary" onclick="AddtoList()">Add</button>
       <button id="start" class="btn btn-secondary">Start</button>
@@ -440,8 +430,6 @@ p{
       <th>PNO.</th>
       <th>Arrival time</th>
       <th>Burst time</th>
-      <!-- <th>I/O time</th>
-      <th>Burst time2</th> -->
       <th>Waiting time</th>
       <th>Turn Around Time</th>
     </thead>
