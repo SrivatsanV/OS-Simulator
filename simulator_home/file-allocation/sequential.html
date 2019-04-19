@@ -9,19 +9,19 @@
 		display: block;
 	}
 	.some{
-		background-color: #3CBC8D;
+		background-color: #e74c3c;
 		color:black;
 	}
-     
-     
+
+
 	input{
 		 width: 10%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    background-color: #3CBC8D;
-    color: white;
+    background-color: white;
+    color: black;
 	}
 	.s_done,.s_cal{
 		 background-color: black; /* Green */
@@ -39,19 +39,24 @@
 	}
 
 	.s_cal:hover{
-		 background-color: #3CBC8D;
-    color: white;
+		 background-color: #D3D3D3;
+    color: black;
 	}
 	.s_done:hover{
-		 background-color: #3CBC8D;
-    color: white;
+		 background-color: #D3D3D3;
+    color: black;
 	}
+	body{
+  background: #e74c3c;
+  color:#fff;
+}
+
 	</style>
 </head>
 
 <body>
-	
-	
+
+
 	<div class="s_choices s_hide">
 		<label class="container">SEQUENTIAL
 			<input type="checkbox" id="s_seq">
@@ -77,7 +82,10 @@
 	<div>
 		<input id="nof" type="number">
 	</div>
-
+	<p> Enter the block size</p>
+	<div>
+		<input id="blockSizeId" type="number">
+	</div>
 	<button class="s_done" onclick="show_fields()">Done</button>
 	<br><br><br>
 
@@ -85,9 +93,9 @@
 		<form class="s_hide">
 			<p> Your First File </p>
 		File no:	<input  id="file_no" type="number">
-		File size(in KB):	<input  id="file_size" type="number">
+		File size :	<input  id="file_size" type="number">
 		Starting block:	<input  id="starting_block" type="number">
-		Block size(in bytes):	<input  id="block_size" type="number">
+		<!-- Block size(in bytes):	<input  id="block_size" type="number"> -->
 		</form>
 
 		<form class="s_hide">
@@ -95,16 +103,16 @@
 			File no:   <input  id="file_no" type="number">
 			File size(in KB):	<input  id="file_size" type="number">
 			Starting block:	<input  id="starting_block" type="number">
-		    Block size(in bytes):		<input  id="block_size" type="number">
+		    <!-- Block size(in bytes):		<input  id="block_size" type="number"> -->
 		</form>
-		
+
 		<form class="s_hide">
 
 			<p> Your Third File </p>
 			File no:		<input  id="file_no" type="number">
 			File size(in KB):		<input  id="file_size" type="number">
 			Starting block:	<input  id="starting_block" type="number">
-			Block size(in bytes):		<input  id="block_size" type="number">
+			<!-- Block size(in bytes):		<input  id="block_size" type="number"> -->
 		</form>
 
 		<form class="s_hide">
@@ -112,7 +120,7 @@
 			File no:     <input  id="file_no" type="number">
 			File size(in KB):	<input  id="file_size" type="number">
 			Starting block:	<input  id="starting_block" type="number">
-			Block size(in bytes):	<input  id="block_size" type="number">
+			<!-- Block size(in bytes):	<input  id="block_size" type="number"> -->
 		</form>
 
 		<form class="s_hide">
@@ -120,7 +128,7 @@
 				File no:   <input  id="file_no" type="number">
 				File size(in KB): <input  id="file_size" type="number">
 				Starting block:<input  id="starting_block" type="number">
-				Block size(in bytes):<input  id="block_size" type="number">
+				<!-- Block size(in bytes):<input  id="block_size" type="number"> -->
 		</form>
 
 		<form class="s_hide">
@@ -128,7 +136,7 @@
 			File no:    <input  id="file_no" type="number">
 			File size(in KB):	<input  id="file_size" type="number">
 			Starting block:	<input  id="starting_block" type="number">
-			Block size(in bytes):	<input  id="block_size" type="number">
+			<!-- Block size(in bytes):	<input  id="block_size" type="number"> -->
 		</form>
 
 		<form class="s_hide">
@@ -136,15 +144,15 @@
 			File no:    <input  id="file_no" type="number">
 			File size(in KB):	<input  id="file_size" type="number">
 			Starting block:	<input  id="starting_block" type="number">
-			Block size(in bytes):	<input  id="block_size" type="number">
+			<!-- Block size(in bytes):	<input  id="block_size" type="number"> -->
 		</form>
 </div>
 
 <p> Enter the number of the file you want to view </p>
-	<input type="number">
+	<input type="number" id="outputFile">
 
 	<button type="button" class="s_cal" onclick="cal_seq()"> OUTPUT</button>
-	<input type="number" class="delete_file">
+	<input type="number" class="delete_file" id="deleteFile">
 	<button type="button" class="s_cal" onclick="delete_form()">DELETE</button>
 
 		<p class="s_out_sect" style="background-color:black;color:white"></p>
@@ -161,7 +169,7 @@
 <script>
 	var form_no=-1;
 	var files = [];
-
+	var blockSize;
 	windows.onload = function()
 	{
 		for(var i=0;i<2000;++i)
@@ -179,15 +187,16 @@
 			att.value ="s_show";
 
 			f.setAttributeNode(att);
-		
+
 	}
 
 	var form_no = -1;
 	function show_fields()
 	{
 		var no_of_files = document.getElementById("nof").value;
+		blockSize = document.getElementById("blockSizeId").value;
 		var i;
-		for(i=0;i<no_of_files;++i)	
+		for(i=0;i<no_of_files;++i)
 			s_add_in();
 	}
 
@@ -204,11 +213,11 @@
 
 	function cal_seq()
 	{
-		var out_file = document.getElementsByTagName("input")[32].value;
+		var out_file = document.getElementById("outputFile").value;
 
 		var i,j,k;
 		var found =0;
-		for(i=4; i<31; i=i+4)
+		for(i=3; i<31; i=i+3)
 		{
 			var x= document.getElementsByTagName("input")[i].value;
 			if(out_file == x){
@@ -216,7 +225,7 @@
 				break;
 			}
 
-			if(i == 28)
+			if(i == 30)
 			{
 				found = 0;
 				alert('file not found');
@@ -233,9 +242,9 @@
 
 			tot_size = document.getElementsByTagName("input")[si+1].value;
 			block_start = document.getElementsByTagName("input")[si+2].value;
-			block_size = document.getElementsByTagName("input")[si+3].value;
-
-			var no_of_blocks = (tot_size * 1024) / block_size;
+			//block_size = document.getElementsByTagName("input")[si+3].value;
+			block_size = blockSize;
+			var no_of_blocks = (tot_size) / block_size;
 
 			var output=[];
 			var pos = block_start - 1;
@@ -255,20 +264,20 @@
 						pos++;
 						files[pos] =1;
 						output.push(pos);
-					}			
+					}
 				}
 			}
-			var q = i / 4;
+			var q = i / 3;
 			document.getElementsByClassName("s_out_sect")[q-1].innerHTML=output.join();
 		}
 
 	}
-	
+
 	function delete_form(){
-		var to_be_deleted = document.getElementsByTagName("input")[33].value;
+		var to_be_deleted = document.getElementById("deleteFile").value;
 		var i,j,k;
 		var found =0;
-		for(i=4; i<31; i=i+4)
+		for(i=3; i<31; i=i+3)
 		{
 			var x= document.getElementsByTagName("input")[i].value;
 			if(to_be_deleted == x){
@@ -276,7 +285,7 @@
 				break;
 			}
 
-			if(i == 28)
+			if(i == 30)
 			{
 				found = 0;
 				alert('file not found');
@@ -292,9 +301,9 @@
 
 			tot_size = document.getElementsByTagName("input")[si+1].value;
 			block_start = document.getElementsByTagName("input")[si+2].value;
-			block_size = document.getElementsByTagName("input")[si+3].value;
-
-			var no_of_blocks = (tot_size * 1024) / block_size;
+			//block_size = document.getElementsByTagName("input")[si+3].value;
+			block_size = blockSize;
+			var no_of_blocks = (tot_size ) / block_size;
 
 			var pos = block_start - 1;
 			for(j=0;j<no_of_blocks;++j)
@@ -304,10 +313,10 @@
 				if(j == no_of_blocks-1)
 				{
 					alert("files deleted");
-				}		
+				}
 			}
 		}
-		var q = i / 4;
+		var q = i / 3;
 		document.getElementsByClassName("s_out_sect")[q-1].innerHTML="";
 		//end of function
 	}
