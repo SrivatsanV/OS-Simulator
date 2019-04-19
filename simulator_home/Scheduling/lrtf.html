@@ -39,7 +39,7 @@ $(document).ready(function(){
   function DisplayList(){
     var table = document.getElementById("ept");
     console.log(stuff[stuff.length-1].no);
-    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
+    $('#ept').append("<tr style="+"background-color:#fff;"+"><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
   }
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
@@ -277,7 +277,7 @@ $(document).ready(function(){
 
     if(sequence[i].n==null)
     {
-      $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'">CPU Idle<div class="bottom">'+ sequence[i+1].start +'</div></div>');
+      $('#outer-div').append('<div class="block" id="process-'+sequence[i].start +'" style="background-color:rgba(112, 128, 144, 0.44);">CPU Idle<div class="bottom">'+ sequence[i+1].start +'</div></div>');
     }
     else
     {
@@ -295,6 +295,8 @@ $(document).ready(function(){
 <style>
 body{
   text-align: center;
+  font-family: 'PT Sans' , sans-serif;
+  background-color: #e9e4e6;
 }
 
 #b{
@@ -310,6 +312,7 @@ p{
 }
 
 #outer-div{
+  display: none;
   margin: auto;
   width: 802px;
   height: 50px;
@@ -323,7 +326,7 @@ p{
   border-right: 1px solid black;
   float: left;
   text-align: center;
-  background-color: rgba(112, 128, 144, 0.44);
+  background-color: rgba(218, 152, 11, 0.44);
   height: 48px;
 }
 
@@ -361,7 +364,7 @@ p{
   <br>
   <div>
     <table id="ep" class="table table-bordered table-striped" style="width:70%;" align="center">
-      <thead>
+      <thead class="thead-dark">
       <th>PNO.</th>
       <th>Arrival Time </th>
       <th>Burst Time</th>

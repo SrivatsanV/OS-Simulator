@@ -39,7 +39,7 @@ $(document).ready(function(){
     var table = document.getElementById("ept");
     console.log(stuff[stuff.length-1].no);
     console.log("inside display list");
-    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
+    $('#ept').append("<tr style="+"background-color:#fff;"+"><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
   }
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
@@ -297,6 +297,7 @@ $(document).ready(function(){
 body{
   text-align: center;
   font-family: 'PT Sans' , sans-serif;
+  background-color: #e9e4e6;
 }
 
 #b{
